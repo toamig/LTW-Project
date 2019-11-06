@@ -13,7 +13,7 @@ CREATE TABLE rental (
   id INTEGER PRIMARY KEY,
   title VARCHAR,
   price FLOAT,
-  published INTEGER, 
+  published DATE, 
   location VARCHAR,   
   description VARCHAR,
   username VARCHAR REFERENCES users,
