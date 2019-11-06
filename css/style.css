@@ -1,0 +1,17 @@
+
+
+
+/* --- HEADER --- */
+
+body header {display: grid; grid-template-columns: auto auto; background-color: dodgerblue; }
+
+#title h1 {color: white; margin: 0; padding-left: 1em; }
+
+#signup {text-align: end; padding: 1em;}
+
+#signup a {text-decoration: none; color: white; padding: 0 0.5em 0 0.5em; margin: 0;}
+
+#signup a:first-child {border-right: 1px solid white; }
+
+
+

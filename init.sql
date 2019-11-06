@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS rental;
+DROP TABLE IF EXISTS user;
+
 
 CREATE TABLE user (
   username VARCHAR PRIMARY KEY,
@@ -17,3 +18,5 @@ CREATE TABLE rental (
   description VARCHAR,
   username VARCHAR REFERENCES users,
 );
+
+-- Preencher base de dados incial
