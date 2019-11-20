@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <title>Houses for rent</title>
-        <meta charset="UTF-8"/>
-    </head>
-    <body>
-        <header>
-            <h1>Houses for rent</h1>
-            <div id="signup">
-                <a href="register.html">Register</a>
-                <a href="login.html">Login</a>
-            </div>
-        </header>
+<?php 
+    include_once('../templates/templates.php');
+    drawHeader(); 
+?>
+
         <nav id="register">
             <p>Register now your place in NAME OF THE WEBSITE</p><br>
             <form action="register.php" method="post" id="register_form">
@@ -30,7 +21,7 @@
                 <input type="submit" name="submit" value="Register" id="submit_register"><br>
             </form>
             
-            <p>Already have an account? <a href="login.html">Sign-in.</a></p>
+            <p>Already have an account? <a href="login.php">Sign-in.</a></p>
         </nav>
         <footer>
 

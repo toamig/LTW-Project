@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <title>Houses for rent</title>
-        <meta charset="UTF-8"/>
-    </head>
-    <body>
-        <header>
-            <h1>Houses for rent</h1>
-            <div id="signup">
-                <a href="register.html">Register</a>
-                <a href="login.html">Login</a>
-            </div>
-        </header>
+<?php 
+    include_once('../templates/templates.php');
+    drawHeader(); 
+?>
+
         <nav id="login">
             <form action="login.php" method="get" id="login_form">
                 <input type="email" name="email" id="email" required="true" placeholder="E-mail"><br>
@@ -21,7 +12,7 @@
                 <input type="submit" name="submit" value="Sign-in" id="submit_login"><br>
             </form>
             
-            <p>Don't have an account? <a href="register.html">Sign-up now.</a></p>
+            <p>Don't have an account? <a href="register.php">Sign-up now.</a></p>
         </nav>
         <footer>
 
