@@ -19,5 +19,7 @@
                 </form>
                 
         </nav>
-    </body>
-</html>
+
+<?php 
+    drawFooter(); 
+?>

@@ -23,8 +23,7 @@
             
             <p>Already have an account? <a href="login.php">Sign-in.</a></p>
         </nav>
-        <footer>
 
-        </footer>
-    </body>
-</html>
+<?php 
+    drawFooter(); 
+?>

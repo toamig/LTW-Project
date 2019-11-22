@@ -24,24 +24,41 @@ function drawHeader(){
 
         <body>
 
-            <div id="page_container">
+            <header>
 
-                <header>
+                <div id="title">
 
-                    <div id="title">
+                    <a href="home.php"><h1>Houses for rent</h1></a>
 
-                        <a href="home.php"><h1>Houses for rent</h1></a>
+                </div>
+                
+                <div id="signup">
 
-                    </div>
-                    
-                    <div id="signup">
+                    <a href="register.php">Register</a>
 
-                        <a href="register.php">Register</a>
+                    <a href="login.php">Login</a>
 
-                        <a href="login.php">Login</a>
+                </div>
 
-                    </div>
+            </header>
+<?php
+}?>
 
-                </header>
+<?php 
+/**
+ * Draws the footer for all pages.
+ */
+function drawFooter(){
+?>
+        <footer>
+
+            <p>&copy; Houses for rent, 2018/2019</p>
+
+        </footer>
+
+    </body>
+
+</html>
+
 <?php
 }?>
