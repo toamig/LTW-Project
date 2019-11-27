@@ -13,6 +13,53 @@ body {display: flex; flex-direction: column; margin: 0; padding: 0; min-height: 
 
 /* --- PAGE CONTAINER --- */
 
+nav#content{
+	font-family: 'Exo 2';
+	background-image: url(../images/background3.jpg);
+	background-position: 0% 0%;background-repeat: no-repeat; background-size: cover;
+
+}
+nav#content a{
+	text-decoration: none;
+}
+
+nav#content form{
+	margin: 10vw auto;
+	width: 40vw;
+	background-color: rgb(255,255,255);
+	/*font-family: sans-serif;*/
+	padding-top: 3vw;
+	padding-bottom: 3vw;
+}
+
+nav#content form input{
+	display: block;
+	font-size: 1.2em;
+	margin: 0.5em auto 0 auto;
+}
+
+#submit{
+	width: 60%;
+	background-color: rgb(67, 128, 252);
+	color: white;
+	border: none;
+}
+
+nav#content form p{
+	text-align: center;
+	color: rgb(67, 128, 252);
+	font-weight: bold;
+}
+
+nav#content form p>a{
+	text-decoration: none;
+	color: rgb(0, 200, 100);
+}
+
+nav#content>form>p:first-child{
+	font-size: 1.5em;
+}
+
 
 /* --- HEADER --- */
 
@@ -48,6 +95,6 @@ body header {display: grid; grid-template-columns: auto auto; background-color: 
 
 /* --- FOOTER --- */
 
-footer {height: 3em; width: 100%; background-color: gray; padding: 1em; bottom: 0; position: absolute; box-sizing: border-box;}
+footer {height: 3em; width: 100%; font-family:sans-serif; background-color: gray; padding: 1em; bottom: 0; position: relative; box-sizing: border-box;}
 
 footer p {list-style: none; text-align: center; color: white; margin: auto;}

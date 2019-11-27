@@ -3,10 +3,10 @@
     drawHeader(); 
 ?>
 
-        <nav id="register">
-            <p>Register now your place in NAME OF THE WEBSITE</p><br>
+        <nav id="content">
+            
             <form action="register.php" method="post" id="register_form">
-                <!-- <span>First Name:</span><br> -->
+                <p>Register now in House for rent</p>
                 <input type="text" name="firstname" id="firstname" required="true" placeholder="First Name"><br>
                 <!-- <span>Last Name:</span><br> -->
                 <input type="text" name="lastname" id="lastname" required="true" placeholder="Last Name"><br>
@@ -18,10 +18,11 @@
                 <input type="password" name="password" id="password" required="true" placeholder="Password"><br>
                 <!-- <span>Confirm Password:</span><br> -->
                 <input type="password" name="password" id="confirm" required="true" placeholder="Confirm your password"><br>
-                <input type="submit" name="submit" value="Register" id="submit_register"><br>
+                <input type="submit" name="submit" value="Register" id="submit"><br>
+                <p>Already have an account? <a href="login.php">Sign-in.</a></p>
             </form>
             
-            <p>Already have an account? <a href="login.php">Sign-in.</a></p>
+            
         </nav>
 
 <?php 
