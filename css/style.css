@@ -3,20 +3,60 @@
 
 /* --- GLOBAL --- */
 
-html {margin: 0; padding: 0; background-color: lightcyan;}
+html {margin: 0; padding: 0; background-color: lightcyan; width: 100%;}
 
 
 /* --- BODY --- */
 
-body {display: flex; flex-direction: column; margin: 0; padding: 0; min-height: 100vh}
+body {display: flex; flex-direction: column; margin: 0; padding: 0; min-height: 100vh; width: 100%;}
 
+
+/* --- HEADER --- */
+
+body header {display: grid; grid-template-columns: auto auto; background-color: white; padding: 1em; position: fixed; width: 100%; box-sizing: border-box;}
+
+#title a {text-align: left; text-decoration: none; font-family: 'Exo 2', sans-serif; color: black;}
+
+#title a:hover {color: rgb(67, 128, 252);}
+
+#title h1 {margin: auto; }
+
+#signup {text-align: right; margin: auto 0; padding: 0; }
+
+#signup a {text-decoration: none; color: black; font-family: 'Exo 2', sans-serif; margin: auto; padding: 0 0.5em 0 0.5em; }
+
+#signup a:hover {color: rgb(67, 128, 252);}
+
+#signup a:first-child {border-right: 1px solid black; }
+
+
+/* --- SEARCH --- */
+
+#search {flex: auto; padding: auto; background-image: url(../images/background2.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover;}
+
+#search form {max-width: 40em; max-height: 2em; min-width: 20em; min-height: 1.5em; display: flex; padding: 0.5em; background-color: gray; margin: auto; border-radius: 5px; position: absolute; top:0; bottom: 0; left: 0; right: 0;}
+
+#search input {width: 100%;}
+
+#search svg {margin-left: 0.5em; min-height: 1.5em; min-width: 1.5em; height: 2em; width: 2em; fill: black;}
+
+#search svg:hover {fill: white;}
+
+
+/* --- FOOTER --- */
+
+footer {height: 3em; width: 100%; font-family:sans-serif; background-color: gray; padding: 1em; bottom: 0; position: relative; box-sizing: border-box;}
+
+footer p {list-style: none; text-align: center; color: white; margin: auto;}
+
+/* ------------------------ */
+/* --- Login / Register --- */
+/* ------------------------ */
 
 /* --- PAGE CONTAINER --- */
 
 nav#content{
-	font-family: 'Exo 2';
-	background-image: url(../images/background3.jpg);
-	background-position: 0% 0%;background-repeat: no-repeat; background-size: cover;
+	flex: auto; padding: auto; background-image: url(../images/background2.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover;
 
 }
 nav#content a{
@@ -59,42 +99,3 @@ nav#content form p>a{
 nav#content>form>p:first-child{
 	font-size: 1.5em;
 }
-
-
-/* --- HEADER --- */
-
-body header {display: grid; grid-template-columns: auto auto; background-color: white; padding: 1em; }
-
-#title a {text-align: left; text-decoration: none; font-family: 'Exo 2', sans-serif; color: black;}
-
-#title a:hover {color: rgb(67, 128, 252);}
-
-#title h1 {margin: 0; }
-
-#signup {text-align: right; margin: auto 0; padding: 0; }
-
-#signup a {text-decoration: none; color: black; font-family: 'Exo 2', sans-serif; margin: auto; padding: 0 0.5em 0 0.5em; }
-
-#signup a:hover {color: rgb(67, 128, 252);}
-
-#signup a:first-child {border-right: 1px solid black; }
-
-
-/* --- SEARCH --- */
-
-#search {flex: auto; padding: auto; background-image: url(../images/background2.jpeg); background-position: center; background-repeat: no-repeat; background-size: cover;}
-
-#search form {max-width: 40em; max-height: 2em; min-width: 20em; min-height: 1.5em; display: flex; padding: 0.5em; background-color: gray; margin: auto; border-radius: 5px; position: absolute; top:0; bottom: 0; left: 0; right: 0;}
-
-#search input {width: 100%;}
-
-#search svg {margin-left: 0.5em; min-height: 1.5em; min-width: 1.5em; height: 2em; width: 2em; fill: black;}
-
-#search svg:hover {fill: white;}
-
-
-/* --- FOOTER --- */
-
-footer {height: 3em; width: 100%; font-family:sans-serif; background-color: gray; padding: 1em; bottom: 0; position: relative; box-sizing: border-box;}
-
-footer p {list-style: none; text-align: center; color: white; margin: auto;}
