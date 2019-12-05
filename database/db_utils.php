@@ -23,14 +23,18 @@
     }
 
     /*
-    * TBD!
+    * Creates a new account with the session variables previously set.
+    * @return true:false
     */
-    function createAccount($name, $username){
+    function createUserAccount(){
+        $name = $_SESSION['name'];
+        $username = $_SESSION['username'];
+        $email = $_SESSION['email'];
+        $phonenumber = $_SESSION['phonenumber'];
+        $password = $_SESSION['password'];
+
         global $db;
-        $stmt = $dbh->prepare('INSERT INTO person (name, address) VALUES (:name, :address)');
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':address', $address);
-        $stmt->execute();
-        return $stmt->fetchAll()?true:false;
+        $stmt = $db->prepare('INSERT INTO user (username, email, password, name, phonenumber) VALUES (?, ?, ?, ?, ?)');
+        return $stmt->execute(array($username, $email, $password, $name, $phonenumber))?true:false;
     }
 ?>
