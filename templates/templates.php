@@ -28,15 +28,15 @@ function drawHeader(){
 
                 <div id="title">
 
-                    <a href="home.php"><h1>Houses for rent</h1></a>
+                    <a href="../pages/home.php"><h1>Houses for rent</h1></a>
 
                 </div>
                 
                 <div id="signup">
 
-                    <a href="register.php">Register</a>
+                    <a href="../pages/register.php">Register</a>
 
-                    <a href="login.php">Login</a>
+                    <a href="../pages/login.php">Login</a>
 
                 </div>
 
