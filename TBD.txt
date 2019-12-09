@@ -1,0 +1,20 @@
+** Template.php **
+- change profile pic.
+
+** results.php **
+- Sort by.
+- all the buttons except "new search".
+
+** verifyLogin.php **
+- alert message not working.
+
+** Account.php **
+- Change side bar logos for better coherence.
+- change profile picture.
+- change inputs for Personal Information to not inputs.
+- Apply Axaj to Side Bar.
+- Portfolio HTML and CSS.
+- Mail HTML and CSS.
+
+** ALL FILES **
+- Media Queries.

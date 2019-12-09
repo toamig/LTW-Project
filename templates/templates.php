@@ -15,11 +15,14 @@
 
             <meta charset="UTF-8"/>
 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
             <title>Houses for rent</title>
 
             <link href="../images/icon.png" rel="icon">
 
             <link href="../css/style.css" rel="stylesheet">
+            <link href="../css/responsive.css" rel="stylesheet">
 
         </head>
 
@@ -48,14 +51,11 @@
                 <?php } else { ?>
 
                     <div id="taskbar">
-
-                        <a href="../pages/account.php">My Account</a>
-
-                        <a href="../pages/account.php">Mail</a>
-
-                        <a href="../pages/account.php">Settings</a>
-
-                        <a href="../utils/logout.php">Logout</a>
+                        <div>
+                            <img src="../images/profileLogo.svg" width="20px">
+                        </div>
+                        
+                        <a href="../pages/account.php"><?php echo $_SESSION['username'];?></a>
 
                     </div>
 

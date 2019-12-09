@@ -1,0 +1,18 @@
+/* Mobile */
+@media screen and (max-width: 576px) {
+    /* --- HEADER --- */
+	#title h1 {
+        font-size: 20px;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+}
+/* Large Desktop */
+@media screen and (min-width: 1200px) {
+}

@@ -1,10 +1,12 @@
 <?php 
+    include_once('../database/session.php');
     include_once('../templates/templates.php');
+
     drawHeader(); 
 ?>
 
         <nav id="content">
-            <form action="home.php" method="get" id="login_form">
+            <form action="../utils/verifyLogin.php" method="post" id="login_form">
                 <input type="email" name="email" id="email" required="true" placeholder="E-mail"><br>
                 <!-- <span>Phone Number:</span><br> -->
                 <input type="password" name="password" id="password" required="true" placeholder="Password"><br>

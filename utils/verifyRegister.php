@@ -3,7 +3,7 @@
     include_once('../database/connection.php');
     include_once('../database/db_utils.php');
     
-    // parse all relevant inputs.
+    // Parse all relevant inputs.
     $name = $_POST['firstname']." ".$_POST['lastname'];
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -11,13 +11,14 @@
     $password = $_POST['password'];
     $confirm = $_POST['confirm-password'];
 
-    // verify if the password and the confirm password fields are equal.
+    // Verify if the password and the confirm password fields are equal.
     if($password != $confirm){
         $message = "Password and its confirmation are not equal!";
         echo "<script>alert('$message'); window.location.replace(\"../pages/register.php\");</script>";
-        return;
+        exit(0);
     }
 
+    // Load all the users info from database.
     $users = loadAllUser();
 
     // For security reasons only these fields are verified. ????
@@ -45,7 +46,7 @@
         $message = $_SESSION['messages'][0]['content'];
         session_destroy();
         echo "<script>alert('$message'); window.location.replace(\"../pages/register.php\");</script>";
-        return;
+        exit(0);
     }
     // If not, a new account is created.
     else {
@@ -56,8 +57,9 @@
         $_SESSION['password'] = $password;
         if(!createUserAccount()){
             session_destroy();
-            $message = "ERROR! Unhable to create a new account!";
+            $message = "ERROR! Unable to create a new account!";
             echo "<script>alert('$message'); window.location.replace(\"../pages/register.php\");</script>";
+            exit(0);
         }
         else header('Location: ../pages/account.php');
     }

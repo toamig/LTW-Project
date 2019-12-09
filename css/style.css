@@ -36,24 +36,21 @@ body header {
 	font-family: 'Exo 2', sans-serif;
 	color: black;
 }
-
-/* #title a:hover {color: rgb(67, 128, 252);} */
-
 #title h1 {
+	font-size: 30px;
 	margin: auto;
 	color: white;
 }
-
 #title h1:hover {
 	color: #6db1b8
 }
+
 
 #signup {
 	text-align: right;
 	margin: auto 0;
 	padding: 0;
 }
-
 #signup a {
 	text-decoration: none;
 	color: white;
@@ -61,11 +58,9 @@ body header {
 	margin: auto;
 	padding: 0 0.5em 0 0.5em;
 }
-
 #signup a:hover {
 	color: #6db1b8;
 }
-
 #signup a:first-child {
 	border-right: 1px solid white;
 }
@@ -74,8 +69,11 @@ body header {
 	text-align: right;
 	margin: auto 0;
 	padding: 0; 
+	display: flex;
 }
-
+#taskbar div {
+	width: 100%;
+}
 #taskbar a {
 	text-decoration: none;
 	color: white;
@@ -86,10 +84,6 @@ body header {
 #taskbar a:hover {
 	color: #6db1b8;
 }
-
-#taskbar a:first-child {border-right: 1px solid white; }
-#taskbar a:nth-child(2) {border-right: 1px solid white; }
-#taskbar a:nth-child(3) {border-right: 1px solid white; }
 
 /* --- SEARCH --- */
 
@@ -103,8 +97,7 @@ body header {
 }
 
 #search form {
-	max-width: 40em;
-	min-width: 20em;
+	width: 70%;
 	height: 2em;
 	display: flex;
 	padding: 0.5em;
@@ -124,7 +117,6 @@ body header {
     border: 0;
     margin-left: 0.5em;
 }
-
 #search input:focus {
 	outline-color: #408c99;
 	outline-width: 2px;
@@ -255,6 +247,10 @@ nav#content>form>p:first-child{
 
 .image-description{
 	display: flex;
+}
+
+.image-description img{
+	width: 100%;
 }
 
 .desc-info{
@@ -398,3 +394,118 @@ nav#content>form>p:first-child{
 	background-color:rgb(245, 102, 86);
 	border: 0.5px solid rgb(245, 102, 86);
 }
+
+/* --- ACCOUNT --- */
+
+.account{
+	display: flex;
+	background-color: rgb(192, 240, 245);
+	padding: 5em;
+}
+
+/* - Side Tabs Dash Board - */
+.account-side-tabs{
+	height: 100%;
+	width: 25%;
+	padding-right: 3em;
+}
+
+.account-side-tabs-wrapper{
+	border-radius: 0.3em;
+	color: #162229;
+	background-color: rgba(0,0,0,.15);
+	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+}
+
+.account-side-tabs-wrapper ul{
+	padding-left: 0;
+	margin: 0;
+}
+
+.account-side-tabs-wrapper ul li{
+	list-style: none;
+}
+.account-side-tabs-wrapper ul li:hover{
+	transform: scale(1.05);
+}
+
+.account-side-tabs-wrapper button{
+	width: 100%;
+	padding: 1em;
+	font-size: 15px;
+	border-radius: 0.2em;
+	text-align: left;
+}
+
+.account-side-tabs-wrapper button:focus{
+	outline: none;
+}
+
+.account-side-tabs-logo{
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-right: 1em;
+}
+
+/* - Second Dash Board - */
+.account-dash-board{
+	border: 1px solid lightgray;
+	border-radius: 0.2em;
+	color: #162229;
+	background-color:#fff;
+	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	height: 100%;
+	width: 100%;
+}
+
+.account-dash-board-items{
+	padding: 0;
+	margin: 0;
+}
+
+.account-dash-board-title{
+	padding: 1em;
+	margin: 0;
+}
+
+.account-dash-board-wrapper{
+	padding: 0.5em 1em;
+	margin: 0;
+}
+
+.border-gray{
+	border-bottom: 1px solid lightgray;
+}
+
+/* Profile */
+.account-profile-wrapper-personal-information-title{
+	margin: 10px 0;
+}
+
+.account-profile-wrapper-container-personal-info{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1em;
+}
+
+.account-profile-wrapper-personal-info-row{
+	display: flex;
+}
+
+.account-profile-wrapper-password-wrapper{
+	display: flex;
+}
+
+.account-profile-wrapper-password-wrapper-title{
+	margin: 10px 0;
+}
+
+.account-profile-wrapper-password-wrapper-change-password-btn{
+	height: 50%;
+	margin: 10px 0;
+}
+
+/* Portfolio */
+
+/* Mail */

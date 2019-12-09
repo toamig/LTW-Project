@@ -46,7 +46,7 @@
             <h4><?php echo $item['title']; ?> in <?php echo $item['location']; ?></h4>
             <div class="image-description">
                 <li>
-                    <img src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg" height="250" height="200">
+                    <img src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg">
                 </li>
                 <div class="desc-info">
                     <li class="description">

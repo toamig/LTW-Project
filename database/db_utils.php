@@ -37,4 +37,16 @@
         $stmt = $db->prepare('INSERT INTO user (username, email, password, name, phonenumber) VALUES (?, ?, ?, ?, ?)');
         return $stmt->execute(array($username, $email, $password, $name, $phonenumber))?true:false;
     }
+
+    /*
+    * Gets all the info from a especific user
+    * @param $email, $password
+    * @return array()
+    */
+    function getUser($email, $password){
+        global $db;
+        $stmt = $db->prepare("SELECT * FROM user WHERE email='".$email."' AND password='".$password."'");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 ?>
