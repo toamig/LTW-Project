@@ -588,9 +588,16 @@ nav#content>form>p:first-child{
 	display: grid;
 	max-width: auto;
 }
+.account-image-description li{
+	list-style: none;
+}
 .account-image-description img{
 	width: 40em;
     height: auto;
+}
+
+.add-new-img{
+	width: fit-content;
 }
 
 /* Mail */

@@ -4,7 +4,7 @@
     include_once('../database/connection.php');
     include_once('../database/db_utils.php');
 
-    echo '|'.$_SESSION['phonemunber'].'|';
+    var_dump($_SESSION['phonenumber']);
 
     drawHeader();
 ?>
@@ -160,14 +160,18 @@
 
                         if(sizeof($houses)){
                             foreach($houses as $item){
-                                ?> <button class="account-btn"><?php ownedItem($item); ?></button> <?php
+                                ?> 
+                                <button class="account-btn">
+                                    <?php ownedItem($item); ?>
+                                </button> 
+                                <?php
                             }
                         }
                     ?>
                     <button class="account-btn">
                         <div class="account-image-description">
                             <li>
-                                <img src="../images/addNew.svg" alt="AddNewImg">
+                                <img class="add-new-img" src="../images/houseExample1.jpg" alt="AddNewImg">
                             </li>
                         </div>
                     </button>
