@@ -55,7 +55,7 @@
                 </li>
                 <li>
                     <form>
-                        <button formaction="../utils/logout.php" class="logout-btn">
+                        <button formaction="../actions/logout_action.php" class="logout-btn">
                             <img class="account-side-tabs-logo" alt="account-side-tabs-logo-logout" src="../images/LogoutLogo.svg">
                             Logout
                         </button>

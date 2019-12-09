@@ -17,7 +17,7 @@
 
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <title>Houses for rent</title>
+            <title>Rent-a-house</title>
 
             <link href="../images/icon.png" rel="icon">
 
@@ -32,7 +32,7 @@
 
                 <div id="title">
 
-                    <a href="../pages/home.php"><h1>Houses for rent</h1></a>
+                    <a href="../pages/home.php"><h1>Rent-a-house</h1></a>
 
                 </div>
 
@@ -73,7 +73,7 @@
 ?>
         <footer>
 
-            <p>&copy; Houses for rent, 2018/2019</p>
+            <p>&copy; Rent-a-house, 2018/2019</p>
 
         </footer>
 

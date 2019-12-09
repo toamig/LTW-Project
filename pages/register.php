@@ -5,8 +5,8 @@
 
     <nav id="content">
         
-        <form action="../utils/verifyRegister.php" method="post" id="register_form">
-            <p>Register now in House for rent</p>
+        <form action="../actions/register_action.php" method="post" id="register_form">
+            <p>Register now in Rent-a-house</p>
             <!-- <span>First Name:</span><br> -->
             <input type="text" name="firstname" id="firstname" required="true" placeholder="First Name"><br>
             <!-- <span>Last Name:</span><br> -->
@@ -21,9 +21,10 @@
             <input type="password" name="password" id="password" required="true" placeholder="Password"><br>
             <!-- <span>Confirm Password:</span><br> -->
             <input type="password" name="confirm-password" id="confirm-password" required="true" placeholder="Confirm your password"><br>
-            <input type="submit" name="submit" value="Register" id="submit"><br>
+            <input type="submit" name="submit-register" value="Register" id="submit"><br>
             <p>Already have an account? <a href="login.php">Sign-in.</a></p>
         </form>
+
     </nav>
 
 <?php

@@ -6,12 +6,13 @@
 ?>
 
         <nav id="content">
-            <form action="../utils/verifyLogin.php" method="post" id="login_form">
+            <form action="../actions/login_action.php" method="post" id="login_form">
+                <p>Login in Rent-a-house</p>
                 <input type="email" name="email" id="email" required="true" placeholder="E-mail"><br>
                 <!-- <span>Phone Number:</span><br> -->
                 <input type="password" name="password" id="password" required="true" placeholder="Password"><br>
                 <!-- <span>Confirm Password:</span><br> -->
-                <input type="submit" name="submit" value="Sign-in" id="submit"><br>
+                <input type="submit" name="submit-login" value="Sign-in" id="submit"><br>
                 <p>Don't have an account? <a href="register.php">Sign-up now.</a></p>
             </form>
         </nav>
