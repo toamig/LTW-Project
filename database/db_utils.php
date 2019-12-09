@@ -45,8 +45,17 @@
     */
     function getUser($email, $password){
         global $db;
-        $stmt = $db->prepare("SELECT * FROM user WHERE email='".$email."' AND password='".$password."'");
-        $stmt->execute();
-        return $stmt->fetchAll();
+        $stmt = $db->prepare("SELECT * FROM user WHERE email='".$email."'");
+        $stmt->execute();  
+        $aux = $stmt->fetchAll();
+        return $aux;
+    }
+
+    /*
+    * Closes the connection to the database
+    */
+    function closeConnection(){
+        global $db;
+        $db->close();
     }
 ?>

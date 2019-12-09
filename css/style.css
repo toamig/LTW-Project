@@ -40,9 +40,10 @@ body header {
 	font-size: 30px;
 	margin: auto;
 	color: white;
+	transition: color 0.5s;
 }
 #title h1:hover {
-	color: #6db1b8
+	color: #234f68;
 }
 
 
@@ -57,9 +58,10 @@ body header {
 	font-family: 'Exo 2', sans-serif;
 	margin: auto;
 	padding: 0 0.5em 0 0.5em;
+	transition: color 0.5s;
 }
 #signup a:hover {
-	color: #6db1b8;
+	color: #234f68;
 }
 #signup a:first-child {
 	border-right: 1px solid white;
@@ -79,17 +81,19 @@ body header {
 	color: white;
 	font-family: 'Exo 2', sans-serif;
 	margin: auto;
-	padding: 0 0.5em 0 0.5em; }
+	padding: 0 0.5em 0 0.5em; 
+	transition: color 0.5s;
+}
 
 #taskbar a:hover {
-	color: #6db1b8;
+	color: #234f68;
 }
 
 /* --- SEARCH --- */
 
 #search {
+	display: flex;
 	flex: auto;
-	padding: auto;
 	background-image: url(../images/background2.jpeg);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -97,25 +101,20 @@ body header {
 }
 
 #search form {
-	width: 70%;
+	width: 60%;
 	height: 2em;
 	display: flex;
 	padding: 0.5em;
 	background-color: white;
 	margin: auto;
 	border-radius: 5px;
-	position: absolute;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
 }
 
 #search input {
 	width: 100%;
-	color: white;
     border: 0;
-    margin-left: 0.5em;
+	margin-left: 0.5em;
+	font-family: 'Exo 2', sans-serif;
 }
 #search input:focus {
 	outline-color: #408c99;
@@ -123,26 +122,42 @@ body header {
 	border-radius:5px;
 }
 
+#search button{
+	display: flex;
+	width: 15%;
+	border-radius: 5px;
+	background: #162229;
+	fill: white;
+	border: none;
+	cursor: pointer;
+	transition: background 0.5s;
+}
+
+#search button:hover {
+	background: #234f68;
+  }
+
 #search svg {
 	margin-left: 0.5em;
 	min-height: 1.5em;
 	min-width: 1.5em;
 	height: 2em;
 	width: 2em;
-	fill: black;
-}
-
-#search svg:hover {
+	margin: auto;
 	fill: white;
 }
+
+/* #search svg:hover {
+	fill: white;
+} */
 
 /* --- FOOTER --- */
 
 footer {
 	height: 3em;
 	width: 100%;
-	font-family:sans-serif;
-	background-color: gray;
+	font-family: 'Exo 2', sans-serif;
+	background-color: rgb(83, 83, 83);
 	padding: 1em;
 	bottom: 0;
 	position: relative;
@@ -164,7 +179,7 @@ footer p {
 
 nav#content{
 	flex: auto;
-	padding: auto;
+	display: flex;
 	background-image: url(../images/background2.jpeg);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -176,10 +191,10 @@ nav#content a{
 }
 
 nav#content form{
-	margin: 10vw auto;
-	width: 40vw;
+	margin: auto;
+	width: 50%;
 	background-color: rgb(255,255,255);
-	/*font-family: sans-serif;*/
+	font-family: 'Exo 2', sans-serif;
 	padding-top: 3vw;
 	padding-bottom: 3vw;
 	border-radius: 0.5em;
@@ -196,6 +211,7 @@ nav#content form input{
     border-right: white;
 	width: 80%;
 	border-radius: 2px;
+	font-family: 'Exo 2', sans-serif;
 }
 
 nav#content form input::placeholder{
@@ -204,10 +220,11 @@ nav#content form input::placeholder{
 
 
 #submit{
-	width: 60%;
 	background-color: rgb(33, 67, 136);
 	color: white;
 	border: none;
+	cursor: pointer;
+	transition: background-color 0.5s;
 }
 
 #submit:hover {

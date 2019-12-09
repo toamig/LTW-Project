@@ -4,14 +4,14 @@ DROP TABLE IF EXISTS user;
 
 CREATE TABLE user (
   username VARCHAR PRIMARY KEY,
-  email VARCHAR,
+  email VARCHAR UNIQUE,
   password VARCHAR,
   name VARCHAR,
-  phoneNumber VARCHAR
+  phoneNumber VARCHAR UNIQUE
 );
 
 CREATE TABLE rental (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   image VARCHAR,
   title VARCHAR,
   price DOUBLE,
