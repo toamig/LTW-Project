@@ -506,6 +506,14 @@ nav#content>form>p:first-child{
 	margin: 10px 0;
 }
 
+.account-profile-img{
+	display: flex;
+}
+
+.account-profile-name-change-picture{
+	display: grid;
+}
+
 /* Portfolio */
 
 /* Mail */

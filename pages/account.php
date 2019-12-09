@@ -80,9 +80,11 @@
 
                 <div class="account-profile-img border-gray">
                     <img src="../images/profileLogo.svg" alt="profileLogo" height="40px">
-                    <?php echo $_SESSION['name']; ?>
-                    <label for="file">Change profile picture</label>
-                    <!-- <input type="file"> -->
+                    <div class="account-profile-name-change-picture">
+                        <?php echo $_SESSION['name']; ?>
+                        <label for="file">Change profile picture</label>
+                        <!-- <input type="file"> -->
+                    </div>
                 </div>
 
                 <div class="account-profile-wrapper-personal-information border-gray">
