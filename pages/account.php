@@ -4,6 +4,8 @@
     include_once('../database/connection.php');
     include_once('../database/db_utils.php');
 
+    echo '|'.$_SESSION['phonemunber'].'|';
+
     drawHeader();
 ?>
 
@@ -20,7 +22,7 @@
 
         else drawProfileDashBoard();
     ?>
-        
+    
 </div>
 
 <?php function drawSideTabs(){ ?>
@@ -79,35 +81,48 @@
             <div class="account-dash-board-wrapper">
 
                 <div class="account-profile-img border-gray">
-                    <img src="../images/profileLogo.svg" alt="profileLogo" height="40px">
+                    <img src="../images/profileLogo.svg" alt="profileLogo">
                     <div class="account-profile-name-change-picture">
                         <?php echo $_SESSION['name']; ?>
-                        <label for="file">Change profile picture</label>
+                        <button class="account-btn">Change profile picture</button>
+                        <!-- <label for="file">Change profile picture</label> -->
                         <!-- <input type="file"> -->
                     </div>
                 </div>
 
                 <div class="account-profile-wrapper-personal-information border-gray">
 
-                    <h4 class="account-profile-wrapper-personal-information-title">Personal Information</h4>
+                    <div class="account-profile-wrapper-personal-information-title">
+                        <h4>Personal Information</h4>
+                        <button class="account-btn">Edit</button>
+                    </div>
 
                     <div class="account-profile-wrapper-container-personal-info">
 
                         <div class="account-profile-wrapper-personal-info-row">
-                            <span>First Name</span>
-                                <input type="text">
-                                </input>
-                        
-                            <span>Last Name</span>
-                            <input type="text"></input>
+                            <?php $pos = strpos ($_SESSION['name'], ' '); ?>
+
+                            <div class="account-profile-wrapper-personal-info-row-element">
+                                <span>First Name</span>
+                                <lable class="element-lable" type="text"><?php  echo substr($_SESSION['name'], 0, $pos); ?></lable>
+                            </div>
+
+                            <div class="account-profile-wrapper-personal-info-row-element">
+                                <span>Last Name</span>
+                                <lable class="element-lable" type="text"><?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?></lable>
+                            </div>
                         </div>
 
                         <div class="account-profile-wrapper-personal-info-row">
-                            <span>Email</span>
-                            <input type="text"></input>
-    
-                            <span>Phone Number</span>
-                            <input type="text"></input>
+                            <div class="account-profile-wrapper-personal-info-row-element">
+                                <span>Email</span>
+                                <lable class="element-lable" type="text"><?php echo $_SESSION['email'];?></lable>
+                            </div>
+
+                            <div class="account-profile-wrapper-personal-info-row-element">
+                                <span>Phone Number</span>
+                                <lable class="element-lable" type="text"><?php echo isset($_SESSION['phonenumber']);?></lable>
+                            </div>
                         </div>
 
                     </div>
@@ -118,7 +133,7 @@
 
                     <h4 class="account-profile-wrapper-password-wrapper-title">Password</h4>
 
-                    <button class="account-profile-wrapper-password-wrapper-change-password-btn">Change Password</button>
+                    <button class="account-btn">Change Password</button>
 
                 </div>
 
@@ -139,10 +154,24 @@
             <h4 class="account-dash-board-title border-gray">Portfolio</h4>
 
             <div class="account-dash-board-wrapper">
-                <?php 
+                <div class="portfolio-wrapper">
+                    <?php
+                        $houses = getUserHouses($_SESSION['username']);
 
-                    rentalItem(); 
-                ?>
+                        if(sizeof($houses)){
+                            foreach($houses as $item){
+                                ?> <button class="account-btn"><?php ownedItem($item); ?></button> <?php
+                            }
+                        }
+                    ?>
+                    <button class="account-btn">
+                        <div class="image-description">
+                            <li>
+                                <img src="../images/addNew.svg" alt="AddNewImg">
+                            </li>
+                        </div>
+                    </button>
+                </div>
             </div>
 
         </ul>
@@ -151,51 +180,14 @@
 
 <?php } ?>
 
-<?php function rentalItem(){ ?>
+<?php function ownedItem($item){ ?>
     <div class="image-description">
+        <li class="location">
+                <?php echo $item['title']; ?> in <?php echo $item['location']; ?>
+        </li>
         <li>
             <img src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg">
         </li>
-        <div class="desc-info">
-            <li class="location">
-                <?php echo $item['title']; ?> in <?php echo $item['location']; ?>
-            </li>
-            <li class="description">
-                <?php echo $item['description']; ?>
-            </li>
-            <div class="house-info">
-                <div class="price-info">
-                    <h5>Price:</h5>
-                    <li class="price-amount">
-                    <?php echo $item['price']."$"; ?>
-                    </li>
-                </div>
-                <div class="date-info">
-                    <h5>Date:</h5>
-                    <li class="date">
-                        <?php echo date('Y-m-d', $item['date']); ?>
-                    </li>
-                </div>
-                <div class="address-info">
-                    <h5>Address:</h5>
-                    <li class="address">
-                        <?php echo $item['address']; ?>
-                    </li>
-                </div>
-                <div class="state-info">
-                    <h5>State:</h5>
-                    <li class="state">
-                        <?php echo $item['state']; ?>
-                    </li>
-                </div>
-                <div class="postcode-info">
-                    <h5>Post Code:</h5>
-                    <li class="postcode">
-                        <?php echo $item['postCode']; ?>
-                    </li>
-                </div>
-            </div>
-        </div>
     </div>
 
 <?php } ?>

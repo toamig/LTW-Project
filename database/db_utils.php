@@ -52,6 +52,19 @@
     }
 
     /*
+    * Gets all the owned houses from a especific user
+    * @param $username
+    * @return array()
+    */
+    function getUserHouses($username){
+        global $db;
+        $stmt = $db->prepare("SELECT * FROM rental WHERE username='".$username."'");
+        $stmt->execute();  
+        $aux = $stmt->fetchAll();
+        return $aux;
+    }
+
+    /*
     * Closes the connection to the database
     */
     function closeConnection(){

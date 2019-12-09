@@ -418,6 +418,7 @@ nav#content>form>p:first-child{
 	display: flex;
 	background-color: rgb(192, 240, 245);
 	padding: 5em;
+	flex: auto;
 }
 
 /* - Side Tabs Dash Board - */
@@ -441,6 +442,7 @@ nav#content>form>p:first-child{
 
 .account-side-tabs-wrapper ul li{
 	list-style: none;
+	height: -webkit-fill-available;
 }
 .account-side-tabs-wrapper ul li:hover{
 	transform: scale(1.05);
@@ -498,6 +500,10 @@ nav#content>form>p:first-child{
 /* Profile */
 .account-profile-wrapper-personal-information-title{
 	margin: 10px 0;
+	display: flex;
+}
+.account-profile-wrapper-personal-information-title h4{
+	margin: auto auto 0 0;
 }
 
 .account-profile-wrapper-container-personal-info{
@@ -509,28 +515,79 @@ nav#content>form>p:first-child{
 .account-profile-wrapper-personal-info-row{
 	display: flex;
 }
+.account-profile-wrapper-personal-info-row-element{
+	display: grid;
+	width: -webkit-fill-available;
+}
+.account-profile-wrapper-personal-info-row-element:first-child{
+	margin-right: 2%;
+}
+.element-lable{
+	padding: 1%;
+	margin: 1% 0;
+	border: 1px solid lightgray;
+	border-radius: 0.2em;
+}
 
 .account-profile-wrapper-password-wrapper{
 	display: flex;
 }
-
 .account-profile-wrapper-password-wrapper-title{
 	margin: 10px 0;
 }
-
-.account-profile-wrapper-password-wrapper-change-password-btn{
-	height: 50%;
-	margin: 10px 0;
+.account-btn{
+	margin: 5px 0 0 auto;
+    background-color: #162229;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+	border: 0.5px solid #162229;
+}
+.account-btn:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+	border: 0.5px solid #408c99;
+}
+.account-btn:active {
+	position:relative;
+	top:1px;
 }
 
 .account-profile-img{
 	display: flex;
+	padding: 0.5em 0;
+}
+
+.account-profile-img img{
+	height: 60px;
+	width: 60px;
 }
 
 .account-profile-name-change-picture{
 	display: grid;
+	padding-left: 0.5em;
 }
 
 /* Portfolio */
+.portfolio-wrapper{
+	display: contents;
+	width: 50%;
+}
+
+.image-description{
+	display: grid;
+	max-width: auto;
+}
+.image-description img{
+	width: 40em;
+    height: auto;
+}
+
+.add-new-btn{
+	
+}
 
 /* Mail */
