@@ -4,8 +4,6 @@
     include_once('../database/connection.php');
     include_once('../database/db_utils.php');
 
-    var_dump($_SESSION['phonenumber']);
-
     drawHeader();
 ?>
 
@@ -121,7 +119,7 @@
 
                             <div class="account-profile-wrapper-personal-info-row-element">
                                 <span>Phone Number</span>
-                                <lable class="element-lable" type="text"><?php echo isset($_SESSION['phonenumber']);?></lable>
+                                <lable class="element-lable" type="text"><?php echo substr($_SESSION['phonenumber'],  0, strlen($_SESSION['phonenumber']));?></lable>
                             </div>
                         </div>
 
