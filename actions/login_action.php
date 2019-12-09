@@ -14,9 +14,7 @@
         $verifyPass = password_verify($password, $user[0]['password']);
 
         if(count($user) != 1){
-            session_destroy();
-            $message = "ERROR! Account doesn't exit!";
-            // echo "<script>alert('$message'); window.location.replace(\"../pages/register.php\");</script>";
+            $_SESSION['messages'] = array('type' => 'error', 'content' => "Account doesn't exit!");
             header("Location: ../pages/login.php");
             exit(0);
         }
@@ -29,9 +27,7 @@
             header('Location: ../pages/home.php');
         }
         else{
-            session_destroy();
-            $message = "ERROR! Wrong password!";
-            // echo "<script>alert('$message'); window.location.replace(\"../pages/register.php\");</script>";
+            $_SESSION['messages'] = array('type' => 'error', 'content' => "Wrong password!");
             header("Location: ../pages/login.php");
             exit(0);
         }

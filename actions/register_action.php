@@ -28,30 +28,27 @@
         $error_flag = false;
         foreach($users as $user){
             if($user['username'] == $username){
-                $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Username already in use!');
+                $_SESSION['messages'] = array('type' => 'error', 'content' => 'Username already in use!');
                 $error_flag = true;
             break;
             }
             if($user['email'] == $email){
-                $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Email alrady in use!');
+                $_SESSION['messages'] = array('type' => 'error', 'content' => 'Email alrady in use!');
                 $error_flag = true;
             break;
             }
             if($user['phoneNumber'] == $phonenumber){
-                $_SESSION['messages'][] = array('type' => 'error', 'content' => 'Phone number already in use!');
+                $_SESSION['messages'] = array('type' => 'error', 'content' => 'Phone number already in use!');
                 $error_flag = true;
             break;
             }
         }
 
-        // If the the parameters evaluated above fail, it returns to the register page again. 
+       // If the the parameters evaluated above fail, it returns to the register page again. 
         if($error_flag){ 
-            $message = $_SESSION['messages'][0]['content'];
-            session_destroy();
-            echo "<script>alert('$message'); window.location.replace(\"../pages/register.php\");</script>";
-            exit(0);
+            header('Location: ../pages/register.php');
         }
-        // If not, a new account is created.
+        //If not, a new account is created.
         else {
             $_SESSION['name'] = $name;
             $_SESSION['username'] = $username;
