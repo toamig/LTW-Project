@@ -165,7 +165,7 @@
                         }
                     ?>
                     <button class="account-btn">
-                        <div class="image-description">
+                        <div class="account-image-description">
                             <li>
                                 <img src="../images/addNew.svg" alt="AddNewImg">
                             </li>
@@ -181,7 +181,7 @@
 <?php } ?>
 
 <?php function ownedItem($item){ ?>
-    <div class="image-description">
+    <div class="account-image-description">
         <li class="location">
                 <?php echo $item['title']; ?> in <?php echo $item['location']; ?>
         </li>

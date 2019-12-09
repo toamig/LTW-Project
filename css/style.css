@@ -584,17 +584,13 @@ nav#content>form>p:first-child{
 	width: 50%;
 }
 
-.image-description{
+.account-image-description{
 	display: grid;
 	max-width: auto;
 }
-.image-description img{
+.account-image-description img{
 	width: 40em;
     height: auto;
-}
-
-.add-new-btn{
-	
 }
 
 /* Mail */
