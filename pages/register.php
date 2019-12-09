@@ -1,4 +1,5 @@
 <?php 
+    include_once('../database/session.php');
     include_once('../templates/templates.php');
     drawHeader();
 ?>
@@ -21,6 +22,16 @@
             <input type="password" name="password" id="password" required="true" placeholder="Password"><br>
             <!-- <span>Confirm Password:</span><br> -->
             <input type="password" name="confirm-password" id="confirm-password" required="true" placeholder="Confirm your password"><br>
+
+            <?php if(isset($_SESSION['messages'])) {?>
+
+                <div id="error"><?=$_SESSION['messages']['content']?></div>
+
+                <?php
+                unset($_SESSION['messages']);
+
+            }?>
+
             <input type="submit" name="submit-register" value="Register" id="submit"><br>
             <p>Already have an account? <a href="login.php">Sign-in.</a></p>
         </form>

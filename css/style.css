@@ -231,6 +231,13 @@ nav#content form input::placeholder{
 	background-color:rgb(245, 89, 71);
 }
 
+nav#content form #error{
+	margin: 1em 0;
+	text-align: center;
+	color: rgb(245, 89, 71);
+	font-weight: bold;
+}
+
 nav#content form p{
 	text-align: center;
 	color: rgb(33, 67, 136);
