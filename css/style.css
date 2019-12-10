@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
 
 
+/* --- Reset CSS --- */
+ul li{
+	list-style: none;
+}
+
+ul{
+	padding: 0;
+}
+
+button:focus{
+	outline: none;
+}
+
 /* --- GLOBAL --- */
 
 html {
@@ -318,6 +331,7 @@ nav#content>form>p:first-child{
 	color: #162229;
 	background-color:#fff;
 	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	padding-left: 1em;
 }
 
 .utils-btn {
@@ -563,6 +577,7 @@ nav#content>form>p:first-child{
     font-weight: bold;
     text-decoration: none;
 	border: 0.5px solid #162229;
+	padding: 1px 7px 7px;
 }
 .account-btn:hover {
 	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
@@ -590,21 +605,56 @@ nav#content>form>p:first-child{
 }
 
 /* Portfolio */
-.portfolio-wrapper{
+.owned-houses-wrapper{
 	display: contents;
 	width: 50%;
 }
 
-.account-image-description{
-	display: grid;
-	max-width: auto;
+.portfolio-element{
+	padding-bottom: 1em;
 }
-.account-image-description li{
-	list-style: none;
+.portfolio-element h5{
+	margin: auto;
 }
-.account-image-description img{
-	width: 20em;
-    height: 15em;
+
+.owned-houses-wrapper ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.owned-houses-wrapper ul li{
+	flex: 0 0 33.3%;
+}
+
+.list-owned{
+	display: flex;
+	flex-direction: column;
+}
+
+.owned-house-img{
+	width: 25em;
+	height: 18em;
+}
+
+.add-new-wrapper{
+	display: flex;
+	justify-content: center;
+}
+
+.add-new-btn{
+	background-color: transparent;
+	border: none;
+}
+
+.add-new-btn img{
+	width: 100%;
+    transform: scale(0.5);
+	max-height: 21em;
+}
+
+.add-new-btn img:hover{
+	transform: scale(0.65);
+	cursor: pointer;
 }
 
 /* Mail */

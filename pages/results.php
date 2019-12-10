@@ -85,9 +85,9 @@
                         </div>
                     </div>
                     <div class="utils-btn-container">
-                        <form><button class="utils-btn" formaction="home.php" formmethod="post">Contact Owner</button></form>
-                        <form><button class="utils-btn" formaction="home.php" formmethod="post">Show Comments</button></form>
-                        <form><button class="utils-btn" formaction="home.php" formmethod="post">Add Comment</button></form>
+                        <form><button class="utils-btn" formaction="home.php" formmethod="post">Details</button></form>
+                        <!-- <form><button class="utils-btn" formaction="home.php" formmethod="post">Show Comments</button></form>
+                        <form><button class="utils-btn" formaction="home.php" formmethod="post">Add Comment</button></form> -->
                     </div>
                 </div>
             </div>

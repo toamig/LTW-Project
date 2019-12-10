@@ -158,55 +158,98 @@
     <div class="account-dash-board">
 
         <ul class="account-dash-board-items">
-
             <h4 class="account-dash-board-title border-gray">Portfolio</h4>
-
+            
             <div class="account-dash-board-wrapper">
-                <div class="portfolio-wrapper">
-                    <?php
-                        $houses = getUserHouses($_SESSION['username']);
 
-                        if(sizeof($houses)){
-                            foreach($houses as $item){
-                                ?> 
-                                <button class="account-btn">
-                                    <?php ownedItem($item); ?>
-                                </button> 
-                                <?php
-                            }
-                        }
-                    ?>
-                    <button class="account-btn">
-                        <div class="account-image-description">
-                            <li class="location">
-                                    Add new House
-                            </li>
-                            <li>
-                                <img class="add-new-img" src="../images/addNew.svg" alt="AddNewImg">
-                            </li>
-                        </div>
-                    </button>
+                <div class="portfolio-element border-gray">
+                    <?php onwedHouses(); ?>
                 </div>
+
+                <div class="portfolio-element">
+                    <?php rentedHouses(); ?>
+                </div>
+
             </div>
+            
         </ul>
 
     </div>
 
 <?php } ?>
 
-<?php function ownedItem($item){ ?>
-    <div class="account-image-description">
-        <li class="location">
-                <?php echo $item['title']; ?> in <?php echo $item['location']; ?>
-        </li>
-        <li>
-            <img src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg">
-        </li>
+<?php function onwedHouses(){ ?>
+
+    <h5>Owned Houses</h5>
+    <div class="owned-houses-wrapper">
+        <ul>
+            <?php
+                $houses = getUserOwnedHouses($_SESSION['username']);
+
+                if(sizeof($houses)){
+                    foreach($houses as $item){
+                        ?> 
+                        <li>
+                            <button class="account-btn">
+                                <?php item($item); ?>
+                            </button> 
+                        </li>
+                        <?php
+                    }
+                }
+            ?>
+            <?php addNewBtn();?>
+        </ul>
+    </div>
+    
+<?php } ?>
+
+<?php function rentedHouses() { ?>
+    <h5 style="padding-top:8px;">Rented Houses</h5>
+    <div class="rented-houses-wrapper">
+        <ul>
+            <?php
+                $houses = getUserRentedHouses($_SESSION['username']);
+
+                if(sizeof($houses)){
+                    foreach($houses as $item){
+                        ?> 
+                        <li>
+                            <button class="account-btn">
+                                <?php rentedItem($item); ?>
+                            </button> 
+                        </li>
+                        <?php
+                    }
+                }
+            ?>
+            <?php addNewBtn();?>
+        </ul>
     </div>
 
 <?php } ?>
 
-<?php function drawMailDashBoard(){?>
+<?php function item($item){ ?>
+        <ul class="list-owned">
+            <li class="location">
+                    <?php echo $item['title']; ?> in <?php echo $item['location']; ?>
+            </li>
+            <li>
+                <img class="owned-house-img" src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg">
+            </li>
+        </ul>
+
+<?php } ?>
+
+<?php function addNewBtn() { ?>
+    <li class="add-new-wrapper">
+        <button class="add-new-btn">
+            <img class="add-new-img" src="../images/addNew.svg" alt="AddNewImg">
+        </button>
+    </li>
+<?php } ?>
+
+<?php function drawMailDashBoard() {?>
     
     <div class="account-dash-board">
 

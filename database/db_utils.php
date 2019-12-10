@@ -56,7 +56,7 @@
     * @param $username
     * @return array()
     */
-    function getUserHouses($username){
+    function getUserOwnedHouses($username){
         global $db;
         $stmt = $db->prepare("SELECT * FROM rental WHERE username='".$username."'");
         $stmt->execute();  

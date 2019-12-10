@@ -4,6 +4,9 @@
 	#title h1 {
         font-size: 20px;
     }
+    .account{
+        padding: 0;
+    }
 }
 
 /* Tablet */
