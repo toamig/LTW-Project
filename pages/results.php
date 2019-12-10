@@ -46,7 +46,7 @@
             <h4><?php echo $item['title']; ?> in <?php echo $item['location']; ?></h4>
             <div class="image-description">
                 <li>
-                    <img src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg">
+                    <img src="../images/houses/<?php echo $item['image'];?>" alt="HouseExampleImg">
                 </li>
                 <div class="desc-info">
                     <li class="description">
@@ -97,7 +97,7 @@
         }
         if(!$resultsFound){ ?>
             <div class="no-results-found">
-                <img src="../images/noResultsFound.png" alt="noResultsFound">
+                <img src="../images/icons/noResultsFound.png" alt="noResultsFound">
             </div>
     <?php } ?>
     

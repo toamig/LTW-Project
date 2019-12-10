@@ -113,7 +113,7 @@ body header {
 #search {
 	display: flex;
 	flex: auto;
-	background-image: url(../images/background2.jpeg);
+	background-image: url(../images/background/background2.jpeg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -199,7 +199,7 @@ footer p {
 nav#content{
 	flex: auto;
 	display: flex;
-	background-image: url(../images/background2.jpeg);
+	background-image: url(../images/background/background2.jpeg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;

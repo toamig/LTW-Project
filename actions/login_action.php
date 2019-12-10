@@ -10,7 +10,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $user = getUser($email, $password);
+        $user = getUser($email);
         $verifyPass = password_verify($password, $user[0]['password']);
 
         if(count($user) != 1){
