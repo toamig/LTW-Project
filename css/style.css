@@ -605,7 +605,7 @@ nav#content>form>p:first-child{
 }
 
 /* Portfolio */
-.owned-houses-wrapper{
+.houses-wrapper{
 	display: contents;
 	width: 50%;
 }
@@ -617,21 +617,21 @@ nav#content>form>p:first-child{
 	margin: auto;
 }
 
-.owned-houses-wrapper ul{
+.houses-wrapper ul{
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.owned-houses-wrapper ul li{
+.houses-wrapper ul li{
 	flex: 0 0 33.3%;
 }
 
-.list-owned{
+.list-item{
 	display: flex;
 	flex-direction: column;
 }
 
-.owned-house-img{
+.item-house-img{
 	width: 25em;
 	height: 18em;
 }

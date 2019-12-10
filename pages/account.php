@@ -181,7 +181,7 @@
 <?php function onwedHouses(){ ?>
 
     <h5>Owned Houses</h5>
-    <div class="owned-houses-wrapper">
+    <div class="houses-wrapper">
         <ul>
             <?php
                 $houses = getUserOwnedHouses($_SESSION['username']);
@@ -206,10 +206,11 @@
 
 <?php function rentedHouses() { ?>
     <h5 style="padding-top:8px;">Rented Houses</h5>
-    <div class="rented-houses-wrapper">
+    <div class="houses-wrapper">
         <ul>
             <?php
-                $houses = getUserRentedHouses($_SESSION['username']);
+                //$houses = getUserRentedHouses($_SESSION['username']);
+                $houses = getUserOwnedHouses($_SESSION['username']);
 
                 if(sizeof($houses)){
                     foreach($houses as $item){
@@ -230,12 +231,12 @@
 <?php } ?>
 
 <?php function item($item){ ?>
-        <ul class="list-owned">
+        <ul class="list-item">
             <li class="location">
                     <?php echo $item['title']; ?> in <?php echo $item['location']; ?>
             </li>
             <li>
-                <img class="owned-house-img" src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg">
+                <img class="item-house-img" src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg">
             </li>
         </ul>
 <?php } ?>
