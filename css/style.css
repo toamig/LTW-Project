@@ -23,29 +23,33 @@ body {
 
 body header {
 	display: grid; 
-	grid-template-columns: auto auto;
+	grid-template-columns: auto auto auto;
 	background-color: #162229; 
 	padding: 1em; 
 	width: 100%;
 	box-sizing: border-box;
 }
 
+#title h1{
+	margin: auto;
+}
+
 #title a {
 	text-align: left;
 	text-decoration: none;
 	font-family: 'Exo 2', sans-serif;
-	color: black;
-}
-#title h1 {
 	font-size: 30px;
-	margin: auto;
 	color: white;
 	transition: color 0.5s;
 }
-#title h1:hover {
+#title a:hover {
 	color: #234f68;
 }
 
+#spacer{
+	display: table-cell;
+	width: 100%;
+}
 
 #signup {
 	text-align: right;
@@ -53,6 +57,7 @@ body header {
 	padding: 0;
 }
 #signup a {
+	vertical-align: middle;
 	text-decoration: none;
 	color: white;
 	font-family: 'Exo 2', sans-serif;
@@ -70,17 +75,18 @@ body header {
 #taskbar {
 	text-align: right;
 	margin: auto 0;
-	padding: 0; 
-	display: flex;
+	padding: 0;
 }
-#taskbar div {
-	width: 100%;
+
+#taskbar img{
+	vertical-align: middle;
 }
+
 #taskbar a {
+	vertical-align: middle;
 	text-decoration: none;
 	color: white;
 	font-family: 'Exo 2', sans-serif;
-	margin: auto;
 	padding: 0 0.5em 0 0.5em; 
 	transition: color 0.5s;
 }
@@ -459,8 +465,11 @@ nav#content>form>p:first-child{
 	width: 100%;
 	padding: 1em;
 	font-size: 15px;
-	border-radius: 0.2em;
 	text-align: left;
+}
+
+.account-side-tabs-wrapper button:hover svg{
+	fill: #234f68;
 }
 
 .account-side-tabs-wrapper button:focus{
@@ -468,10 +477,12 @@ nav#content>form>p:first-child{
 }
 
 .account-side-tabs-logo{
+	fill: #162229;
 	width: 20px;
 	height: 20px;
 	float: left;
 	margin-right: 1em;
+	transition: fill 0.5s;
 }
 
 /* - Second Dash Board - */

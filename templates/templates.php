@@ -32,7 +32,11 @@
 
                 <div id="title">
 
-                    <a href="../pages/home.php"><h1>Rent-a-house</h1></a>
+                    <h1><a href="../pages/home.php">Rent-a-house</a></h1>
+
+                </div>
+
+                <div id="spacer">
 
                 </div>
 
@@ -51,11 +55,10 @@
                 <?php } else { ?>
 
                     <div id="taskbar">
-                        <div>
-                            <img src="../images/profileLogo.svg" width="20px">
-                        </div>
                         
                         <a href="../pages/account.php"><?php echo $_SESSION['username'];?></a>
+
+                        <img src="../images/placeholder.png" width="20px">
 
                     </div>
 

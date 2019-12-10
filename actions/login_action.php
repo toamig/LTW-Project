@@ -22,7 +22,7 @@
             $_SESSION['name'] = $user[0]['name'];
             $_SESSION['username'] = $user[0]['username'];
             $_SESSION['email'] = $user[0]['email'];
-            $_SESSION['phonenumber'] = $user[0]['phonenumber'];
+            $_SESSION['phonenumber'] = $user[0]['phoneNumber'];
 
             header('Location: ../pages/home.php');
         }
