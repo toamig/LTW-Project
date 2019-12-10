@@ -168,14 +168,16 @@
                     ?>
                     <button class="account-btn">
                         <div class="account-image-description">
+                            <li class="location">
+                                    Add new House
+                            </li>
                             <li>
-                                <img class="add-new-img" src="../images/houseExample1.jpg" alt="AddNewImg">
+                                <img class="add-new-img" src="../images/addNew.svg" alt="AddNewImg">
                             </li>
                         </div>
                     </button>
                 </div>
             </div>
-
         </ul>
 
     </div>
