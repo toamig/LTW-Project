@@ -613,8 +613,9 @@ nav#content>form>p:first-child{
 .portfolio-element{
 	padding-bottom: 1em;
 }
-.portfolio-element h5{
+.portfolio-element h4{
 	margin: auto;
+	margin-top: 8px;
 }
 
 .houses-wrapper ul{

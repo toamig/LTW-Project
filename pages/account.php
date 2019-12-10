@@ -180,7 +180,7 @@
 
 <?php function onwedHouses(){ ?>
 
-    <h5>Owned Houses</h5>
+    <h4>Owned Houses</h4>
     <div class="houses-wrapper">
         <ul>
             <?php
@@ -205,7 +205,7 @@
 <?php } ?>
 
 <?php function rentedHouses() { ?>
-    <h5 style="padding-top:8px;">Rented Houses</h5>
+    <h4>Rented Houses</h4>
     <div class="houses-wrapper">
         <ul>
             <?php
