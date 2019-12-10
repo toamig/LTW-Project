@@ -216,7 +216,7 @@
                         ?> 
                         <li>
                             <button class="account-btn">
-                                <?php rentedItem($item); ?>
+                                <?php item($item); ?>
                             </button> 
                         </li>
                         <?php
@@ -238,7 +238,6 @@
                 <img class="owned-house-img" src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg">
             </li>
         </ul>
-
 <?php } ?>
 
 <?php function addNewBtn() { ?>
