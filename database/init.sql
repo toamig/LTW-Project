@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS house;
 DROP TABLE IF EXISTS rental;
+DROP TABLE IF EXISTS message;
 
 CREATE TABLE user (
   username VARCHAR PRIMARY KEY,
@@ -36,6 +37,13 @@ CREATE TABLE rental (
   endDate DATE
 );
 
+CREATE TABLE message (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sender VARCHAR REFERENCES user,
+  receiver VARCHAR REFERENCES user,
+  message VARCHAR
+);
+
 -- Preencher base de dados incial
 
 -- User
@@ -61,3 +69,21 @@ INSERT INTO rental VALUES
 (NULL, 'JanieJett', 4, '2007-01-01', '2007-01-10'),
 (NULL, 'FeFigueredo', 3, '2007-01-01', '2007-01-10'),
 (NULL, 'CruzCervantez', 2, '2007-01-01', '2007-01-10');
+
+-- Message
+INSERT INTO user VALUES 
+(NULL, 'LucianoLisby', 'DenverDebelak', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
+(NULL, 'DenverDebelak', 'LucianoLisby', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(NULL, 'LucianoLisby', 'DenverDebelak', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'),
+(NULL, 'DenverDebelak', 'LucianoLisby', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+(NULL, 'JanieJett', 'FeFigueredo', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.'),
+(NULL, 'FeFigueredo', 'JanieJett', 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.'),
+(NULL, 'JanieJett', 'FeFigueredo', 'eque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.'),
+(NULL, 'FeFigueredo', 'JanieJett', 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?'),
+(NULL, 'JanieJett', 'FeFigueredo', ' Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?'),
+(NULL, 'FeFigueredo', 'LucianoLisby', 'Proin blandit faucibus odio, a fermentum turpis volutpat vitae.'),
+(NULL, 'LucianoLisby', 'FeFigueredo', 'Curabitur a diam lorem. Maecenas et magna turpis. Morbi sit amet ipsum sit amet magna lobortis feugiat eget non diam.'),
+(NULL, 'FeFigueredo', 'LucianoLisby', 'Praesent condimentum purus at diam vestibulum, ut scelerisque mi luctus.'),
+(NULL, 'LucianoLisby', 'FeFigueredo', 'Mauris non sodales turpis.'),
+(NULL, 'FeFigueredo', 'LucianoLisby', 'Interdum et malesuada fames ac ante ipsum primis in faucibus.'),
+(NULL, 'LucianoLisby', 'FeFigueredo', 'Proin blandit erat eget magna semper varius. Donec vel metus orci.');
