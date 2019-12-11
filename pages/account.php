@@ -265,7 +265,6 @@
         </ul>
 <?php } ?>
 
-
 <?php function addNewBtn() { ?>
     <li class="add-new-wrapper">
         <button class="add-new-btn">
