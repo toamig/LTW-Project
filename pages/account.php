@@ -88,8 +88,10 @@
 
             <div class="account-dash-board-wrapper">
 
+                <?php $user = getUser($_SESSION['email']); ?>
+
                 <div class="account-profile-img border-gray">
-                    <img src="../images/placeholder.png" alt="profileLogo">
+                    <img src="../images/icons/placeholder.png" alt="profileLogo">
                     <div class="account-profile-name-change-picture">
                         <?php echo $_SESSION['name']; ?>
                         <button class="account-btn">Change profile picture</button>
@@ -180,7 +182,7 @@
 
 <?php function onwedHouses(){ ?>
 
-    <h5>Owned Houses</h5>
+    <h4>Owned Houses</h4>
     <div class="houses-wrapper">
         <ul>
             <?php
@@ -205,7 +207,7 @@
 <?php } ?>
 
 <?php function rentedHouses() { ?>
-    <h5 style="padding-top:8px;">Rented Houses</h5>
+    <h4>Rented Houses</h4>
     <div class="houses-wrapper">
         <ul>
             <?php
@@ -236,7 +238,7 @@
                     <?php echo $item['title']; ?> in <?php echo $item['location']; ?>
             </li>
             <li>
-                <img class="item-house-img" src="../images/<?php echo $item['image'];?>" alt="HouseExampleImg">
+                <img class="item-house-img" src="../images/houses/<?php echo $item['image'];?>" alt="HouseExampleImg">
             </li>
         </ul>
 <?php } ?>
@@ -244,7 +246,7 @@
 <?php function addNewBtn() { ?>
     <li class="add-new-wrapper">
         <button class="add-new-btn">
-            <img class="add-new-img" src="../images/addNew.svg" alt="AddNewImg">
+            <img class="add-new-img" src="../images/icons/addNew.svg" alt="AddNewImg">
         </button>
     </li>
 <?php } ?>

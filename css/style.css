@@ -120,7 +120,7 @@ body header {
 #search {
 	display: flex;
 	flex: auto;
-	background-image: url(../images/background2.jpeg);
+	background-image: url(../images/background/background2.jpeg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -206,7 +206,7 @@ footer p {
 nav#content{
 	flex: auto;
 	display: flex;
-	background-image: url(../images/background2.jpeg);
+	background-image: url(../images/background/background2.jpeg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -620,8 +620,9 @@ nav#content>form>p:first-child{
 .portfolio-element{
 	padding-bottom: 1em;
 }
-.portfolio-element h5{
+.portfolio-element h4{
 	margin: auto;
+	margin-top: 8px;
 }
 
 .houses-wrapper ul{

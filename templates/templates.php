@@ -19,7 +19,7 @@
 
             <title>Rent-a-house</title>
 
-            <link href="../images/icon.png" rel="icon">
+            <link href="../images/icons/icon.png" rel="icon">
 
             <link href="../css/style.css" rel="stylesheet">
             <link href="../css/responsive.css" rel="stylesheet">
@@ -58,7 +58,7 @@
                         
                         <a href="../pages/account.php"><?php echo $_SESSION['username'];?></a>
 
-                        <img src="../images/placeholder.png" width="20px">
+                        <img src="../images/icons/placeholder.png" width="20px">
 
                     </div>
 

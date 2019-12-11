@@ -6,7 +6,7 @@
     */
     function loadAllRental(){
         global $db;
-        $stmt = $db->prepare("SELECT * FROM rental");
+        $stmt = $db->prepare("SELECT * FROM house");
         $stmt->execute();
         return $stmt->fetchAll();
     }
@@ -34,8 +34,8 @@
         $password = $_SESSION['password'];
 
         global $db;
-        $stmt = $db->prepare('INSERT INTO user (username, email, password, name, phonenumber) VALUES (?, ?, ?, ?, ?)');
-        return $stmt->execute(array($username, $email, $password, $name, $phonenumber))?true:false;
+        $stmt = $db->prepare('INSERT INTO user (username, email, password, name, phonenumber, image) VALUES (?, ?, ?, ?, ?, ?)');
+        return $stmt->execute(array($username, $email, $password, $name, $phonenumber, NULL))?true:false;
     }
 
     /*
@@ -43,7 +43,7 @@
     * @param $email, $password
     * @return array()
     */
-    function getUser($email, $password){
+    function getUser($email){
         global $db;
         $stmt = $db->prepare("SELECT * FROM user WHERE email='".$email."'");
         $stmt->execute();  
@@ -76,7 +76,7 @@
     */
     function getUserOwnedHouses($username){
         global $db;
-        $stmt = $db->prepare("SELECT * FROM rental WHERE username='".$username."'");
+        $stmt = $db->prepare("SELECT * FROM house WHERE owner='".$username."'");
         $stmt->execute();  
         $aux = $stmt->fetchAll();
         return $aux;
