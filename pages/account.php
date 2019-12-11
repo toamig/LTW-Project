@@ -100,11 +100,14 @@
 
                 <div class="account-profile-img border-gray">
                     <img src=<?=$imgPath ?> alt="profileLogo">
-                    <div class="account-profile-name-change-picture">
+                    <div class="account-profile-name-change-picture" >
                         <?php echo $_SESSION['name']; ?>
-                        <button class="account-btn">Change profile picture</button>
-                        <!-- <label for="file">Change profile picture</label> -->
-                        <!-- <input type="file"> -->
+                        <form class="account-change-img" action="../actions/upluad_image_action.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="profileImg" class="account-img-btn">
+                            <input type="submit" name="submit-profileImg" class="account-btn" value="Change profile picture">
+                            <!-- <label for="file">Change profile picture</label> -->
+                            <!-- <input type="file"> -->
+                        </form>
                     </div>
                 </div>
 
