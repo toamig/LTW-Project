@@ -559,7 +559,6 @@ div#rental{
 }
 
 .account-dash-board-wrapper{
-	display: flex;
 	padding: 0.5em 1em;
 	margin: 0;
 }
@@ -721,31 +720,41 @@ div#rental{
 }
 
 .add-new-btn img:hover{
-	transform: scale(0.65);
+	transform: scale(0.54);
 	cursor: pointer;
 }
 
-/* Mail */
+/* - Mail - */
 
+.message-panels {
+	display: flex;
+}
+
+/* Left panel */
 .message-left-panel {
-	max-width: 30%;
+	width: 30%;
 }
 
 .self-id {
-	border: 1px solid #2c3e50;
+	display: flex;
+	border: 1px solid #162229;
 	border-bottom: 1px solid white;
-	padding: 2px;
-	background-color: #2c3e50;
-	padding: 1em;
+	background-color: #162229;
+	padding: 0.5em 0.25em;
+}
+
+.user-id {
+	margin-right: auto;
 }
 .self-name {
 	color: white;
+	margin-left: 5px;
 }
 
 .create-new-message-btn {
 	border: none;
 	float: right;
-	background-color: #2c3e50;
+	background-color: #162229;
 }
 .create-new-message {
 	width: 15px;
@@ -757,11 +766,11 @@ div#rental{
 }
 
 .scroll-container {
-	background-color: #2c3e50;
+	background-color: #162229;
 	overflow: auto;
 	white-space: nowrap;
 	width: auto;
-	max-height: 28em;
+	height: 25em;
 }
   
 .scroll-container a {
@@ -773,5 +782,83 @@ div#rental{
 }
   
 .scroll-container a:hover {
-	background-color: #777;
+	background-color: #32465a;
+}
+
+/* Right Panel */
+.message-right-panel{
+	width: -webkit-fill-available;
+	display: grid;
+}
+
+.user-id {
+	padding-left: fill;
+	border: 1px solid #162229;
+	border-bottom: 0;
+	padding: 0.3em;
+	width: -webkit-fill-available;
+}
+.user-id img{
+	vertical-align: middle;
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+.chat-container {
+	border: 1px solid #162229;
+	border-top: 0;
+	overflow: auto;
+	width: auto;
+	height: 23.85em;
+	background-color: #E6EAEA;
+}
+
+.chat-container ul li{
+    display: grid;
+    clear: both;
+    margin: 0 15px;
+    width: calc(100% - 25px);
+	font-size: 0.9em;
+}
+
+.message-p{
+	margin: 10px;
+	padding: 10px 15px;
+    border-radius: 20px;
+	line-height: 130%;
+	max-width: 300px;
+}
+
+.reply p{
+	background: #162229;
+	color: #f5f5f5;
+	margin-left: auto;
+}
+
+.sent p{
+	float: right;
+	color: #162229;
+	background: #f5f5f5;
+}
+
+.message-input {
+	display: flex;
+	border: 1px solid #162229;
+	border-top: 0;
+	padding: 0;
+}
+.message-input input {
+	margin: 0;
+	border: 0;
+	padding: 1em;
+	width: -webkit-fill-available;
+}
+.send-message-btn {
+	margin: 0;
+	border: 0;
+	padding: 1em;
+	background-color: #162229;
 }
