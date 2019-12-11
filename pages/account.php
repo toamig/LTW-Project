@@ -96,7 +96,7 @@
 
             <div class="account-dash-board-wrapper">
 
-                <?php $user = getUser($_SESSION['email']); ?>
+                <?php $user = getUserEmail($_SESSION['email']); ?>
 
                 <div class="account-profile-img border-gray">
                     <img src=<?=$imgPath ?> alt="profileLogo">

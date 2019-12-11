@@ -13,18 +13,19 @@
         $password = $_POST['password'];
         $confirm = $_POST['confirm-password'];
 
+        $error_flag = false;
+
         // Verify if the password and the confirm password fields are equal.
         if($password != $confirm){
-            $message = "Password and its confirmation are not equal!";
-            echo "<script>alert('$message'); window.location.replace(\"../pages/register.php\");</script>";
-            exit(0);
+            $_SESSION['messages'] = array('type' => 'error', 'content' => 'Password and its confirmation are not equal!');
+            $error_flag = true;
         }
 
         // Load all the users info from database.
         $users = loadAllUser();
 
         // For security reasons only these fields are verified. ????
-        $error_flag = false;
+        
         foreach($users as $user){
             if($user['username'] == $username){
                 $_SESSION['messages'] = array('type' => 'error', 'content' => 'Username already in use!');
@@ -46,6 +47,7 @@
        // If the the parameters evaluated above fail, it returns to the register page again. 
         if($error_flag){ 
             header('Location: ../pages/register.php');
+            die();
         }
         //If not, a new account is created.
         else {
@@ -54,11 +56,12 @@
             $_SESSION['email'] = $email;
             $_SESSION['phonenumber'] = $phonenumber;
             $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
+
             if(!createUserAccount()){
                 session_destroy();
-                $message = "ERROR! Unable to create a new account!";
-                echo "<script>alert('$message'); window.location.replace(\"../pages/register.php\");</script>";
-                exit(0);
+                $_SESSION['messages'] = array('type' => 'error', 'content' => 'ERROR! Unable to create a new account!!');
+                header('Location: ../pages/register.php');
+                die();
             }
             else header('Location: ../pages/account.php');
         }

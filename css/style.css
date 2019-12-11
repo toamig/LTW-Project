@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
 
+/* --- Variables --- */
+
+:root{
+
+	--main-color-1: #242038;
+	--main-color-2: #725AC1;
+	--main-color-3: #8D86C9;
+	--main-color-4: #CAC4CE;
+	--main-color-5: #F7ECE1;
+	
+
+}
 
 /* --- Reset CSS --- */
 ul li{
@@ -28,7 +40,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Exo 2', sans-serif;
-	background-color: lightgray;
+	background-color: var(--main-color-5);
+    color: var(--main-color-1);
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
@@ -40,7 +53,7 @@ body {
 body header {
 	display: grid; 
 	grid-template-columns: auto auto auto;
-	background-color: #162229; 
+	background-color: var(--main-color-1); 
 	padding: 1em; 
 	width: 100%;
 	box-sizing: border-box;
@@ -63,7 +76,7 @@ body header {
 	transition: color 0.5s;
 }
 #title a:hover {
-	color: #234f68;
+	color: var(--main-color-4);
 }
 
 #spacer{
@@ -86,7 +99,7 @@ body header {
 	transition: color 0.5s;
 }
 #signup a:hover {
-	color: #234f68;
+	color: var(--main-color-4);
 }
 #signup a:first-child {
 	border-right: 1px solid white;
@@ -104,7 +117,7 @@ body header {
 	height: 30px;
 	object-fit: cover;
 	border-radius: 50%;
-	border: 2px solid white;
+	border: 2px solid var(--main-color-1);
 }
 
 #taskbar a {
@@ -117,7 +130,7 @@ body header {
 }
 
 #taskbar a:hover {
-	color: #234f68;
+	color: var(--main-color-4);
 }
 
 /* --- SEARCH --- */
@@ -136,7 +149,7 @@ body header {
 	height: 2em;
 	display: flex;
 	padding: 0.5em;
-	background-color: white;
+	background-color: var(--main-color-5);
 	margin: auto;
 	border-radius: 5px;
 }
@@ -147,8 +160,14 @@ body header {
 	margin-left: 0.5em;
 	font-family: 'Exo 2', sans-serif;
 }
+
+input:-internal-autofill-selected {
+    background-color: white !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+}
 #search input:focus {
-	outline-color: #408c99;
+	outline-color: var(--main-color-4);
 	outline-width: 2px;
 	border-radius:5px;
 }
@@ -157,15 +176,14 @@ body header {
 	display: flex;
 	width: 15%;
 	border-radius: 5px;
-	background: #162229;
-	fill: white;
+	background: var(--main-color-1);
 	border: none;
 	cursor: pointer;
 	transition: background 0.5s;
 }
 
 #search button:hover {
-	background: #234f68;
+	background: var(--main-color-2);
   }
 
 #search svg {
@@ -175,7 +193,7 @@ body header {
 	height: 2em;
 	width: 2em;
 	margin: auto;
-	fill: white;
+	fill: var(--main-color-5);
 }
 
 /* #search svg:hover {
@@ -224,7 +242,7 @@ nav#content a{
 nav#content form{
 	margin: auto;
 	width: 50%;
-	background-color: rgb(255,255,255);
+	background-color: white;
 	font-family: 'Exo 2', sans-serif;
 	padding-top: 3vw;
 	padding-bottom: 3vw;
@@ -236,7 +254,7 @@ nav#content form input{
 	display: block;
     font-size: 1.2em;
     margin: auto auto;
-    border: 1px ridge #e1e1e1;
+    border: 1px ridge var(--main-color-3);
     border-top: white;
     border-left: white;
     border-right: white;
@@ -247,11 +265,12 @@ nav#content form input{
 
 nav#content form input::placeholder{
 	opacity: 0.5;
+	color: var(--main-color-3);
 }
 
 
 #submit{
-	background-color: rgb(33, 67, 136);
+	background-color: var(--main-color-1);
 	color: white;
 	border: none;
 	cursor: pointer;
@@ -259,7 +278,7 @@ nav#content form input::placeholder{
 }
 
 #submit:hover {
-	background-color:rgb(245, 89, 71);
+	background-color:var(--main-color-2);
 }
 
 nav#content form #error{
@@ -271,13 +290,13 @@ nav#content form #error{
 
 nav#content form p{
 	text-align: center;
-	color: rgb(33, 67, 136);
+	color: var(--main-color-1);
 	font-weight: bold;
 }
 
 nav#content form p>a{
 	text-decoration: none;
-	color: rgb(0, 200, 100);
+	color: var(--main-color-2);
 }
 
 nav#content>form>p:first-child{
@@ -287,17 +306,17 @@ nav#content>form>p:first-child{
 /* --- RESULTS --- */
 
 #results {
-	background-color: rgb(192, 240, 245);
-	padding: 3em 10em;
+	padding: 2em;
+	flex: auto;
 }
 
 .house-item li{
 	list-style: none;
-	color: black;
+	color: var(--main-color-1);
 }
 
 .description{
-	padding-right: 1em;
+	text-align: justify;
 }
 
 .image-description{
@@ -333,37 +352,32 @@ nav#content>form>p:first-child{
 
 .house-info h5 {
 	margin: 0 1em 0 0;
-	color: #6f7985;
+	color: var(--main-color-3);
 }
 
 .house-item {
-	border: 1px solid #162229;
+	border: 1px solid var(--main-color-1);
 	border-radius: 0.5em;
-	padding-bottom: 1em;
-	color: #162229;
-	background-color:#fff;
+	padding: 1em;
+	color: var(--main-color-1);
+	background-color:white;
 	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
-	padding-left: 1em;
 }
 
 .utils-btn {
-	box-shadow: 0px 10px 14px -7px #162229;
-	background-color:#162229;
+	background-color:var(--main-color-1);
 	border-radius: 3px;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:white;
 	font-weight:bold;
-	padding:0.5em 0.5em;
+	padding: 5px;
 	text-decoration:none;
-	border: 0.5px solid #162229;
-	margin-top: 1em;
-	margin-right: 1em;
+	border: none;
+	transition: background-color 0.5s;
 }
 .utils-btn:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
-	border: 0.5px solid #408c99;
+	background-color:var(--main-color-2);
 }
 .utils-btn:active {
 	position:relative;
@@ -383,6 +397,7 @@ nav#content>form>p:first-child{
 .results-header{
 	display: grid;
 	grid-template-columns: auto auto;
+	border-bottom: 1px solid var(--main-color-1);
 }
 
 .sort-by {
@@ -404,10 +419,10 @@ nav#content>form>p:first-child{
 	cursor: pointer;
 	padding: 10px 15px;
 	outline: 0;
-	border: 0px solid #e08e9b;
+	border: 1px solid var(--main-color-1);
 	border-radius: 5px;
 	background: white;
-	color: black;
+	color: var(--main-color-1);
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -418,7 +433,7 @@ nav#content>form>p:first-child{
     right: 9px;
     width: 3px;
     height: 3px;
-    border: solid #ccc;
+    border: solid var(--main-color-4);
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
@@ -428,10 +443,10 @@ nav#content>form>p:first-child{
 
 .no-results-found{
 	text-align: center;
-    border: 1px solid #162229;
+    border: 1px solid var(--main-color-1);
     background-color: white;
-    box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
-    border-radius: 0.5em;
+	border-radius: 0.5em;
+	margin: 1em 0;
 }
 
 .new-search {
@@ -440,15 +455,16 @@ nav#content>form>p:first-child{
 
 .new-search-btn{
 	color: white;
-	background-color: #162229;
+	background-color: var(--main-color-1);
+	padding: 5px;
 	border-radius: 0.5em;
+	border: none;
 	width: 15%;
+	transition: background-color 0.5s;
 }
 
 .new-search-btn:hover{
-	background:linear-gradient(to bottom, rgb(245, 102, 86) 5%, rgb(245, 102, 86) 100%);
-	background-color:rgb(245, 102, 86);
-	border: 0.5px solid rgb(245, 102, 86);
+	background-color:var(--main-color-2);
 }
 
 /* --- HOUSE --- */
@@ -463,7 +479,7 @@ nav#content>form>p:first-child{
 #house-header {
 	display: flex;
 	flex-direction: row;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid var(--main-color-1);
     margin-bottom: 1em;
 }
 
@@ -476,9 +492,11 @@ nav#content>form>p:first-child{
 
 #house-title h2 {
 	margin: auto;
+	color: var(--main-color-1)
 }
 
 #house-title p {
+	color: var(--main-color-1);
 	margin: auto;
 }
 
@@ -491,10 +509,12 @@ nav#content>form>p:first-child{
 
 #house-value h3 {
 	margin: auto;
+	color: var(--main-color-1);
 }
 
 #house-value p {
 	margin: auto;
+	color: var(--main-color-1);
 }
 
 #house-image-contact {
@@ -503,58 +523,54 @@ nav#content>form>p:first-child{
 }
 
 #house-image-contact>img {
+	border: 2px solid var(--main-color-1);
     border-radius: 10px;
     margin: auto auto auto 0;
 	float: left;
 	width: 70%;
 	height: 35em;
 	vertical-align: middle;
-    object-fit: cover;
-    border: 2px solid white;
+	object-fit: cover;
+	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	margin-right: 1em;
 }
 
 #house-contact-owner {
+	border: 2px solid var(--main-color-1);
 	border-radius: 10px;
 	float: right;
 	margin: 0 0 0 auto;
 	display: flex;
 	flex-direction: column;
-	background-color: white;
+	background-color: var(--main-color-4);
 	width: 25%;
 	padding: 1em;
+	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
 }
 
 #owner-info {
 	display: flex;
 	flex-direction: row;
+	padding: 1em;
+	border-bottom: 1px solid var(--main-color-1);
 }
 
-#owner-image-container {
-	position: relative;
-	width: 37%; /* The size you want */
-}
-
-#owner-image-container:after {
-	content: "";
-	display: block;
-	padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
-}
-  
-#owner-image-container img {
-	position: absolute; /* Take your picture out of the flow */
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0; /* Make the picture taking the size of it's parent */
-	width: 100%; /* This if for the object-fit */
-	height: 100%; /* This if for the object-fit */
-	object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+#owner-info img{
+	border: 2px solid var(--main-color-1);
+	vertical-align: middle;
+	object-fit: cover; 
 	object-position: center;
 	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	margin-right: 1em;
+	
 }
 
 #owner-info a {
-	margin: auto;
+	width: 80%;
+	text-align: center;
+	margin: auto 0;
 }
 
 #house-contact-owner form {
@@ -564,39 +580,48 @@ nav#content>form>p:first-child{
 }
 
 #house-contact-owner form :first-child {
-	margin-top: 1em;
+	border: 1px solid var(--main-color-1);
+	font-family: 'Exo 2', sans-serif;
+	border-radius: 5px;
+	color: var(--main-color-1);
+	padding: 1em;
+	margin-top: 2em;
 	resize: none;
 	flex: auto;
 }
 
 #house-contact-owner form :nth-child(2){
-    background-color: #162229;
+    background-color: var(--main-color-1);
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: white;
     font-weight: bold;
     text-decoration: none;
 	border: none;
-	margin-top: 1em;
+	margin-top: 2em;
 	transition: background-color 0.5s;
+}
+
+#house-contact-owner form :nth-child(2):hover {
+	background-color:var(--main-color-2);
 }
 
 
 #house-properties {
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid var(--main-color-1);
 }
 
 #house-description {
-	border-bottom: 1px solid black;
+	text-align: justify;
+	border-bottom: 1px solid var(--main-color-1);
 }
 
 /* --- ACCOUNT --- */
 
 .account{
 	display: flex;
-	background-color: rgb(192, 240, 245);
-	padding: 5em;
+	padding: 2em;
 	flex: auto;
 }
 
@@ -609,9 +634,7 @@ nav#content>form>p:first-child{
 
 .account-side-tabs-wrapper{
 	border-radius: 0.3em;
-	color: #162229;
-	background-color: rgba(0,0,0,.15);
-	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	background-color: var(--main-color-4);
 }
 
 .account-side-tabs-wrapper ul{
@@ -632,10 +655,15 @@ nav#content>form>p:first-child{
 	padding: 1em;
 	font-size: 15px;
 	text-align: left;
+	border: 1px solid var(--main-color-3);
+	background-color: white;
+	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+
+
 }
 
 .account-side-tabs-wrapper button:hover svg{
-	fill: #234f68;
+	fill: var(--main-color-2);
 }
 
 .account-side-tabs-wrapper button:focus{
@@ -643,7 +671,7 @@ nav#content>form>p:first-child{
 }
 
 .account-side-tabs-logo{
-	fill: #162229;
+	fill: var(--main-color-1);
 	width: 20px;
 	height: 20px;
 	float: left;
@@ -653,10 +681,10 @@ nav#content>form>p:first-child{
 
 /* - Second Dash Board - */
 .account-dash-board{
-	border: 1px solid lightgray;
+	border: 1px solid var(--main-color-3);
 	border-radius: 0.2em;
-	color: #162229;
-	background-color:#fff;
+	color: var(--main-color-1);
+	background-color:white;
 	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
 	height: 100%;
 	width: 100%;
@@ -678,7 +706,7 @@ nav#content>form>p:first-child{
 }
 
 .border-gray{
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid var(--main-color-3);
 }
 
 /* Profile */
@@ -709,7 +737,7 @@ nav#content>form>p:first-child{
 .element-lable{
 	padding: 1%;
 	margin: 1% 0;
-	border: 1px solid lightgray;
+	border: 1px solid var(--main-color-3);
 	border-radius: 0.2em;
 }
 
@@ -730,37 +758,37 @@ nav#content>form>p:first-child{
 .account-img-btn::before {
 	content: 'Select some files';
 	margin: 5px 0 0 auto;
-    background-color: #162229;
+    background-color: var(--main-color-1);
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: white;
     font-weight: bold;
     text-decoration: none;
 	border: none;
-	padding: 1px 7px 7px;
+	padding: 5px;
 	transition: background-color 0.5s;
 }
 .account-img-btn:hover::before {
-	background-color:#408c99;
+	background-color:var(--main-color-2);
 }
 
 .account-btn{
 	margin: 5px 0 0 auto;
-    background-color: #162229;
+    background-color: var(--main-color-1);
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: white;
     font-weight: bold;
     text-decoration: none;
 	border: none;
-	padding: 1px 7px 7px;
+	padding: 5px;
 	transition: background-color 0.5s;
 }
 
 .account-btn:hover {
-	background-color:#408c99;
+	background-color:var(--main-color-2);
 }
 
 .account-btn:active {
@@ -834,7 +862,7 @@ nav#content>form>p:first-child{
 }
 
 .add-new-btn img:hover{
-	transform: scale(0.54);
+	transform: scale(0.65);
 	cursor: pointer;
 }
 
@@ -851,10 +879,10 @@ nav#content>form>p:first-child{
 
 .self-id {
 	display: flex;
-	border: 1px solid #162229;
-	border-bottom: 1px solid white;
-	background-color: #162229;
-	padding: 0.5em 0.25em;
+    border: 1px solid var(--main-color-1);
+    border-bottom: 1px solid var(--main-color-5);
+    background-color: var(--main-color-1);
+    padding: 0.5em 0.25em;
 }
 
 .user-id-left {
@@ -866,7 +894,7 @@ nav#content>form>p:first-child{
 	height: 50px;
 	object-fit: cover;
 	border-radius: 50%;
-	border: 1px solid white;
+	border: 2px solid white;
 }
 .self-name {
 	color: white;
@@ -876,19 +904,20 @@ nav#content>form>p:first-child{
 .create-new-message-btn {
 	border: none;
 	float: right;
-	background-color: #162229;
+	background-color: var(--main-color-1);
 }
 .create-new-message {
 	width: 15px;
 	height: 15px;
 	fill: white;
+	transition: fill 0.5s
 }
 .create-new-message:hover{
-	fill: #408c99;
+	fill: var(--main-color-3);
 }
 
 .scroll-container {
-	background-color: #162229;
+	background-color: var(--main-color-1);
 	overflow: auto;
 	white-space: nowrap;
 	width: auto;
@@ -899,7 +928,7 @@ nav#content>form>p:first-child{
 	display: block;
 }
 .contact:hover {
-	background-color: #32465a;
+	background-color: var(--main-color-2);
 }
 
 .contact-wrap {
@@ -926,20 +955,16 @@ nav#content>form>p:first-child{
 }
 .meta p{
 	font-weight: 600;
+	font-size: 50%;
 }
 
 .name{
 	text-align: left;
-	margin: 0;
-	font-size: 14.4px;
+	margin-bottom: 0;
 }
 .preview{
-	font-size: 12.4px;
 	text-align: left;
-	margin: 0;
-	white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+	margin-top: 0;
 }
 
 /* Right Panel */
@@ -949,9 +974,10 @@ nav#content>form>p:first-child{
 }
 
 .user-id-right {
-	border: 1px solid #162229;
+	padding-left: fill;
+	border: 1px solid var(--main-color-1);
 	border-bottom: 0;
-	padding: 0.3em 0.5em 0.3em 0.3em;
+	padding: 0.3em;
 	width: -webkit-fill-available;
 }
 .user-id-right img{
@@ -964,12 +990,12 @@ nav#content>form>p:first-child{
 }
 
 .chat-container {
-	border: 1px solid #162229;
+	border: 1px solid var(--main-color-1);
 	margin: 0;
 	overflow: auto;
 	width: auto;
 	height: 23em;
-	background-color: #E6EAEA;
+	background-color: var(--main-color-5);
 }
 
 .chat-container ul li{
@@ -989,21 +1015,21 @@ nav#content>form>p:first-child{
 }
 
 .reply p{
-	background: #162229;
-	color: #f5f5f5;
+	background-color: var(--main-color-1);
+	color: white;
 	margin-left: auto;
 }
 
 .sent p{
 	float: right;
-	color: #162229;
-	background: #f5f5f5;
+	color: var(--main-color-1);
+	background-color: var(--main-color-4);
 }
 
 .message-input {
 	display: flex;
 	margin: 0;
-	border: 1px solid #162229;
+	border: 1px solid var(--main-color-1);
 	padding: 0;
 }
 .message-input input {
@@ -1016,7 +1042,7 @@ nav#content>form>p:first-child{
 	margin: 0;
 	border: 0;
 	padding: 1em;
-	background-color: #162229;
+	background-color: var(--main-color-1);
 }
 .send-message-icon {
 	fill: white;
@@ -1024,7 +1050,5 @@ nav#content>form>p:first-child{
 	height: 20px;
 }
 .send-message-icon:hover{
-	fill: #408c99;
+	fill: var(--main-color-3);
 }
-
-

@@ -9,21 +9,21 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $user = getUser($email);
-        $verifyPass = password_verify($password, $user[0]['password']);
+        $user = getUserEmail($email);
+        $verifyPass = password_verify($password, $user['password']);
 
-        if(count($user) != 1){
+        if(!$user){
             $_SESSION['messages'] = array('type' => 'error', 'content' => "Account doesn't exit!");
             header("Location: ../pages/login.php");
             exit(0);
         }
         else if($verifyPass){
-            $_SESSION['name'] = $user[0]['name'];
-            $_SESSION['username'] = $user[0]['username'];
-            $_SESSION['email'] = $user[0]['email'];
-            $_SESSION['phonenumber'] = $user[0]['phoneNumber'];
-            if($user[0]['image'] != NULL){
-                $_SESSION['image'] = $user[0]['image'];
+            $_SESSION['name'] = $user['name'];
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['phonenumber'] = $user['phoneNumber'];
+            if($user['image'] != NULL){
+                $_SESSION['image'] = $user['image'];
             }
 
             header('Location: ../pages/home.php');
