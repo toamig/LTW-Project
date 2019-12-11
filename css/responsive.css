@@ -9,8 +9,20 @@
     }
 }
 
+@media screen and (max-width: 876px) {
+    .self-id{
+        display: grid;
+    }
+    .create-new-message-btn{
+        margin-top: 10px;
+    }
+    .create-new-message{
+        float: left;
+    }
+}
+
 /* Tablet */
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
 }
 
 /* Desktop */

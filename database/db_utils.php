@@ -39,6 +39,9 @@
         return $stmt->execute(array($username, $email, $password, $name, $phonenumber, NULL))?true:false;
     }
 
+    function createHouse(){
+        
+    }
     /*
     * Gets all the info from a specific user
     * @param $email, $password
