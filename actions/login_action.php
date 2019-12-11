@@ -23,6 +23,9 @@
             $_SESSION['username'] = $user[0]['username'];
             $_SESSION['email'] = $user[0]['email'];
             $_SESSION['phonenumber'] = $user[0]['phoneNumber'];
+            if($user[0]['image'] != NULL){
+                $_SESSION['image'] = $user[0]['image'];
+            }
 
             header('Location: ../pages/home.php');
         }

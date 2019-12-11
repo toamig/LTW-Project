@@ -39,8 +39,8 @@
     }
 
     /*
-    * Gets all the info from a especific user
-    * @param $email
+    * Gets all the info from a specific user
+    * @param $email, $password
     * @return array()
     */
     function getUser($email){
@@ -52,7 +52,25 @@
     }
 
     /*
-    * Gets all the owned houses from a especific user
+    * Gets all the info from a specific house
+    * @param $email, $password
+    * @return array()
+    */
+    function getHouse($id){
+        global $db;
+        $stmt = $db->prepare("SELECT * FROM house WHERE id='".$id."'");
+        $stmt->execute();  
+        $aux = $stmt->fetchAll();
+        if(count($aux)==1){
+            return $aux[0];
+        }
+        else{
+            return false;
+        }
+    }
+
+    /*
+    * Gets all the owned houses from a specific user
     * @param $username
     * @return array()
     */

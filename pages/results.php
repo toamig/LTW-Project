@@ -34,11 +34,12 @@
         foreach($result as $item){
             $counter = 0;
             // Searches for the given input
+            if($item['id'] != $search) $counter++;
             if($item['address'] != $search) $counter++;
             if($item['location'] != $search) $counter++;
             if($item['state'] != $search) $counter++;
             if($item['postCode'] != $search) $counter++;
-            if($counter == 4) continue;
+            if($counter == 5) continue;
             $resultsFound = true;
     ?>
     <div class="wrapper-house">
@@ -85,9 +86,10 @@
                         </div>
                     </div>
                     <div class="utils-btn-container">
-                        <form><button class="utils-btn" formaction="home.php" formmethod="post">Details</button></form>
-                        <!-- <form><button class="utils-btn" formaction="home.php" formmethod="post">Show Comments</button></form>
-                        <form><button class="utils-btn" formaction="home.php" formmethod="post">Add Comment</button></form> -->
+                        <form action="house.php">
+                            <input type="hidden" name="id" value="<?=$item['id']?>">
+                            <input class="utils-btn" type="submit" value="Details">
+                        </form>
                     </div>
                 </div>
             </div>

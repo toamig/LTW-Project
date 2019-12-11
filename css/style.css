@@ -27,10 +27,13 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
+	font-family: 'Exo 2', sans-serif;
+	background-color: #BEE8F7;
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
-	width: 100%;}
+	width: 100%;
+}
 
 /* --- HEADER --- */
 
@@ -41,6 +44,10 @@ body header {
 	padding: 1em; 
 	width: 100%;
 	box-sizing: border-box;
+}
+
+#title{
+	margin: auto 0;
 }
 
 #title h1{
@@ -93,6 +100,11 @@ body header {
 
 #taskbar img{
 	vertical-align: middle;
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid white;
 }
 
 #taskbar a {
@@ -595,6 +607,7 @@ nav#content>form>p:first-child{
 }
 
 .account-profile-img img{
+	object-fit: cover;
 	height: 60px;
 	width: 60px;
 }
