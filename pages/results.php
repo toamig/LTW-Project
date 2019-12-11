@@ -62,7 +62,7 @@
                         <div class="date-info">
                             <h5>Date:</h5>
                             <li class="date">
-                                <?php echo date('Y-m-d', $item['date']); ?>
+                                <?php echo $item['published']; ?>
                             </li>
                         </div>
                         <div class="address-info">
