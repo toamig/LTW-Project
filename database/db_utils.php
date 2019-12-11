@@ -58,7 +58,7 @@
     */
     function getHouse($id){
         global $db;
-        $stmt = $db->prepare("SELECT * FROM rental WHERE id='".$id."'");
+        $stmt = $db->prepare("SELECT * FROM house WHERE id='".$id."'");
         $stmt->execute();  
         $aux = $stmt->fetchAll();
         if(count($aux)==1){

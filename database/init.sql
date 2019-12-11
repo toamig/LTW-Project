@@ -36,7 +36,7 @@ CREATE TABLE rental (
 -- Preencher base de dados incial
 
 -- User
-INSERT INTO user VALUES ('LucianoLisby' ,'lucianoLisby@gmail.com', '$2y$10$U5hUoiTXIjiZfVkTJOJU3OUCcHh9qhwXtOwtcqg.OrfnMIFQX3Asq', 'Luciano Lisby', '792-806-7761', 'LucianoLisby.jpeg'); --password: lucianolisby123
+INSERT INTO user VALUES ('LucianoLisby' ,'lucianoLisby@gmail.com', '$2y$10$U5hUoiTXIjiZfVkTJOJU3OUCcHh9qhwXtOwtcqg.OrfnMIFQX3Asq', 'Luciano Lisby', '792-806-7761', 'LucianoLisby.jpg'); --password: lucianolisby123
 INSERT INTO user VALUES ('DenverDebelak' ,'denverDebalk@gmail.com', '$2y$10$EHUIsLXguznQ8vO7bhJhTuzkF03L/Ag1Q6DOIE1HEhncpse6xi2GK', 'Denver Debelak', '433-917-8029', 'DenverDebelak.jpeg'); --password: denverdebelak456
 INSERT INTO user VALUES ('JanieJett' ,'janieJett@gamil.com', '$2y$10$LCsVCuqW/AJG3.RG3tlJIOM3GpUVo9MUTTrH5QIID5001sqKwUMBq', 'Janie Jett', '988-992-2571', 'JanieJett.jpg'); --password: janiejett789
 INSERT INTO user VALUES ('FeFigueredo' ,'feFigueiredo@gmail.com', '$2y$10$jZPzljTlyYtdWA.c/wDSye93U1ua..v64b1kb2ftl2eDM1fFC5yJ6', 'Fe Figueredo', '396-203-3087', 'FeFigueredo.jpeg'); --password: fefigueiredo135

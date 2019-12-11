@@ -100,6 +100,11 @@ body header {
 
 #taskbar img{
 	vertical-align: middle;
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid white;
 }
 
 #taskbar a {
@@ -602,6 +607,7 @@ nav#content>form>p:first-child{
 }
 
 .account-profile-img img{
+	object-fit: cover;
 	height: 60px;
 	width: 60px;
 }

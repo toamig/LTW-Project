@@ -31,7 +31,7 @@
 
                     </div>
 
-                <p>advertiser: <a><?=$house["username"]?></a></p>
+                <p>advertiser: <a><?=$house["owner"]?></a></p>
 
             </div>
 

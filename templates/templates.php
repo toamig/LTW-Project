@@ -41,24 +41,33 @@
                 </div>
 
                 <!-- If a session was not yet started. -->
-                <?php if (!isset($_SESSION['username'])){ ?>
+                <?php if (isset($_SESSION['username'])){ 
+                    
+                    if(isset($_SESSION['image'])){
+                        $imgPath = '../images/users/'.$_SESSION['image'];
+                    }
+                    else{
+                        $imgPath = '../images/icons/placeholder.png';
+                    }
+                
+                ?>
 
-                    <div id="signup">
+                    <div id="taskbar">
+                        
+                        <a href="../pages/account.php"><?php echo $_SESSION['username'];?></a>
 
-                        <a href="../pages/register.php">Register</a>
-
-                        <a href="../pages/login.php">Login</a>
+                        <img src=<?=$imgPath ?>>
 
                     </div>
                 
                 <!-- If the user has already register or loged in. -->
                 <?php } else { ?>
 
-                    <div id="taskbar">
-                        
-                        <a href="../pages/account.php"><?php echo $_SESSION['username'];?></a>
+                    <div id="signup">
 
-                        <img src="../images/icons/placeholder.png" width="20px">
+                    <a href="../pages/register.php">Register</a>
+
+                    <a href="../pages/login.php">Login</a>
 
                     </div>
 
