@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
 
+/* --- Variables --- */
+
+:root{
+
+	--main-color-1: #242038;
+	--main-color-2: #725AC1;
+	--main-color-3: #8D86C9;
+	--main-color-4: #CAC4CE;
+	--main-color-5: #F7ECE1;
+	
+
+}
 
 /* --- Reset CSS --- */
 ul li{
@@ -28,8 +40,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Exo 2', sans-serif;
-	background-color: #F7ECE1;
-    color: #242038;
+	background-color: var(--main-color-5);
+    color: var(--main-color-1);
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
@@ -41,7 +53,7 @@ body {
 body header {
 	display: grid; 
 	grid-template-columns: auto auto auto;
-	background-color: #242038; 
+	background-color: var(--main-color-1); 
 	padding: 1em; 
 	width: 100%;
 	box-sizing: border-box;
@@ -64,7 +76,7 @@ body header {
 	transition: color 0.5s;
 }
 #title a:hover {
-	color: #CAC4CE;
+	color: var(--main-color-4);
 }
 
 #spacer{
@@ -87,7 +99,7 @@ body header {
 	transition: color 0.5s;
 }
 #signup a:hover {
-	color: #CAC4CE;
+	color: var(--main-color-4);
 }
 #signup a:first-child {
 	border-right: 1px solid white;
@@ -105,7 +117,7 @@ body header {
 	height: 30px;
 	object-fit: cover;
 	border-radius: 50%;
-	border: 2px solid #242038;
+	border: 2px solid var(--main-color-1);
 }
 
 #taskbar a {
@@ -118,7 +130,7 @@ body header {
 }
 
 #taskbar a:hover {
-	color: #CAC4CE;
+	color: var(--main-color-4);
 }
 
 /* --- SEARCH --- */
@@ -137,7 +149,7 @@ body header {
 	height: 2em;
 	display: flex;
 	padding: 0.5em;
-	background-color: #F7ECE1;
+	background-color: var(--main-color-5);
 	margin: auto;
 	border-radius: 5px;
 }
@@ -155,7 +167,7 @@ input:-internal-autofill-selected {
     color: rgb(0, 0, 0) !important;
 }
 #search input:focus {
-	outline-color: #CAC4CE;
+	outline-color: var(--main-color-4);
 	outline-width: 2px;
 	border-radius:5px;
 }
@@ -164,14 +176,14 @@ input:-internal-autofill-selected {
 	display: flex;
 	width: 15%;
 	border-radius: 5px;
-	background: #242038;
+	background: var(--main-color-1);
 	border: none;
 	cursor: pointer;
 	transition: background 0.5s;
 }
 
 #search button:hover {
-	background: #725AC1;
+	background: var(--main-color-2);
   }
 
 #search svg {
@@ -181,7 +193,7 @@ input:-internal-autofill-selected {
 	height: 2em;
 	width: 2em;
 	margin: auto;
-	fill: #F7ECE1;
+	fill: var(--main-color-5);
 }
 
 /* #search svg:hover {
@@ -242,7 +254,7 @@ nav#content form input{
 	display: block;
     font-size: 1.2em;
     margin: auto auto;
-    border: 1px ridge #8D86C9;
+    border: 1px ridge var(--main-color-3);
     border-top: white;
     border-left: white;
     border-right: white;
@@ -253,12 +265,12 @@ nav#content form input{
 
 nav#content form input::placeholder{
 	opacity: 0.5;
-	color: #8D86C9;
+	color: var(--main-color-3);
 }
 
 
 #submit{
-	background-color: #242038;
+	background-color: var(--main-color-1);
 	color: white;
 	border: none;
 	cursor: pointer;
@@ -266,7 +278,7 @@ nav#content form input::placeholder{
 }
 
 #submit:hover {
-	background-color:#725AC1;
+	background-color:var(--main-color-2);
 }
 
 nav#content form #error{
@@ -278,13 +290,13 @@ nav#content form #error{
 
 nav#content form p{
 	text-align: center;
-	color: #242038;
+	color: var(--main-color-1);
 	font-weight: bold;
 }
 
 nav#content form p>a{
 	text-decoration: none;
-	color: #725AC1;
+	color: var(--main-color-2);
 }
 
 nav#content>form>p:first-child{
@@ -300,7 +312,7 @@ nav#content>form>p:first-child{
 
 .house-item li{
 	list-style: none;
-	color: #242038;
+	color: var(--main-color-1);
 }
 
 .description{
@@ -340,20 +352,20 @@ nav#content>form>p:first-child{
 
 .house-info h5 {
 	margin: 0 1em 0 0;
-	color: #8D86C9;
+	color: var(--main-color-3);
 }
 
 .house-item {
-	border: 1px solid #242038;
+	border: 1px solid var(--main-color-1);
 	border-radius: 0.5em;
 	padding: 1em;
-	color: #242038;
+	color: var(--main-color-1);
 	background-color:white;
 	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
 }
 
 .utils-btn {
-	background-color:#242038;
+	background-color:var(--main-color-1);
 	border-radius: 3px;
 	display:inline-block;
 	cursor:pointer;
@@ -365,7 +377,7 @@ nav#content>form>p:first-child{
 	transition: background-color 0.5s;
 }
 .utils-btn:hover {
-	background-color:#725AC1;
+	background-color:var(--main-color-2);
 }
 .utils-btn:active {
 	position:relative;
@@ -385,7 +397,7 @@ nav#content>form>p:first-child{
 .results-header{
 	display: grid;
 	grid-template-columns: auto auto;
-	border-bottom: 1px solid #242038;
+	border-bottom: 1px solid var(--main-color-1);
 }
 
 .sort-by {
@@ -407,10 +419,10 @@ nav#content>form>p:first-child{
 	cursor: pointer;
 	padding: 10px 15px;
 	outline: 0;
-	border: 0px solid #e08e9b;
+	border: 1px solid var(--main-color-1);
 	border-radius: 5px;
 	background: white;
-	color: #242038;
+	color: var(--main-color-1);
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -421,7 +433,7 @@ nav#content>form>p:first-child{
     right: 9px;
     width: 3px;
     height: 3px;
-    border: solid #CAC4CE;
+    border: solid var(--main-color-4);
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
@@ -431,7 +443,7 @@ nav#content>form>p:first-child{
 
 .no-results-found{
 	text-align: center;
-    border: 1px solid #242038;
+    border: 1px solid var(--main-color-1);
     background-color: white;
 	border-radius: 0.5em;
 	margin: 1em 0;
@@ -443,7 +455,7 @@ nav#content>form>p:first-child{
 
 .new-search-btn{
 	color: white;
-	background-color: #242038;
+	background-color: var(--main-color-1);
 	padding: 5px;
 	border-radius: 0.5em;
 	border: none;
@@ -452,7 +464,7 @@ nav#content>form>p:first-child{
 }
 
 .new-search-btn:hover{
-	background-color:#725AC1;
+	background-color:var(--main-color-2);
 }
 
 /* --- HOUSE --- */
@@ -467,7 +479,7 @@ nav#content>form>p:first-child{
 #house-header {
 	display: flex;
 	flex-direction: row;
-	border-bottom: 1px solid #242038;
+	border-bottom: 1px solid var(--main-color-1);
     margin-bottom: 1em;
 }
 
@@ -480,11 +492,11 @@ nav#content>form>p:first-child{
 
 #house-title h2 {
 	margin: auto;
-	color: #242038
+	color: var(--main-color-1)
 }
 
 #house-title p {
-	color: #242038;
+	color: var(--main-color-1);
 	margin: auto;
 }
 
@@ -497,12 +509,12 @@ nav#content>form>p:first-child{
 
 #house-value h3 {
 	margin: auto;
-	color: #242038;
+	color: var(--main-color-1);
 }
 
 #house-value p {
 	margin: auto;
-	color: #242038;
+	color: var(--main-color-1);
 }
 
 #house-image-contact {
@@ -511,7 +523,7 @@ nav#content>form>p:first-child{
 }
 
 #house-image-contact>img {
-	border: 2px solid #242038;
+	border: 2px solid var(--main-color-1);
     border-radius: 10px;
     margin: auto auto auto 0;
 	float: left;
@@ -524,13 +536,13 @@ nav#content>form>p:first-child{
 }
 
 #house-contact-owner {
-	border: 2px solid #242038;
+	border: 2px solid var(--main-color-1);
 	border-radius: 10px;
 	float: right;
 	margin: 0 0 0 auto;
 	display: flex;
 	flex-direction: column;
-	background-color: #CAC4CE;
+	background-color: var(--main-color-4);
 	width: 25%;
 	padding: 1em;
 	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
@@ -540,11 +552,11 @@ nav#content>form>p:first-child{
 	display: flex;
 	flex-direction: row;
 	padding: 1em;
-	border-bottom: 1px solid #242038;
+	border-bottom: 1px solid var(--main-color-1);
 }
 
 #owner-info img{
-	border: 2px solid #242038;
+	border: 2px solid var(--main-color-1);
 	vertical-align: middle;
 	object-fit: cover; 
 	object-position: center;
@@ -568,10 +580,10 @@ nav#content>form>p:first-child{
 }
 
 #house-contact-owner form :first-child {
-	border: 1px solid #242038;
+	border: 1px solid var(--main-color-1);
 	font-family: 'Exo 2', sans-serif;
 	border-radius: 5px;
-	color: #242038;
+	color: var(--main-color-1);
 	padding: 1em;
 	margin-top: 2em;
 	resize: none;
@@ -579,7 +591,7 @@ nav#content>form>p:first-child{
 }
 
 #house-contact-owner form :nth-child(2){
-    background-color: #242038;
+    background-color: var(--main-color-1);
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
@@ -592,17 +604,17 @@ nav#content>form>p:first-child{
 }
 
 #house-contact-owner form :nth-child(2):hover {
-	background-color:#725AC1;
+	background-color:var(--main-color-2);
 }
 
 
 #house-properties {
-	border-bottom: 1px solid #242038;
+	border-bottom: 1px solid var(--main-color-1);
 }
 
 #house-description {
 	text-align: justify;
-	border-bottom: 1px solid #242038;
+	border-bottom: 1px solid var(--main-color-1);
 }
 
 /* --- ACCOUNT --- */
@@ -622,7 +634,7 @@ nav#content>form>p:first-child{
 
 .account-side-tabs-wrapper{
 	border-radius: 0.3em;
-	background-color: #CAC4CE;
+	background-color: var(--main-color-4);
 }
 
 .account-side-tabs-wrapper ul{
@@ -643,7 +655,7 @@ nav#content>form>p:first-child{
 	padding: 1em;
 	font-size: 15px;
 	text-align: left;
-	border: 1px solid #8D86C9;
+	border: 1px solid var(--main-color-3);
 	background-color: white;
 	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
 
@@ -651,7 +663,7 @@ nav#content>form>p:first-child{
 }
 
 .account-side-tabs-wrapper button:hover svg{
-	fill: #725AC1;
+	fill: var(--main-color-2);
 }
 
 .account-side-tabs-wrapper button:focus{
@@ -659,7 +671,7 @@ nav#content>form>p:first-child{
 }
 
 .account-side-tabs-logo{
-	fill: #242038;
+	fill: var(--main-color-1);
 	width: 20px;
 	height: 20px;
 	float: left;
@@ -669,9 +681,9 @@ nav#content>form>p:first-child{
 
 /* - Second Dash Board - */
 .account-dash-board{
-	border: 1px solid #8D86C9;
+	border: 1px solid var(--main-color-3);
 	border-radius: 0.2em;
-	color: #242038;
+	color: var(--main-color-1);
 	background-color:white;
 	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
 	height: 100%;
@@ -694,7 +706,7 @@ nav#content>form>p:first-child{
 }
 
 .border-gray{
-	border-bottom: 1px solid #8D86C9;
+	border-bottom: 1px solid var(--main-color-3);
 }
 
 /* Profile */
@@ -725,7 +737,7 @@ nav#content>form>p:first-child{
 .element-lable{
 	padding: 1%;
 	margin: 1% 0;
-	border: 1px solid #8D86C9;
+	border: 1px solid var(--main-color-3);
 	border-radius: 0.2em;
 }
 
@@ -746,7 +758,7 @@ nav#content>form>p:first-child{
 .account-img-btn::before {
 	content: 'Select some files';
 	margin: 5px 0 0 auto;
-    background-color: #242038;
+    background-color: var(--main-color-1);
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
@@ -758,12 +770,12 @@ nav#content>form>p:first-child{
 	transition: background-color 0.5s;
 }
 .account-img-btn:hover::before {
-	background-color:#725AC1;
+	background-color:var(--main-color-2);
 }
 
 .account-btn{
 	margin: 5px 0 0 auto;
-    background-color: #242038;
+    background-color: var(--main-color-1);
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
@@ -776,7 +788,7 @@ nav#content>form>p:first-child{
 }
 
 .account-btn:hover {
-	background-color:#725AC1;
+	background-color:var(--main-color-2);
 }
 
 .account-btn:active {
@@ -854,4 +866,189 @@ nav#content>form>p:first-child{
 	cursor: pointer;
 }
 
-/* Mail */
+/* - Mail - */
+
+.message-panels {
+	display: flex;
+}
+
+/* Left panel */
+.message-left-panel {
+	width: 30%;
+}
+
+.self-id {
+	display: flex;
+    border: 1px solid var(--main-color-1);
+    border-bottom: 1px solid var(--main-color-5);
+    background-color: var(--main-color-1);
+    padding: 0.5em 0.25em;
+}
+
+.user-id-left {
+	margin-right: auto;
+}
+.self-img {
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 2px solid white;
+}
+.self-name {
+	color: white;
+	margin-left: 5px;
+}
+
+.create-new-message-btn {
+	border: none;
+	float: right;
+	background-color: var(--main-color-1);
+}
+.create-new-message {
+	width: 15px;
+	height: 15px;
+	fill: white;
+	transition: fill 0.5s
+}
+.create-new-message:hover{
+	fill: var(--main-color-3);
+}
+
+.scroll-container {
+	background-color: var(--main-color-1);
+	overflow: auto;
+	white-space: nowrap;
+	width: auto;
+	height: 25em;
+}
+  
+.scroll-container ul{
+	display: block;
+}
+.contact:hover {
+	background-color: var(--main-color-2);
+}
+
+.contact-wrap {
+	display: flex;
+	color: white;
+	text-align: center;
+	padding: 14px;
+	text-decoration: none;
+}
+
+.contact-img{
+	vertical-align: middle;
+	width: 20%;
+	height: 20%;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+.meta {
+	display: grid;
+	margin-left: 10px;
+	width: -webkit-fill-available;
+}
+.meta p{
+	font-weight: 600;
+	font-size: 50%;
+}
+
+.name{
+	text-align: left;
+	margin-bottom: 0;
+}
+.preview{
+	text-align: left;
+	margin-top: 0;
+}
+
+/* Right Panel */
+.message-right-panel{
+	width: -webkit-fill-available;
+	display: grid;
+}
+
+.user-id-right {
+	padding-left: fill;
+	border: 1px solid var(--main-color-1);
+	border-bottom: 0;
+	padding: 0.3em;
+	width: -webkit-fill-available;
+}
+.user-id-right img{
+	vertical-align: middle;
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+.chat-container {
+	border: 1px solid var(--main-color-1);
+	margin: 0;
+	overflow: auto;
+	width: auto;
+	height: 23em;
+	background-color: var(--main-color-5);
+}
+
+.chat-container ul li{
+    display: grid;
+    clear: both;
+    margin: 0 15px;
+    width: calc(100% - 25px);
+	font-size: 0.9em;
+}
+
+.message-p{
+	margin: 10px;
+	padding: 10px 15px;
+    border-radius: 20px;
+	line-height: 130%;
+	max-width: 300px;
+}
+
+.reply p{
+	background-color: var(--main-color-1);
+	color: white;
+	margin-left: auto;
+}
+
+.sent p{
+	float: right;
+	color: var(--main-color-1);
+	background-color: var(--main-color-4);
+}
+
+.message-input {
+	display: flex;
+	margin: 0;
+	border: 1px solid var(--main-color-1);
+	padding: 0;
+}
+.message-input input {
+	margin: 0;
+	border: 0;
+	padding: 1em;
+	width: -webkit-fill-available;
+}
+.send-message-btn {
+	margin: 0;
+	border: 0;
+	padding: 1em;
+	background-color: var(--main-color-1);
+}
+.send-message-icon {
+	fill: white;
+	width: 20px;
+	height: 20px;
+}
+.send-message-icon:hover{
+	fill: var(--main-color-3);
+}
