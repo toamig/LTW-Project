@@ -71,7 +71,7 @@ INSERT INTO rental VALUES
 (NULL, 'CruzCervantez', 2, '2007-01-01', '2007-01-10');
 
 -- Message
-INSERT INTO user VALUES 
+INSERT INTO message VALUES 
 (NULL, 'LucianoLisby', 'DenverDebelak', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'),
 (NULL, 'DenverDebelak', 'LucianoLisby', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
 (NULL, 'LucianoLisby', 'DenverDebelak', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'),

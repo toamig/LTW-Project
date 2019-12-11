@@ -590,9 +590,35 @@ nav#content>form>p:first-child{
 .account-profile-wrapper-password-wrapper{
 	display: flex;
 }
+
 .account-profile-wrapper-password-wrapper-title{
 	margin: 10px 0;
 }
+
+.account-img-btn {
+	color: transparent;
+}
+.account-img-btn::-webkit-file-upload-button {
+	visibility: hidden;
+}
+.account-img-btn::before {
+	content: 'Select some files';
+	margin: 5px 0 0 auto;
+    background-color: #162229;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+	border: none;
+	padding: 1px 7px 7px;
+	transition: background-color 0.5s;
+}
+.account-img-btn:hover::before {
+	background-color:#408c99;
+}
+
 .account-btn{
 	margin: 5px 0 0 auto;
     background-color: #162229;
@@ -602,14 +628,15 @@ nav#content>form>p:first-child{
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
-	border: 0.5px solid #162229;
+	border: none;
 	padding: 1px 7px 7px;
+	transition: background-color 0.5s;
 }
+
 .account-btn:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
 	background-color:#408c99;
-	border: 0.5px solid #408c99;
 }
+
 .account-btn:active {
 	position:relative;
 	top:1px;
