@@ -1,7 +1,6 @@
 <?php 
     include_once('../database/session.php');
     include_once('../templates/templates.php');
-    include_once('../database/connection.php');
     include_once('../database/db_utils.php');
 
     drawHeader();
@@ -202,7 +201,7 @@
                         ?> 
                         <li>
                             <button class="account-btn">
-                                <?php item($item); ?>
+                                <?php ownedItem($item); ?>
                             </button> 
                         </li>
                         <?php
@@ -220,15 +219,14 @@
     <div class="houses-wrapper">
         <ul>
             <?php
-                //$houses = getUserRentedHouses($_SESSION['username']);
-                $houses = getUserOwnedHouses($_SESSION['username']);
+                $houses = getUserRentedHouses($_SESSION['username']);
 
                 if(sizeof($houses)){
                     foreach($houses as $item){
                         ?> 
                         <li>
                             <button class="account-btn">
-                                <?php item($item); ?>
+                                <?php rentedItem($item); ?>
                             </button> 
                         </li>
                         <?php
@@ -241,16 +239,29 @@
 
 <?php } ?>
 
-<?php function item($item){ ?>
+<?php function ownedItem($item){ ?>
         <ul class="list-item">
             <li class="location">
                     <?php echo $item['title']; ?> in <?php echo $item['location']; ?>
             </li>
             <li>
-                <img class="item-house-img" src="../images/houses/<?php echo $item['image'];?>" alt="HouseExampleImg">
+                <img class="item-house-img" src="../images/houses/<?php echo $item['image'];?>" alt="HouseImg">
             </li>
         </ul>
 <?php } ?>
+
+<?php function rentedItem($item){ ?>
+        <ul class="list-item">
+            <?php $house = getHouse($item['houseID']);?>
+            <li class="location">
+                    <?php echo $house['title']; ?> in <?php echo $house['location']; ?>
+            </li>
+            <li>
+                <img class="item-house-img" src="../images/houses/<?php echo $house['image'];?>" alt="HouseImg">
+            </li>
+        </ul>
+<?php } ?>
+
 
 <?php function addNewBtn() { ?>
     <li class="add-new-wrapper">
