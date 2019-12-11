@@ -533,6 +533,7 @@ nav#content>form>p:first-child{
 }
 
 .account-dash-board-wrapper{
+	display: flex;
 	padding: 0.5em 1em;
 	margin: 0;
 }
@@ -699,3 +700,52 @@ nav#content>form>p:first-child{
 }
 
 /* Mail */
+
+.message-left-panel {
+	max-width: 30%;
+}
+
+.self-id {
+	border: 1px solid #2c3e50;
+	border-bottom: 1px solid white;
+	padding: 2px;
+	background-color: #2c3e50;
+	padding: 1em;
+}
+.self-name {
+	color: white;
+}
+
+.create-new-message-btn {
+	border: none;
+	float: right;
+	background-color: #2c3e50;
+}
+.create-new-message {
+	width: 15px;
+	height: 15px;
+	fill: white;
+}
+.create-new-message:hover{
+	fill: #408c99;
+}
+
+.scroll-container {
+	background-color: #2c3e50;
+	overflow: auto;
+	white-space: nowrap;
+	width: auto;
+	max-height: 28em;
+}
+  
+.scroll-container a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px;
+	text-decoration: none;
+}
+  
+.scroll-container a:hover {
+	background-color: #777;
+}
