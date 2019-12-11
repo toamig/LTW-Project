@@ -85,11 +85,9 @@
 
 <?php } ?>
 
-<?php function drawProfileDashBoard(){ 
+<?php function drawProfileDashBoard(){ ?>
     
-    global $imgPath;
-
-?>
+    <?php global $imgPath; ?>
 
     <div class="account-dash-board">
 
