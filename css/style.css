@@ -28,7 +28,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Exo 2', sans-serif;
-	background-color: #BEE8F7;
+	background-color: #F7ECE1;
+    color: #242038;
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
@@ -40,7 +41,7 @@ body {
 body header {
 	display: grid; 
 	grid-template-columns: auto auto auto;
-	background-color: #162229; 
+	background-color: #242038; 
 	padding: 1em; 
 	width: 100%;
 	box-sizing: border-box;
@@ -63,7 +64,7 @@ body header {
 	transition: color 0.5s;
 }
 #title a:hover {
-	color: #234f68;
+	color: #CAC4CE;
 }
 
 #spacer{
@@ -86,7 +87,7 @@ body header {
 	transition: color 0.5s;
 }
 #signup a:hover {
-	color: #234f68;
+	color: #CAC4CE;
 }
 #signup a:first-child {
 	border-right: 1px solid white;
@@ -104,7 +105,7 @@ body header {
 	height: 30px;
 	object-fit: cover;
 	border-radius: 50%;
-	border: 1px solid white;
+	border: 2px solid #242038;
 }
 
 #taskbar a {
@@ -117,7 +118,7 @@ body header {
 }
 
 #taskbar a:hover {
-	color: #234f68;
+	color: #CAC4CE;
 }
 
 /* --- SEARCH --- */
@@ -136,7 +137,7 @@ body header {
 	height: 2em;
 	display: flex;
 	padding: 0.5em;
-	background-color: white;
+	background-color: #F7ECE1;
 	margin: auto;
 	border-radius: 5px;
 }
@@ -147,8 +148,14 @@ body header {
 	margin-left: 0.5em;
 	font-family: 'Exo 2', sans-serif;
 }
+
+input:-internal-autofill-selected {
+    background-color: white !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+}
 #search input:focus {
-	outline-color: #408c99;
+	outline-color: #CAC4CE;
 	outline-width: 2px;
 	border-radius:5px;
 }
@@ -157,15 +164,14 @@ body header {
 	display: flex;
 	width: 15%;
 	border-radius: 5px;
-	background: #162229;
-	fill: white;
+	background: #242038;
 	border: none;
 	cursor: pointer;
 	transition: background 0.5s;
 }
 
 #search button:hover {
-	background: #234f68;
+	background: #725AC1;
   }
 
 #search svg {
@@ -175,7 +181,7 @@ body header {
 	height: 2em;
 	width: 2em;
 	margin: auto;
-	fill: white;
+	fill: #F7ECE1;
 }
 
 /* #search svg:hover {
@@ -224,7 +230,7 @@ nav#content a{
 nav#content form{
 	margin: auto;
 	width: 50%;
-	background-color: rgb(255,255,255);
+	background-color: white;
 	font-family: 'Exo 2', sans-serif;
 	padding-top: 3vw;
 	padding-bottom: 3vw;
@@ -236,7 +242,7 @@ nav#content form input{
 	display: block;
     font-size: 1.2em;
     margin: auto auto;
-    border: 1px ridge #e1e1e1;
+    border: 1px ridge #8D86C9;
     border-top: white;
     border-left: white;
     border-right: white;
@@ -247,11 +253,12 @@ nav#content form input{
 
 nav#content form input::placeholder{
 	opacity: 0.5;
+	color: #8D86C9;
 }
 
 
 #submit{
-	background-color: rgb(33, 67, 136);
+	background-color: #242038;
 	color: white;
 	border: none;
 	cursor: pointer;
@@ -259,7 +266,7 @@ nav#content form input::placeholder{
 }
 
 #submit:hover {
-	background-color:rgb(245, 89, 71);
+	background-color:#725AC1;
 }
 
 nav#content form #error{
@@ -271,13 +278,13 @@ nav#content form #error{
 
 nav#content form p{
 	text-align: center;
-	color: rgb(33, 67, 136);
+	color: #242038;
 	font-weight: bold;
 }
 
 nav#content form p>a{
 	text-decoration: none;
-	color: rgb(0, 200, 100);
+	color: #725AC1;
 }
 
 nav#content>form>p:first-child{
@@ -287,17 +294,17 @@ nav#content>form>p:first-child{
 /* --- RESULTS --- */
 
 #results {
-	background-color: rgb(192, 240, 245);
-	padding: 3em 10em;
+	padding: 2em;
+	flex: auto;
 }
 
 .house-item li{
 	list-style: none;
-	color: black;
+	color: #242038;
 }
 
 .description{
-	padding-right: 1em;
+	text-align: justify;
 }
 
 .image-description{
@@ -333,37 +340,32 @@ nav#content>form>p:first-child{
 
 .house-info h5 {
 	margin: 0 1em 0 0;
-	color: #6f7985;
+	color: #8D86C9;
 }
 
 .house-item {
-	border: 1px solid #162229;
+	border: 1px solid #242038;
 	border-radius: 0.5em;
-	padding-bottom: 1em;
-	color: #162229;
-	background-color:#fff;
+	padding: 1em;
+	color: #242038;
+	background-color:white;
 	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
-	padding-left: 1em;
 }
 
 .utils-btn {
-	box-shadow: 0px 10px 14px -7px #162229;
-	background-color:#162229;
+	background-color:#242038;
 	border-radius: 3px;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:white;
 	font-weight:bold;
-	padding:0.5em 0.5em;
+	padding: 5px;
 	text-decoration:none;
-	border: 0.5px solid #162229;
-	margin-top: 1em;
-	margin-right: 1em;
+	border: none;
+	transition: background-color 0.5s;
 }
 .utils-btn:hover {
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
-	border: 0.5px solid #408c99;
+	background-color:#725AC1;
 }
 .utils-btn:active {
 	position:relative;
@@ -383,6 +385,7 @@ nav#content>form>p:first-child{
 .results-header{
 	display: grid;
 	grid-template-columns: auto auto;
+	border-bottom: 1px solid #242038;
 }
 
 .sort-by {
@@ -407,7 +410,7 @@ nav#content>form>p:first-child{
 	border: 0px solid #e08e9b;
 	border-radius: 5px;
 	background: white;
-	color: black;
+	color: #242038;
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -418,7 +421,7 @@ nav#content>form>p:first-child{
     right: 9px;
     width: 3px;
     height: 3px;
-    border: solid #ccc;
+    border: solid #CAC4CE;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 3px;
@@ -428,10 +431,10 @@ nav#content>form>p:first-child{
 
 .no-results-found{
 	text-align: center;
-    border: 1px solid #162229;
+    border: 1px solid #242038;
     background-color: white;
-    box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
-    border-radius: 0.5em;
+	border-radius: 0.5em;
+	margin: 1em 0;
 }
 
 .new-search {
@@ -440,23 +443,173 @@ nav#content>form>p:first-child{
 
 .new-search-btn{
 	color: white;
-	background-color: #162229;
+	background-color: #242038;
+	padding: 5px;
 	border-radius: 0.5em;
+	border: none;
 	width: 15%;
+	transition: background-color 0.5s;
 }
 
 .new-search-btn:hover{
-	background:linear-gradient(to bottom, rgb(245, 102, 86) 5%, rgb(245, 102, 86) 100%);
-	background-color:rgb(245, 102, 86);
-	border: 0.5px solid rgb(245, 102, 86);
+	background-color:#725AC1;
+}
+
+/* --- HOUSE --- */
+
+.house-body {
+	flex: auto;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+}
+
+#house-header {
+	display: flex;
+	flex-direction: row;
+	border-bottom: 1px solid #242038;
+    margin-bottom: 1em;
+}
+
+#house-title {
+	padding: 1em;
+	border-radius: 10px;
+	margin: auto auto auto 0;
+	float: right;
+}
+
+#house-title h2 {
+	margin: auto;
+	color: #242038
+}
+
+#house-title p {
+	color: #242038;
+	margin: auto;
+}
+
+#house-value {
+	padding: 1em;
+	border-radius: 10%;
+	margin: auto 0 auto auto;
+	float: left;
+}
+
+#house-value h3 {
+	margin: auto;
+	color: #242038;
+}
+
+#house-value p {
+	margin: auto;
+	color: #242038;
+}
+
+#house-image-contact {
+	display: flex;
+	flex-direction: row;
+}
+
+#house-image-contact>img {
+	border: 2px solid #242038;
+    border-radius: 10px;
+    margin: auto auto auto 0;
+	float: left;
+	width: 70%;
+	height: 35em;
+	vertical-align: middle;
+	object-fit: cover;
+	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	margin-right: 1em;
+}
+
+#house-contact-owner {
+	border: 2px solid #242038;
+	border-radius: 10px;
+	float: right;
+	margin: 0 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	background-color: #CAC4CE;
+	width: 25%;
+	padding: 1em;
+	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+}
+
+#owner-info {
+	display: flex;
+	flex-direction: row;
+	padding: 1em;
+	border-bottom: 1px solid #242038;
+}
+
+#owner-info img{
+	border: 2px solid #242038;
+	vertical-align: middle;
+	object-fit: cover; 
+	object-position: center;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	margin-right: 1em;
+	
+}
+
+#owner-info a {
+	width: 80%;
+	text-align: center;
+	margin: auto 0;
+}
+
+#house-contact-owner form {
+	display: flex;
+	flex-direction: column;
+	flex: auto;
+}
+
+#house-contact-owner form :first-child {
+	border: 1px solid #242038;
+	font-family: 'Exo 2', sans-serif;
+	border-radius: 5px;
+	color: #242038;
+	padding: 1em;
+	margin-top: 2em;
+	resize: none;
+	flex: auto;
+}
+
+#house-contact-owner form :nth-child(2){
+    background-color: #242038;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+	border: none;
+	margin-top: 2em;
+	transition: background-color 0.5s;
+}
+
+#house-contact-owner form :nth-child(2):hover {
+	background-color:#725AC1;
+}
+
+
+#house-properties {
+	border-bottom: 1px solid #242038;
+}
+
+#house-description {
+	text-align: justify;
+	border-bottom: 1px solid #242038;
 }
 
 /* --- ACCOUNT --- */
 
 .account{
 	display: flex;
-	background-color: rgb(192, 240, 245);
-	padding: 5em;
+	padding: 2em;
 	flex: auto;
 }
 
@@ -469,9 +622,7 @@ nav#content>form>p:first-child{
 
 .account-side-tabs-wrapper{
 	border-radius: 0.3em;
-	color: #162229;
-	background-color: rgba(0,0,0,.15);
-	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	background-color: #CAC4CE;
 }
 
 .account-side-tabs-wrapper ul{
@@ -492,10 +643,15 @@ nav#content>form>p:first-child{
 	padding: 1em;
 	font-size: 15px;
 	text-align: left;
+	border: 1px solid #8D86C9;
+	background-color: white;
+	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+
+
 }
 
 .account-side-tabs-wrapper button:hover svg{
-	fill: #234f68;
+	fill: #725AC1;
 }
 
 .account-side-tabs-wrapper button:focus{
@@ -503,7 +659,7 @@ nav#content>form>p:first-child{
 }
 
 .account-side-tabs-logo{
-	fill: #162229;
+	fill: #242038;
 	width: 20px;
 	height: 20px;
 	float: left;
@@ -513,10 +669,10 @@ nav#content>form>p:first-child{
 
 /* - Second Dash Board - */
 .account-dash-board{
-	border: 1px solid lightgray;
+	border: 1px solid #8D86C9;
 	border-radius: 0.2em;
-	color: #162229;
-	background-color:#fff;
+	color: #242038;
+	background-color:white;
 	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
 	height: 100%;
 	width: 100%;
@@ -538,7 +694,7 @@ nav#content>form>p:first-child{
 }
 
 .border-gray{
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid #8D86C9;
 }
 
 /* Profile */
@@ -569,7 +725,7 @@ nav#content>form>p:first-child{
 .element-lable{
 	padding: 1%;
 	margin: 1% 0;
-	border: 1px solid lightgray;
+	border: 1px solid #8D86C9;
 	border-radius: 0.2em;
 }
 
@@ -590,37 +746,37 @@ nav#content>form>p:first-child{
 .account-img-btn::before {
 	content: 'Select some files';
 	margin: 5px 0 0 auto;
-    background-color: #162229;
+    background-color: #242038;
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: white;
     font-weight: bold;
     text-decoration: none;
 	border: none;
-	padding: 1px 7px 7px;
+	padding: 5px;
 	transition: background-color 0.5s;
 }
 .account-img-btn:hover::before {
-	background-color:#408c99;
+	background-color:#725AC1;
 }
 
 .account-btn{
 	margin: 5px 0 0 auto;
-    background-color: #162229;
+    background-color: #242038;
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
+    color: white;
     font-weight: bold;
     text-decoration: none;
 	border: none;
-	padding: 1px 7px 7px;
+	padding: 5px;
 	transition: background-color 0.5s;
 }
 
 .account-btn:hover {
-	background-color:#408c99;
+	background-color:#725AC1;
 }
 
 .account-btn:active {
@@ -699,3 +855,5 @@ nav#content>form>p:first-child{
 }
 
 /* Mail */
+
+

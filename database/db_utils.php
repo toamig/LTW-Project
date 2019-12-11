@@ -44,11 +44,24 @@
     * @param $email, $password
     * @return array()
     */
-    function getUser($email){
+    function getUserEmail($email){
         global $db;
         $stmt = $db->prepare("SELECT * FROM user WHERE email='".$email."'");
         $stmt->execute();  
-        $aux = $stmt->fetchAll();
+        $aux = $stmt->fetch();
+        return $aux;
+    }
+
+    /*
+    * Gets all the info from a specific user
+    * @param $email, $password
+    * @return array()
+    */
+    function getUserUsername($username){
+        global $db;
+        $stmt = $db->prepare("SELECT * FROM user WHERE username='".$username."'");
+        $stmt->execute();  
+        $aux = $stmt->fetch();
         return $aux;
     }
 
@@ -61,13 +74,8 @@
         global $db;
         $stmt = $db->prepare("SELECT * FROM house WHERE id='".$id."'");
         $stmt->execute();  
-        $aux = $stmt->fetchAll();
-        if(count($aux)==1){
-            return $aux[0];
-        }
-        else{
-            return false;
-        }
+        $aux = $stmt->fetch();
+        return $aux;
     }
 
     /*
