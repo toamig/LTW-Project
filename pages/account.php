@@ -285,9 +285,11 @@
 
                 <div class="message-panels">
 
-                    <?php messageLeftPanel(); ?>
+                    <?php $messages = getMessages($_SESSION['username']); // var_dump($messages);?>
 
-                    <?php messageRightPanel(); ?>
+                    <?php messageLeftPanel($messages); ?>
+
+                    <?php messageRightPanel($messages); ?>
                 </div>
 
             </div>
@@ -298,7 +300,7 @@
 
 <?php } ?>
 
-<?php function messageLeftPanel() { ?>
+<?php function messageLeftPanel($messages) { ?>
 
     <div class="message-left-panel">
         <div class="self-id">
@@ -314,53 +316,33 @@
         </div>
         <div class="scroll-container">
             <ul>
-                <li class="contact">
-                    <div class="contact-wrap">
-                        <img class="contact-img" src="../images/users/<?php echo $_SESSION['image']; ?>" alt="contactImg">
-                        <div class="meta">
-                            <p class="name">Louis Litt</p>
-                            <p class="preview">You just got LITT up, Mike.</p>
+
+                <?php for($i=sizeof($messages)-1; $i>0; $i--){ ?>
+
+                    <li class="contact">
+                        <div class="contact-wrap">
+                            <img class="contact-img" src="../images/users/<?php echo $_SESSION['image']; ?>" alt="contactImg">
+                            <div class="meta">
+                                <p class="name">Louis Litt</p>
+                                <p class="preview">You just got LITT up, Mike.</p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-wrap">
-                        <img class="contact-img" src="../images/users/<?php echo $_SESSION['image']; ?>" alt="contactImg">
-                        <div class="meta">
-                            <p class="name">Louis Litt</p>
-                            <p class="preview">You just got LITT up, Mike.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-wrap">
-                        <img class="contact-img" src="../images/users/<?php echo $_SESSION['image']; ?>" alt="contactImg">
-                        <div class="meta">
-                            <p class="name">Louis Litt</p>
-                            <p class="preview">You just got LITT up, Mike.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-wrap">
-                        <img class="contact-img" src="../images/users/<?php echo $_SESSION['image']; ?>" alt="contactImg">
-                        <div class="meta">
-                            <p class="name">Louis Litt</p>
-                            <p class="preview">You just got LITT up, Mike.</p>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                    
+                <?php } ?>
+
             </ul>
         </div>
     </div>
 
 <?php } ?>
 
-<?php function messageRightPanel(){ ?>
+<?php function messageRightPanel($messages){ ?>
 
     <div class="message-right-panel">
         <div class="user-id-right">
             <img class="contact-img" src="../images/users/DenverDebelak.jpeg" alt="userImg">
+            <label class="chat-user">Name Name</label>
         </div>
         <div class="chat-container">
             <ul>

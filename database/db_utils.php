@@ -100,6 +100,19 @@
     }
 
     /*
+    * Gets all the Messages from a specific user
+    * @param $username
+    * @return array()
+    */
+    function getMessages($username){
+        global $db;
+        $stmt = $db->prepare("SELECT * FROM message WHERE sender='".$username."' OR receiver='".$username."'");
+        $stmt->execute();  
+        $aux = $stmt->fetchAll();
+        return $aux;
+    }
+
+    /*
     * Closes the connection to the database
     */
     function closeConnection(){

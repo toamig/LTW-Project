@@ -926,16 +926,20 @@ nav#content>form>p:first-child{
 }
 .meta p{
 	font-weight: 600;
-	font-size: 50%;
 }
 
 .name{
 	text-align: left;
-	margin-bottom: 0;
+	margin: 0;
+	font-size: 14.4px;
 }
 .preview{
+	font-size: 12.4px;
 	text-align: left;
-	margin-top: 0;
+	margin: 0;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Right Panel */
@@ -945,10 +949,9 @@ nav#content>form>p:first-child{
 }
 
 .user-id-right {
-	padding-left: fill;
 	border: 1px solid #162229;
 	border-bottom: 0;
-	padding: 0.3em;
+	padding: 0.3em 0.5em 0.3em 0.3em;
 	width: -webkit-fill-available;
 }
 .user-id-right img{
