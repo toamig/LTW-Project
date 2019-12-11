@@ -298,7 +298,19 @@ nav#content>form>p:first-child{
 	font-size: 1.5em;
 }
 
+div#rental{
+	margin: 5% auto 5% auto;
+	width: 50%;
+	background-color: rgb(255,255,255);
+	font-family: 'Exo 2', sans-serif;
+	padding-top: 3vw;
+	padding-bottom: 3vw;
+	padding-left: 10%;
+	border-radius: 0.5em;
+	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+}
 /* --- RESULTS --- */
+
 
 #results {
 	background-color: rgb(192, 240, 245);
