@@ -3,7 +3,6 @@
     if(isset($_POST['submit-register'])){
 
         include_once('../database/session.php');
-        include_once('../database/connection.php');
         include_once('../database/db_utils.php');
         
         // Parse all relevant inputs.

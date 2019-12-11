@@ -1,4 +1,5 @@
 <?php
+    include_once('../database/connection.php');
 
     /*
     * Get function for all the houses present in the database.
@@ -77,6 +78,19 @@
     function getUserOwnedHouses($username){
         global $db;
         $stmt = $db->prepare("SELECT * FROM house WHERE owner='".$username."'");
+        $stmt->execute();  
+        $aux = $stmt->fetchAll();
+        return $aux;
+    }
+
+    /*
+    * Gets all the Rented houses from a specific user
+    * @param $username
+    * @return array()
+    */
+    function getUserRentedHouses($username){
+        global $db;
+        $stmt = $db->prepare("SELECT * FROM rental WHERE username='".$username."'");
         $stmt->execute();  
         $aux = $stmt->fetchAll();
         return $aux;
