@@ -28,7 +28,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-family: 'Exo 2', sans-serif;
-	background-color: #BEE8F7;
+	background-color: lightgray;
 	margin: 0;
 	padding: 0;
 	min-height: 100vh;
@@ -104,7 +104,7 @@ body header {
 	height: 30px;
 	object-fit: cover;
 	border-radius: 50%;
-	border: 1px solid white;
+	border: 2px solid white;
 }
 
 #taskbar a {
@@ -222,7 +222,7 @@ nav#content a{
 }
 
 nav#content form{
-	margin: 5% auto 5% auto;
+	margin: auto;
 	width: 50%;
 	background-color: rgb(255,255,255);
 	font-family: 'Exo 2', sans-serif;
@@ -249,20 +249,6 @@ nav#content form input::placeholder{
 	opacity: 0.5;
 }
 
-nav#content form div#select_box{
-	margin-left: 10%;
-
-}
-
-nav#content form div#select_box select{
-	width: 35%;
-	font-size: 1em;
-	border: 1px ridge #e1e1e1;
-    border-top: white;
-    border-left: white;
-    border-right: white;
-	border-radius: 2px;
-}
 
 #submit{
 	background-color: rgb(33, 67, 136);
@@ -298,19 +284,7 @@ nav#content>form>p:first-child{
 	font-size: 1.5em;
 }
 
-div#rental{
-	margin: 5% auto 5% auto;
-	width: 50%;
-	background-color: rgb(255,255,255);
-	font-family: 'Exo 2', sans-serif;
-	padding-top: 3vw;
-	padding-bottom: 3vw;
-	padding-left: 10%;
-	border-radius: 0.5em;
-	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
-}
 /* --- RESULTS --- */
-
 
 #results {
 	background-color: rgb(192, 240, 245);
@@ -475,6 +449,146 @@ div#rental{
 	background:linear-gradient(to bottom, rgb(245, 102, 86) 5%, rgb(245, 102, 86) 100%);
 	background-color:rgb(245, 102, 86);
 	border: 0.5px solid rgb(245, 102, 86);
+}
+
+/* --- HOUSE --- */
+
+.house-body {
+	flex: auto;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+}
+
+#house-header {
+	display: flex;
+	flex-direction: row;
+	border-bottom: 1px solid black;
+    margin-bottom: 1em;
+}
+
+#house-title {
+	padding: 1em;
+	border-radius: 10px;
+	margin: auto auto auto 0;
+	float: right;
+}
+
+#house-title h2 {
+	margin: auto;
+}
+
+#house-title p {
+	margin: auto;
+}
+
+#house-value {
+	padding: 1em;
+	border-radius: 10%;
+	margin: auto 0 auto auto;
+	float: left;
+}
+
+#house-value h3 {
+	margin: auto;
+}
+
+#house-value p {
+	margin: auto;
+}
+
+#house-image-contact {
+	display: flex;
+	flex-direction: row;
+}
+
+#house-image-contact>img {
+    border-radius: 10px;
+    margin: auto auto auto 0;
+	float: left;
+	width: 70%;
+	height: 35em;
+	vertical-align: middle;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+#house-contact-owner {
+	border-radius: 10px;
+	float: right;
+	margin: 0 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	width: 25%;
+	padding: 1em;
+}
+
+#owner-info {
+	display: flex;
+	flex-direction: row;
+}
+
+#owner-image-container {
+	position: relative;
+	width: 37%; /* The size you want */
+}
+
+#owner-image-container:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
+  
+#owner-image-container img {
+	position: absolute; /* Take your picture out of the flow */
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0; /* Make the picture taking the size of it's parent */
+	width: 100%; /* This if for the object-fit */
+	height: 100%; /* This if for the object-fit */
+	object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+	object-position: center;
+	border-radius: 50%;
+}
+
+#owner-info a {
+	margin: auto;
+}
+
+#house-contact-owner form {
+	display: flex;
+	flex-direction: column;
+	flex: auto;
+}
+
+#house-contact-owner form :first-child {
+	margin-top: 1em;
+	resize: none;
+	flex: auto;
+}
+
+#house-contact-owner form :nth-child(2){
+    background-color: #162229;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+	border: none;
+	margin-top: 1em;
+	transition: background-color 0.5s;
+}
+
+
+#house-properties {
+	border-bottom: 1px solid black;
+}
+
+#house-description {
+	border-bottom: 1px solid black;
 }
 
 /* --- ACCOUNT --- */
@@ -743,8 +857,16 @@ div#rental{
 	padding: 0.5em 0.25em;
 }
 
-.user-id {
+.user-id-left {
 	margin-right: auto;
+}
+.self-img {
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid white;
 }
 .self-name {
 	color: white;
@@ -773,16 +895,47 @@ div#rental{
 	height: 25em;
 }
   
-.scroll-container a {
+.scroll-container ul{
 	display: block;
+}
+.contact:hover {
+	background-color: #32465a;
+}
+
+.contact-wrap {
+	display: flex;
 	color: white;
 	text-align: center;
 	padding: 14px;
 	text-decoration: none;
 }
-  
-.scroll-container a:hover {
-	background-color: #32465a;
+
+.contact-img{
+	vertical-align: middle;
+	width: 20%;
+	height: 20%;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid white;
+}
+
+.meta {
+	display: grid;
+	margin-left: 10px;
+	width: -webkit-fill-available;
+}
+.meta p{
+	font-weight: 600;
+	font-size: 50%;
+}
+
+.name{
+	text-align: left;
+	margin-bottom: 0;
+}
+.preview{
+	text-align: left;
+	margin-top: 0;
 }
 
 /* Right Panel */
@@ -791,14 +944,14 @@ div#rental{
 	display: grid;
 }
 
-.user-id {
+.user-id-right {
 	padding-left: fill;
 	border: 1px solid #162229;
 	border-bottom: 0;
 	padding: 0.3em;
 	width: -webkit-fill-available;
 }
-.user-id img{
+.user-id-right img{
 	vertical-align: middle;
 	width: 40px;
 	height: 40px;
@@ -809,10 +962,10 @@ div#rental{
 
 .chat-container {
 	border: 1px solid #162229;
-	border-top: 0;
+	margin: 0;
 	overflow: auto;
 	width: auto;
-	height: 23.85em;
+	height: 23em;
 	background-color: #E6EAEA;
 }
 
@@ -846,8 +999,8 @@ div#rental{
 
 .message-input {
 	display: flex;
+	margin: 0;
 	border: 1px solid #162229;
-	border-top: 0;
 	padding: 0;
 }
 .message-input input {
@@ -862,3 +1015,13 @@ div#rental{
 	padding: 1em;
 	background-color: #162229;
 }
+.send-message-icon {
+	fill: white;
+	width: 20px;
+	height: 20px;
+}
+.send-message-icon:hover{
+	fill: #408c99;
+}
+
+
