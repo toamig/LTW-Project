@@ -264,9 +264,9 @@
 
 <?php function addNewBtn() { ?>
     <li class="add-new-wrapper">
-        <button class="add-new-btn">
+        <a href="addhouse.php"><button class="add-new-btn">
             <img class="add-new-img" src="../images/icons/addNew.svg" alt="AddNewImg">
-        </button>
+        </button></a>
     </li>
 <?php } ?>
 
