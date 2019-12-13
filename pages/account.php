@@ -398,10 +398,8 @@
                     array_push($contacts, $aux);
                     // get new contact info
                     $user = getUserUsername($aux);
-                    // get message
-                    $message = $messages[$i]['message'];
 
-                    displayConversation($user);
+                    displayConversation($user, $messages);
                 }
             } 
         ?>
@@ -420,7 +418,7 @@
 
 <?php } ?>
 
-<?php function displayConversation($user){ ?>
+<?php function displayConversation($user, $messages){ ?>
 
     <div class="conversation" id="<?php echo $user['username'];?>">
         <div class="user-id-right">
@@ -429,38 +427,27 @@
         </div>
         <div class="chat-container">
             <ul>
-                <li class="sent">
-                    
-                    <p class="message-p">How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p>
-                </li>
-                <li class="reply">
-                    
-                    <p class="message-p">When you're backed against the wall, break the god damn thing down.</p>
-                </li>
-                <li class="reply">
-                    
-                    <p class="message-p">Excuses don't win championships.</p>
-                </li>
-                <li class="sent">
-                    
-                    <p class="message-p">Oh yeah, did Michael Jordan tell you that?</p>
-                </li>
-                <li class="reply">
-                    
-                    <p class="message-p">No, I told him that.</p>
-                </li>
-                <li class="reply">
-                    
-                    <p class="message-p">What are your choices when someone puts a gun to your head?</p>
-                </li>
-                <li class="sent">
-                    
-                    <p class="message-p">What are you talking about? You do what they say or they shoot you.</p>
-                </li>
-                <li class="reply">
-                    
-                    <p class="message-p">Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
-                </li>
+                
+                <?php
+                    for($i = 0; $i < sizeof($messages); ++$i){
+                        // display message 
+                        if($messages[$i]['sender'] == $_SESSION['username'] && $messages[$i]['receiver'] == $user['username']){ 
+                            ?>
+                                <li class="reply">
+                                    <p class="message-p"><?php echo $messages[$i]['message'];?></p>
+                                </li>
+                            <?php 
+                        }
+                        else if($messages[$i]['sender'] == $user['username'] && $messages[$i]['receiver'] == $_SESSION['username']){ 
+                            ?>
+                                <li class="receive">
+                                    <p class="message-p"><?php echo $messages[$i]['message'];?></p>
+                                </li>
+                            <?php 
+                        }
+                    }
+                ?>
+
             </ul>
         </div>
     </div>

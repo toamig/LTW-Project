@@ -4,13 +4,19 @@
 
 :root{
 
+	/* Template */
 	--main-color-1: #242038;
 	--main-color-2: #725AC1;
 	--main-color-3: #8D86C9;
 	--main-color-4: #CAC4CE;
 	--main-color-5: #F7ECE1;
-	
 
+	/* Secondaries */
+	--main-color-6: white;
+	--main-color-7: rgba(0,0,0,.2);
+	--main-color-8: rgb(0, 0, 0);
+	--main-color-9: rgb(83, 83, 83);
+	--main-color-10: rgb(245, 89, 71);
 }
 
 /* --- Reset CSS --- */
@@ -72,7 +78,7 @@ body header {
 	text-decoration: none;
 	font-family: 'Exo 2', sans-serif;
 	font-size: 30px;
-	color: white;
+	color: var(--main-color-6);
 	transition: color 0.5s;
 }
 #title a:hover {
@@ -92,7 +98,7 @@ body header {
 #signup a {
 	vertical-align: middle;
 	text-decoration: none;
-	color: white;
+	color: var(--main-color-6);
 	font-family: 'Exo 2', sans-serif;
 	margin: auto;
 	padding: 0 0.5em 0 0.5em;
@@ -102,7 +108,7 @@ body header {
 	color: var(--main-color-4);
 }
 #signup a:first-child {
-	border-right: 1px solid white;
+	border-right: 1px solid var(--main-color-6);
 }
 
 #taskbar {
@@ -123,7 +129,7 @@ body header {
 #taskbar a {
 	vertical-align: middle;
 	text-decoration: none;
-	color: white;
+	color: var(--main-color-6);
 	font-family: 'Exo 2', sans-serif;
 	padding: 0 0.5em 0 0.5em; 
 	transition: color 0.5s;
@@ -162,9 +168,9 @@ body header {
 }
 
 input:-internal-autofill-selected {
-    background-color: white !important;
+    background-color: var(--main-color-6) !important;
     background-image: none !important;
-    color: rgb(0, 0, 0) !important;
+    color: var(--main-color-8) !important;
 }
 #search input:focus {
 	outline-color: var(--main-color-4);
@@ -197,7 +203,7 @@ input:-internal-autofill-selected {
 }
 
 /* #search svg:hover {
-	fill: white;
+	fill: var(--main-color-6);
 } */
 
 /* --- FOOTER --- */
@@ -206,7 +212,7 @@ footer {
 	height: 3em;
 	width: 100%;
 	font-family: 'Exo 2', sans-serif;
-	background-color: rgb(83, 83, 83);
+	background-color: var(--main-color-9);
 	padding: 1em;
 	bottom: 0;
 	position: relative;
@@ -216,7 +222,7 @@ footer {
 footer p {
 	list-style: none;
 	text-align: center;
-	color: white;
+	color: var(--main-color-6);
 	margin: auto;
 }
 
@@ -242,12 +248,12 @@ nav#content a{
 nav#content form{
 	margin: auto;
 	width: 50%;
-	background-color: white;
+	background-color: var(--main-color-6);
 	font-family: 'Exo 2', sans-serif;
 	padding-top: 3vw;
 	padding-bottom: 3vw;
 	border-radius: 0.5em;
-	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	box-shadow: 0 0 0.8rem 0.2rem var(--main-color-7);
 }
 
 nav#content form input{
@@ -255,9 +261,9 @@ nav#content form input{
     font-size: 1.2em;
     margin: auto auto;
     border: 1px ridge var(--main-color-3);
-    border-top: white;
-    border-left: white;
-    border-right: white;
+    border-top: var(--main-color-6);
+    border-left: var(--main-color-6);
+    border-right: var(--main-color-6);
 	width: 80%;
 	border-radius: 2px;
 	font-family: 'Exo 2', sans-serif;
@@ -271,7 +277,7 @@ nav#content form input::placeholder{
 
 #submit{
 	background-color: var(--main-color-1);
-	color: white;
+	color: var(--main-color-6);
 	border: none;
 	cursor: pointer;
 	transition: background-color 0.5s;
@@ -284,7 +290,7 @@ nav#content form input::placeholder{
 nav#content form #error{
 	margin: 1em 0;
 	text-align: center;
-	color: rgb(245, 89, 71);
+	color: var(--main-color-10);
 	font-weight: bold;
 }
 
@@ -360,8 +366,8 @@ nav#content>form>p:first-child{
 	border-radius: 0.5em;
 	padding: 1em;
 	color: var(--main-color-1);
-	background-color:white;
-	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	background-color:var(--main-color-6);
+	box-shadow: 0 0 0.8rem 0.2rem var(--main-color-7);
 }
 
 .utils-btn {
@@ -369,7 +375,7 @@ nav#content>form>p:first-child{
 	border-radius: 3px;
 	display:inline-block;
 	cursor:pointer;
-	color:white;
+	color:var(--main-color-6);
 	font-weight:bold;
 	padding: 5px;
 	text-decoration:none;
@@ -421,7 +427,7 @@ nav#content>form>p:first-child{
 	outline: 0;
 	border: 1px solid var(--main-color-1);
 	border-radius: 5px;
-	background: white;
+	background: var(--main-color-6);
 	color: var(--main-color-1);
 	appearance: none;
 	-webkit-appearance: none;
@@ -444,7 +450,7 @@ nav#content>form>p:first-child{
 .no-results-found{
 	text-align: center;
     border: 1px solid var(--main-color-1);
-    background-color: white;
+    background-color: var(--main-color-6);
 	border-radius: 0.5em;
 	margin: 1em 0;
 }
@@ -454,7 +460,7 @@ nav#content>form>p:first-child{
 }
 
 .new-search-btn{
-	color: white;
+	color: var(--main-color-6);
 	background-color: var(--main-color-1);
 	padding: 5px;
 	border-radius: 0.5em;
@@ -531,7 +537,7 @@ nav#content>form>p:first-child{
 	height: 35em;
 	vertical-align: middle;
 	object-fit: cover;
-	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	box-shadow: 0 0 0.8rem 0.2rem var(--main-color-7);
 	margin-right: 1em;
 }
 
@@ -545,7 +551,7 @@ nav#content>form>p:first-child{
 	background-color: var(--main-color-4);
 	width: 25%;
 	padding: 1em;
-	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	box-shadow: 0 0 0.8rem 0.2rem var(--main-color-7);
 }
 
 #owner-info {
@@ -595,7 +601,7 @@ nav#content>form>p:first-child{
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
-    color: white;
+    color: var(--main-color-6);
     font-weight: bold;
     text-decoration: none;
 	border: none;
@@ -656,8 +662,8 @@ nav#content>form>p:first-child{
 	font-size: 15px;
 	text-align: left;
 	border: 1px solid var(--main-color-3);
-	background-color: white;
-	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	background-color: var(--main-color-6);
+	box-shadow: 0 0 0.8rem 0.2rem var(--main-color-7);
 }
 
 .account-side-tabs-wrapper button:hover svg{
@@ -682,8 +688,8 @@ nav#content>form>p:first-child{
 	border: 1px solid var(--main-color-3);
 	border-radius: 0.2em;
 	color: var(--main-color-1);
-	background-color:white;
-	box-shadow: 0 0 0.8rem 0.2rem rgba(0,0,0,.2);
+	background-color:var(--main-color-6);
+	box-shadow: 0 0 0.8rem 0.2rem var(--main-color-7);
 	height: 100%;
 	width: 100%;
 }
@@ -760,7 +766,7 @@ nav#content>form>p:first-child{
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
-    color: white;
+    color: var(--main-color-6);
     font-weight: bold;
     text-decoration: none;
 	border: none;
@@ -777,7 +783,7 @@ nav#content>form>p:first-child{
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
-    color: white;
+    color: var(--main-color-6);
     font-weight: bold;
     text-decoration: none;
 	border: none;
@@ -860,7 +866,7 @@ nav#content>form>p:first-child{
 }
 
 .add-new-btn img:hover{
-	transform: scale(0.65);
+	transform: scale(0.55);
 	cursor: pointer;
 }
 
@@ -892,10 +898,10 @@ nav#content>form>p:first-child{
 	height: 50px;
 	object-fit: cover;
 	border-radius: 50%;
-	border: 2px solid white;
+	border: 2px solid var(--main-color-6);
 }
 .self-name {
-	color: white;
+	color: var(--main-color-6);
 	margin-left: 5px;
 }
 
@@ -907,7 +913,7 @@ nav#content>form>p:first-child{
 .create-new-message {
 	width: 15px;
 	height: 15px;
-	fill: white;
+	fill: var(--main-color-6);
 	transition: fill 0.5s
 }
 .create-new-message:hover{
@@ -928,7 +934,7 @@ nav#content>form>p:first-child{
 
 .contact-wrap {
 	display: flex;
-	color: white;
+	color: var(--main-color-6);
 	background-color: var(--main-color-1);
 	border: 0;
 	text-align: center;
@@ -945,7 +951,7 @@ nav#content>form>p:first-child{
 	height: 50px;
 	object-fit: cover;
 	border-radius: 50%;
-	border: 1px solid white;
+	border: 1px solid var(--main-color-6);
 }
 
 .meta {
@@ -991,7 +997,7 @@ nav#content>form>p:first-child{
 	height: 40px;
 	object-fit: cover;
 	border-radius: 50%;
-	border: 1px solid white;
+	border: 1px solid var(--main-color-6);
 }
 
 .chat-container {
@@ -1021,11 +1027,11 @@ nav#content>form>p:first-child{
 
 .reply p{
 	background-color: var(--main-color-1);
-	color: white;
+	color: var(--main-color-6);
 	margin-left: auto;
 }
 
-.sent p{
+.receive p{
 	float: right;
 	color: var(--main-color-1);
 	background-color: var(--main-color-4);
@@ -1050,7 +1056,7 @@ nav#content>form>p:first-child{
 	background-color: var(--main-color-1);
 }
 .send-message-icon {
-	fill: white;
+	fill: var(--main-color-6);
 	width: 20px;
 	height: 20px;
 }
