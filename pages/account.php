@@ -6,22 +6,26 @@
     drawHeader();
 ?>
 
+<script src="../js/account_utils.js"></script>
+
+<!-- Main Div -->
 <div class="account">
 
     <?php
         drawSideTabs(); 
 
-        if(isset($_POST['profile-btn'])) drawProfileDashBoard();
+        drawProfileDashBoard();
 
-        else if(isset($_POST['portfolio-btn'])) drawPortfolioDashBoard();
+        drawPortfolioDashBoard();
 
-        else if(isset($_POST['mail-btn'])) drawMailDashBoard();
-
-        else drawProfileDashBoard();
+        drawMessagesDashBoard();
     ?>
+
+    <script>loadFirstTab();</script>
     
 </div>
 
+<!-- Side Tabs -->
 <?php function drawSideTabs(){ ?>
 
     <div class="account-side-tabs">
@@ -29,35 +33,29 @@
         <div class="account-side-tabs-wrapper">
             <ul>
                 <li>
-                    <form method="post">
-                        <button type="submit" name="profile-btn">
-                            <svg class="account-side-tabs-logo" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" style="enable-background:new 0 0 55 55;" xml:space="preserve">
-	                            <path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752 c0.058,0.049,0.121,0.089,0.179,0.137c0.474,0.393,0.965,0.766,1.465,1.127c0.162,0.117,0.324,0.234,0.489,0.348 c0.534,0.368,1.082,0.717,1.642,1.048c0.122,0.072,0.245,0.142,0.368,0.212c0.613,0.349,1.239,0.678,1.88,0.98 c0.047,0.022,0.095,0.042,0.142,0.064c2.089,0.971,4.319,1.684,6.651,2.105c0.061,0.011,0.122,0.022,0.184,0.033 c0.724,0.125,1.456,0.225,2.197,0.292c0.09,0.008,0.18,0.013,0.271,0.021C25.998,54.961,26.744,55,27.5,55 c0.749,0,1.488-0.039,2.222-0.098c0.093-0.008,0.186-0.013,0.279-0.021c0.735-0.067,1.461-0.164,2.178-0.287 c0.062-0.011,0.125-0.022,0.187-0.034c2.297-0.412,4.495-1.109,6.557-2.055c0.076-0.035,0.153-0.068,0.229-0.104 c0.617-0.29,1.22-0.603,1.811-0.936c0.147-0.083,0.293-0.167,0.439-0.253c0.538-0.317,1.067-0.648,1.581-1 c0.185-0.126,0.366-0.259,0.549-0.391c0.439-0.316,0.87-0.642,1.289-0.983c0.093-0.075,0.193-0.14,0.284-0.217l0.915-0.764 l-0.027-0.023C51.523,42.802,55,35.55,55,27.5z M2,27.5C2,13.439,13.439,2,27.5,2S53,13.439,53,27.5 c0,7.577-3.325,14.389-8.589,19.063c-0.294-0.203-0.59-0.385-0.893-0.537l-8.467-4.233c-0.76-0.38-1.232-1.144-1.232-1.993v-2.957 c0.196-0.242,0.403-0.516,0.617-0.817c1.096-1.548,1.975-3.27,2.616-5.123c1.267-0.602,2.085-1.864,2.085-3.289v-3.545 c0-0.867-0.318-1.708-0.887-2.369v-4.667c0.052-0.52,0.236-3.448-1.883-5.864C34.524,9.065,31.541,8,27.5,8 s-7.024,1.065-8.867,3.168c-2.119,2.416-1.935,5.346-1.883,5.864v4.667c-0.568,0.661-0.887,1.502-0.887,2.369v3.545 c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313 c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"/>
-                            </svg>
-                            Profile
-                        </button>
-                    </form>
+                    <button onclick="changeTab('profile')" name="profile-btn">
+                        <svg class="account-side-tabs-logo" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" style="enable-background:new 0 0 55 55;" xml:space="preserve">
+                            <path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752 c0.058,0.049,0.121,0.089,0.179,0.137c0.474,0.393,0.965,0.766,1.465,1.127c0.162,0.117,0.324,0.234,0.489,0.348 c0.534,0.368,1.082,0.717,1.642,1.048c0.122,0.072,0.245,0.142,0.368,0.212c0.613,0.349,1.239,0.678,1.88,0.98 c0.047,0.022,0.095,0.042,0.142,0.064c2.089,0.971,4.319,1.684,6.651,2.105c0.061,0.011,0.122,0.022,0.184,0.033 c0.724,0.125,1.456,0.225,2.197,0.292c0.09,0.008,0.18,0.013,0.271,0.021C25.998,54.961,26.744,55,27.5,55 c0.749,0,1.488-0.039,2.222-0.098c0.093-0.008,0.186-0.013,0.279-0.021c0.735-0.067,1.461-0.164,2.178-0.287 c0.062-0.011,0.125-0.022,0.187-0.034c2.297-0.412,4.495-1.109,6.557-2.055c0.076-0.035,0.153-0.068,0.229-0.104 c0.617-0.29,1.22-0.603,1.811-0.936c0.147-0.083,0.293-0.167,0.439-0.253c0.538-0.317,1.067-0.648,1.581-1 c0.185-0.126,0.366-0.259,0.549-0.391c0.439-0.316,0.87-0.642,1.289-0.983c0.093-0.075,0.193-0.14,0.284-0.217l0.915-0.764 l-0.027-0.023C51.523,42.802,55,35.55,55,27.5z M2,27.5C2,13.439,13.439,2,27.5,2S53,13.439,53,27.5 c0,7.577-3.325,14.389-8.589,19.063c-0.294-0.203-0.59-0.385-0.893-0.537l-8.467-4.233c-0.76-0.38-1.232-1.144-1.232-1.993v-2.957 c0.196-0.242,0.403-0.516,0.617-0.817c1.096-1.548,1.975-3.27,2.616-5.123c1.267-0.602,2.085-1.864,2.085-3.289v-3.545 c0-0.867-0.318-1.708-0.887-2.369v-4.667c0.052-0.52,0.236-3.448-1.883-5.864C34.524,9.065,31.541,8,27.5,8 s-7.024,1.065-8.867,3.168c-2.119,2.416-1.935,5.346-1.883,5.864v4.667c-0.568,0.661-0.887,1.502-0.887,2.369v3.545 c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313 c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"/>
+                        </svg>
+                        Profile
+                    </button>
                 </li>
                 <li>
-                    <form method="post">
-                        <button type="submit" name="portfolio-btn">
-                            <svg class="account-side-tabs-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <path d="M59.407,176.306H44.498v17.114h14.466c5.468,0,10.935-1.41,10.935-8.554C69.899,178.072,65.762,176.306,59.407,176.306z"/>
-                                <path d="M285.712,124.727h-31.317l-88.274-76.751c0.495-1.602,0.844-3.269,0.844-5.025c0-9.37-7.595-16.965-16.965-16.965 s-16.965,7.595-16.965,16.965c0,1.756,0.35,3.423,0.844,5.025l-88.274,76.751H14.288c-3.748,0-6.788,3.04-6.788,6.788v135.712 c0,3.748,3.04,6.788,6.788,6.788h271.424c3.748,0,6.788-3.04,6.788-6.788V131.515C292.5,127.767,289.46,124.727,285.712,124.727z M142.761,58.24c2.205,1.039,4.635,1.676,7.239,1.676s5.035-0.637,7.239-1.676l76.482,66.487H66.278L142.761,58.24z M82.17,211.149 c0,7.326,1.933,10.063,1.933,13.056c0,3.352-3.436,5.65-6.788,5.65c-7.938,0-8.56-7.672-8.56-10.236 c0-11.118-2.022-15.614-9.964-15.614H44.498v18.616c0,4.323-2.82,7.233-7.233,7.233c-4.413,0-7.233-2.91-7.233-7.233v-48.962 c0-6.438,3.349-8.47,8.47-8.47h24.081c17.197,0,21.783,9.441,21.783,17.646c0,6.877-4.054,13.671-10.932,15.264v0.173 C80.844,199.326,82.17,204.71,82.17,211.149z M138.886,228.711h-34.669c-5.118,0-8.47-2.032-8.47-8.47v-46.582 c0-6.438,3.352-8.47,8.47-8.47h33.964c4.23,0,7.323,1.237,7.323,5.823c0,4.589-3.092,5.823-7.323,5.823h-27.968V190.6h24.523 c3.8,0,6.794,1.054,6.794,5.557c0,4.496-2.994,5.56-6.794,5.56h-24.523v15.348h28.673c4.24,0,7.326,1.234,7.326,5.823 C146.212,227.474,143.125,228.711,138.886,228.711z M211.317,220.853c0,5.733-2.474,9.002-8.563,9.002 c-4.586,0-6.089-0.971-7.938-3.881l-25.145-39.698h-0.176v36.611c0,4.669-2.644,6.967-6.967,6.967s-6.967-2.298-6.967-6.967 v-50.373c0-5.999,2.91-8.47,9.083-8.47c3.003,0,5.65,1.145,7.233,3.792l25.321,40.848h0.173v-37.672 c0-4.679,2.647-6.967,6.977-6.967c4.323,0,6.97,2.289,6.97,6.967V220.853z M268.122,177.367h-13.671v45.255 c0,4.323-2.83,7.233-7.233,7.233c-4.416,0-7.236-2.91-7.236-7.233v-45.255h-13.678c-4.141,0-7.502-2.125-7.502-6.089 c0-3.974,3.361-6.089,7.502-6.089h41.819c4.147,0,7.5,2.115,7.5,6.089C275.622,175.242,272.27,177.367,268.122,177.367z"/>
-                            </svg>
-                            Portfolio
-                        </button>
-                    </form>
+                    <button onclick="changeTab('portfolio')" name="portfolio-btn">
+                        <svg class="account-side-tabs-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                            <path d="M59.407,176.306H44.498v17.114h14.466c5.468,0,10.935-1.41,10.935-8.554C69.899,178.072,65.762,176.306,59.407,176.306z"/>
+                            <path d="M285.712,124.727h-31.317l-88.274-76.751c0.495-1.602,0.844-3.269,0.844-5.025c0-9.37-7.595-16.965-16.965-16.965 s-16.965,7.595-16.965,16.965c0,1.756,0.35,3.423,0.844,5.025l-88.274,76.751H14.288c-3.748,0-6.788,3.04-6.788,6.788v135.712 c0,3.748,3.04,6.788,6.788,6.788h271.424c3.748,0,6.788-3.04,6.788-6.788V131.515C292.5,127.767,289.46,124.727,285.712,124.727z M142.761,58.24c2.205,1.039,4.635,1.676,7.239,1.676s5.035-0.637,7.239-1.676l76.482,66.487H66.278L142.761,58.24z M82.17,211.149 c0,7.326,1.933,10.063,1.933,13.056c0,3.352-3.436,5.65-6.788,5.65c-7.938,0-8.56-7.672-8.56-10.236 c0-11.118-2.022-15.614-9.964-15.614H44.498v18.616c0,4.323-2.82,7.233-7.233,7.233c-4.413,0-7.233-2.91-7.233-7.233v-48.962 c0-6.438,3.349-8.47,8.47-8.47h24.081c17.197,0,21.783,9.441,21.783,17.646c0,6.877-4.054,13.671-10.932,15.264v0.173 C80.844,199.326,82.17,204.71,82.17,211.149z M138.886,228.711h-34.669c-5.118,0-8.47-2.032-8.47-8.47v-46.582 c0-6.438,3.352-8.47,8.47-8.47h33.964c4.23,0,7.323,1.237,7.323,5.823c0,4.589-3.092,5.823-7.323,5.823h-27.968V190.6h24.523 c3.8,0,6.794,1.054,6.794,5.557c0,4.496-2.994,5.56-6.794,5.56h-24.523v15.348h28.673c4.24,0,7.326,1.234,7.326,5.823 C146.212,227.474,143.125,228.711,138.886,228.711z M211.317,220.853c0,5.733-2.474,9.002-8.563,9.002 c-4.586,0-6.089-0.971-7.938-3.881l-25.145-39.698h-0.176v36.611c0,4.669-2.644,6.967-6.967,6.967s-6.967-2.298-6.967-6.967 v-50.373c0-5.999,2.91-8.47,9.083-8.47c3.003,0,5.65,1.145,7.233,3.792l25.321,40.848h0.173v-37.672 c0-4.679,2.647-6.967,6.977-6.967c4.323,0,6.97,2.289,6.97,6.967V220.853z M268.122,177.367h-13.671v45.255 c0,4.323-2.83,7.233-7.233,7.233c-4.416,0-7.236-2.91-7.236-7.233v-45.255h-13.678c-4.141,0-7.502-2.125-7.502-6.089 c0-3.974,3.361-6.089,7.502-6.089h41.819c4.147,0,7.5,2.115,7.5,6.089C275.622,175.242,272.27,177.367,268.122,177.367z"/>
+                        </svg>
+                        Portfolio
+                    </button>
                 </li>
                 <li>
-                    <form method="post">
-                        <button type="submit" name="mail-btn">
-                            <svg class="account-side-tabs-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 299.997 299.997" style="enable-background:new 0 0 299.997 299.997;" xml:space="preserve">
-                                <path d="M149.996,0C67.157,0,0.001,67.158,0.001,149.997c0,82.837,67.156,150,149.995,150s150-67.163,150-150 C299.996,67.158,232.835,0,149.996,0z M149.999,52.686l88.763,55.35H61.236L149.999,52.686z M239.868,196.423h-0.009 c0,8.878-7.195,16.072-16.072,16.072H76.211c-8.878,0-16.072-7.195-16.072-16.072v-84.865c0-0.939,0.096-1.852,0.252-2.749 l84.808,52.883c0.104,0.065,0.215,0.109,0.322,0.169c0.112,0.062,0.226,0.122,0.34,0.179c0.599,0.309,1.216,0.558,1.847,0.721 c0.065,0.018,0.13,0.026,0.195,0.041c0.692,0.163,1.393,0.265,2.093,0.265h0.005c0.005,0,0.01,0,0.01,0 c0.7,0,1.401-0.099,2.093-0.265c0.065-0.016,0.13-0.023,0.195-0.041c0.63-0.163,1.245-0.412,1.847-0.721 c0.114-0.057,0.228-0.117,0.34-0.179c0.106-0.06,0.218-0.104,0.322-0.169l84.808-52.883c0.156,0.897,0.252,1.808,0.252,2.749 V196.423z"/>
-                            </svg>
-                            Messages
-                        </button>
-                    </form>
+                    <button onclick="changeTab('messages')" name="mail-btn">
+                        <svg class="account-side-tabs-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 299.997 299.997" style="enable-background:new 0 0 299.997 299.997;" xml:space="preserve">
+                            <path d="M149.996,0C67.157,0,0.001,67.158,0.001,149.997c0,82.837,67.156,150,149.995,150s150-67.163,150-150 C299.996,67.158,232.835,0,149.996,0z M149.999,52.686l88.763,55.35H61.236L149.999,52.686z M239.868,196.423h-0.009 c0,8.878-7.195,16.072-16.072,16.072H76.211c-8.878,0-16.072-7.195-16.072-16.072v-84.865c0-0.939,0.096-1.852,0.252-2.749 l84.808,52.883c0.104,0.065,0.215,0.109,0.322,0.169c0.112,0.062,0.226,0.122,0.34,0.179c0.599,0.309,1.216,0.558,1.847,0.721 c0.065,0.018,0.13,0.026,0.195,0.041c0.692,0.163,1.393,0.265,2.093,0.265h0.005c0.005,0,0.01,0,0.01,0 c0.7,0,1.401-0.099,2.093-0.265c0.065-0.016,0.13-0.023,0.195-0.041c0.63-0.163,1.245-0.412,1.847-0.721 c0.114-0.057,0.228-0.117,0.34-0.179c0.106-0.06,0.218-0.104,0.322-0.169l84.808-52.883c0.156,0.897,0.252,1.808,0.252,2.749 V196.423z"/>
+                        </svg>
+                        Messages
+                    </button>
                 </li>
                 <li>
                     <form>
@@ -77,9 +75,10 @@
 
 <?php } ?>
 
+<!-- Profile -->
 <?php function drawProfileDashBoard(){ ?>
 
-    <div class="account-dash-board">
+    <div class="account-dash-board" id="profile">
 
         <ul class="account-dash-board-items">
 
@@ -95,7 +94,7 @@
                         <?php echo $_SESSION['name']; ?>
                         <form class="account-change-img" action="../actions/upluad_image_action.php" method="post" enctype="multipart/form-data">
                             <input type="file" name="profileImg" class="account-img-btn">
-                            <input type="submit" name="submit-profileImg" class="account-btn" value="Change profile picture">
+                            <input name="submit-profileImg" class="account-btn" value="Change profile picture">
                             <!-- <label for="file">Change profile picture</label> -->
                             <!-- <input type="file"> -->
                         </form>
@@ -157,9 +156,10 @@
 
 <?php } ?>
 
+<!-- Portfolio -->
 <?php function drawPortfolioDashBoard(){?>
     
-    <div class="account-dash-board">
+    <div class="account-dash-board" id="portfolio">
 
         <ul class="account-dash-board-items">
             <h4 class="account-dash-board-title border-gray">Portfolio</h4>
@@ -264,9 +264,10 @@
     </li>
 <?php } ?>
 
-<?php function drawMailDashBoard() {?>
+<!-- Messages -->
+<?php function drawMessagesDashBoard() {?>
     
-    <div class="account-dash-board">
+    <div class="account-dash-board" id="messages">
 
         <ul class="account-dash-board-items">
 
@@ -276,9 +277,13 @@
 
                 <div class="message-panels">
 
-                    <?php messageLeftPanel(); ?>
+                    <?php $messages = getMessages($_SESSION['username']); ?>
 
-                    <?php messageRightPanel(); ?>
+                    <?php //var_dump($messages); ?>
+
+                    <?php messageLeftPanel($messages); ?>
+
+                    <?php messageRightPanel($messages); ?>
                 </div>
 
             </div>
@@ -289,7 +294,7 @@
 
 <?php } ?>
 
-<?php function messageLeftPanel() { ?>
+<?php function messageLeftPanel($messages) { ?>
 
     <div class="message-left-panel">
         <div class="self-id">
@@ -305,90 +310,93 @@
         </div>
         <div class="scroll-container">
             <ul>
-                <li class="contact">
-                    <div class="contact-wrap">
-                        <img class="contact-img" src="../images/users/<?php echo $_SESSION['image']; ?>" alt="contactImg">
-                        <div class="meta">
-                            <p class="name">Louis Litt</p>
-                            <p class="preview">You just got LITT up, Mike.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-wrap">
-                        <img class="contact-img" src="../images/users/<?php echo $_SESSION['image']; ?>" alt="contactImg">
-                        <div class="meta">
-                            <p class="name">Louis Litt</p>
-                            <p class="preview">You just got LITT up, Mike.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-wrap">
-                        <img class="contact-img" src="../images/users/<?php echo $_SESSION['image']; ?>" alt="contactImg">
-                        <div class="meta">
-                            <p class="name">Louis Litt</p>
-                            <p class="preview">You just got LITT up, Mike.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-wrap">
-                        <img class="contact-img" src="../images/users/<?php echo $_SESSION['image']; ?>" alt="contactImg">
-                        <div class="meta">
-                            <p class="name">Louis Litt</p>
-                            <p class="preview">You just got LITT up, Mike.</p>
-                        </div>
-                    </div>
-                </li>
+
+                <?php 
+
+                    $contacts = array();
+                    for($i=sizeof($messages)-1; $i>0; --$i){
+
+                        // get contact 
+                        if($messages[$i]['sender'] == $_SESSION['username']){
+                            $aux = $messages[$i]['receiver'];
+                            $sender_flag = true;
+                        }
+                        else{
+                            $aux = $messages[$i]['sender'];
+                            $sender_flag = false;
+                        }
+
+                        // display contact
+                        if(!in_array($aux, $contacts)){
+                            // insert new contact
+                            array_push($contacts, $aux);
+                            // get new contact info
+                            $user = getUserUsername($aux);
+                            // get message
+                            $message = $messages[$i]['message'];
+
+                            displayContact($user, $message, $sender_flag);
+                        }
+                    }
+                ?>
+
             </ul>
         </div>
     </div>
 
 <?php } ?>
 
-<?php function messageRightPanel(){ ?>
+<?php function displayContact($user, $message, $sender_flag){ ?>
+
+    <li class="contact" id="<?php echo $user['username'];?>">
+        <button class="contact-wrap" onclick="contactWrapper(<?php echo $user['username'];?>)">
+            <img class="contact-img" src="../images/users/<?php echo $user['image']; ?>" alt="contactImg">
+            <div class="meta">
+                <!-- display name -->
+                <p class="name"><?php echo $user['name']; ?></p>
+
+                <!-- display last message -->
+                <?php if($sender_flag){ ?>
+                    <p class="preview">You: <?php echo $message; ?></p>
+
+                <?php } else { ?>
+                    <p class="preview"><?php echo substr($user['name'], 0, strpos($user['name'], ' ')).": ".$message; ?></p>
+
+                <?php } ?>
+            </div>
+        </button>
+    </li>
+
+<?php } ?>
+
+<?php function messageRightPanel($messages){ ?>
 
     <div class="message-right-panel">
-        <div class="user-id-right">
-            <img class="contact-img" src="../images/users/DenverDebelak.jpeg" alt="userImg">
-        </div>
-        <div class="chat-container">
-            <ul>
-				<li class="sent">
-					
-					<p class="message-p">How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p>
-				</li>
-				<li class="reply">
-					
-					<p class="message-p">When you're backed against the wall, break the god damn thing down.</p>
-				</li>
-				<li class="reply">
-					
-					<p class="message-p">Excuses don't win championships.</p>
-				</li>
-				<li class="sent">
-					
-					<p class="message-p">Oh yeah, did Michael Jordan tell you that?</p>
-				</li>
-				<li class="reply">
-					
-					<p class="message-p">No, I told him that.</p>
-				</li>
-				<li class="reply">
-					
-					<p class="message-p">What are your choices when someone puts a gun to your head?</p>
-				</li>
-				<li class="sent">
-					
-					<p class="message-p">What are you talking about? You do what they say or they shoot you.</p>
-				</li>
-				<li class="reply">
-					
-					<p class="message-p">Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
-				</li>
-			</ul>
-        </div>
+
+        <?php 
+            $contacts = array();
+            for($i=sizeof($messages)-1; $i>0; --$i){
+
+                // get contact 
+                if($messages[$i]['sender'] == $_SESSION['username'])
+                    $aux = $messages[$i]['receiver'];
+                
+                else $aux = $messages[$i]['sender'];
+
+                // display contact
+                if(!in_array($aux, $contacts)){
+                    // insert new contact
+                    array_push($contacts, $aux);
+                    // get new contact info
+                    $user = getUserUsername($aux);
+
+                    displayConversation($user, $messages);
+                }
+            } 
+        ?>
+
+        <script>loadConversation();</script>
+       
         <div class="message-input">
             <input type="text" placeholder="write your message..">
             <button class="send-message-btn">
@@ -401,4 +409,41 @@
 
 <?php } ?>
 
+<?php function displayConversation($user, $messages){ ?>
+
+    <div class="conversation" id="<?php echo $user['username'];?>">
+        <div class="user-id-right">
+            <img class="contact-img" src="../images/users/<?php echo $user['image'];?>" alt="userImg">
+            <label class="chat-user"><?php echo $user['name'];?></label>
+        </div>
+        <div class="chat-container">
+            <ul>
+                
+                <?php
+                    for($i = 0; $i < sizeof($messages); ++$i){
+                        // display message 
+                        if($messages[$i]['sender'] == $_SESSION['username'] && $messages[$i]['receiver'] == $user['username']){ 
+                            ?>
+                                <li class="reply">
+                                    <p class="message-p"><?php echo $messages[$i]['message'];?></p>
+                                </li>
+                            <?php 
+                        }
+                        else if($messages[$i]['sender'] == $user['username'] && $messages[$i]['receiver'] == $_SESSION['username']){ 
+                            ?>
+                                <li class="receive">
+                                    <p class="message-p"><?php echo $messages[$i]['message'];?></p>
+                                </li>
+                            <?php 
+                        }
+                    }
+                ?>
+
+            </ul>
+        </div>
+    </div>
+
+<?php } ?>
+
+<!-- Footer -->
 <?php drawFooter(); ?>
