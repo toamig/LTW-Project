@@ -86,4 +86,5 @@ INSERT INTO message VALUES
 (NULL, 'FeFigueredo', 'LucianoLisby', 'Praesent condimentum purus at diam vestibulum, ut scelerisque mi luctus.'),
 (NULL, 'LucianoLisby', 'FeFigueredo', 'Mauris non sodales turpis.'),
 (NULL, 'FeFigueredo', 'LucianoLisby', 'Interdum et malesuada fames ac ante ipsum primis in faucibus.'),
-(NULL, 'LucianoLisby', 'FeFigueredo', 'Proin blandit erat eget magna semper varius. Donec vel metus orci.');
+(NULL, 'LucianoLisby', 'FeFigueredo', 'Proin blandit erat eget magna semper varius. Donec vel metus orci.'),
+(NULL, 'FeFigueredo', 'LucianoLisby', 'Interdum et malesuada fames ac ante ipsum primis in faucibus.');
