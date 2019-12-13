@@ -88,6 +88,7 @@
 
                 <?php $user = getUserEmail($_SESSION['email']); ?>
 
+                <!-- Profile picture -->
                 <div class="account-profile-img border-gray">
                     <img src="../images/users/<?=$_SESSION['image']?>" alt="profileLogo">
                     <div class="account-profile-name-change-picture" >
@@ -103,105 +104,154 @@
 
                 <!-- Personal Information -->
                 <div class="account-profile-wrapper-personal-information border-gray">
+                    
+                    <!-- Set -->
+                    <div id="personal-info-set">
 
-                    <div class="account-profile-wrapper-personal-information-title">
-                        <h4>Personal Information</h4>
-                        
-                        <button class="account-btn" onclick="changePersonalInfo()" id="edit-btn">Edit</button>
+                        <!-- Change Button -->
+                        <div class="account-profile-wrapper-personal-information-title">
+                            <h4>Personal Information</h4>
+                            <button class="account-btn" onclick="changePersonalInfo()" id="edit-btn">Edit</button>
+                        </div>
 
-                        <button class="account-btn" id="make-changes-btn">Make Changes</button>
+                        <div class="account-profile-wrapper-container-personal-info" >
+                            
+                            <!-- Username -->
+                            <div class="account-profile-wrapper-personal-info-row">
+                                <div class="account-profile-wrapper-personal-info-row-element">
+                                    <span>Username</span>
+                                    <lable class="element-lable" type="text"><?php  echo $_SESSION['username']; ?></lable>
+                                </div>
+
+                                <div class="account-profile-wrapper-personal-info-row-element"></div>
+                            </div>
+                            
+                            <!-- First Name && Last Name -->
+                            <div class="account-profile-wrapper-personal-info-row">
+                                <?php $pos = strpos ($_SESSION['name'], ' '); ?>
+
+                                <div class="account-profile-wrapper-personal-info-row-element">
+                                    <span>First Name</span>
+                                    <lable class="element-lable" type="text"><?php  echo substr($_SESSION['name'], 0, $pos); ?></lable>
+                                </div>
+
+                                <div class="account-profile-wrapper-personal-info-row-element">
+                                    <span>Last Name</span>
+                                    <lable class="element-lable" type="text"><?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?></lable>
+                                </div>
+                            </div>
+
+                            <!-- Email && Phone Number -->
+                            <div class="account-profile-wrapper-personal-info-row">
+                                <div class="account-profile-wrapper-personal-info-row-element">
+                                    <span>Email</span>
+                                    <lable class="element-lable" type="text"><?php echo $_SESSION['email'];?></lable>
+                                </div>
+
+                                <div class="account-profile-wrapper-personal-info-row-element">
+                                    <span>Phone Number</span>
+                                    <lable class="element-lable" type="text"><?php echo substr($_SESSION['phonenumber'],  0, strlen($_SESSION['phonenumber']));?></lable>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <div class="account-profile-wrapper-container-personal-info" id="personal-info-set">
+                    <!-- Change -->
+                    <div id="personal-info-change">
 
-                        <div class="account-profile-wrapper-personal-info-row">
-                            <?php $pos = strpos ($_SESSION['name'], ' '); ?>
+                        <form action="../actions/personalInfo_action.php" method="post">
+                            
+                            <!-- Change Button -->
+                            <div class="account-profile-wrapper-personal-information-title">
+                                <h4>Personal Information</h4>
+                                <button class="account-btn" id="make-changes-btn" type="submit">Make Changes</button>
+                            </div>
+                            
+                            <div class="account-profile-wrapper-container-personal-info">
+                                    <!-- Username -->
+                                    <div class="account-profile-wrapper-personal-info-row">
+                                        <div class="account-profile-wrapper-personal-info-row-element">
+                                            <span>Username</span>
+                                            <input class="element-lable" type="text" name="username" placeholder="<?php  echo $_SESSION['username']; ?>" required>
+                                        </div>
 
-                            <div class="account-profile-wrapper-personal-info-row-element">
-                                <span>First Name</span>
-                                <lable class="element-lable" type="text"><?php  echo substr($_SESSION['name'], 0, $pos); ?></lable>
+                                        <div class="account-profile-wrapper-personal-info-row-element"></div>
+                                    </div>
+
+                                    <!-- First Name && Last Name -->
+                                    <div class="account-profile-wrapper-personal-info-row">
+                                        <?php $pos = strpos ($_SESSION['name'], ' '); ?>
+
+                                        <div class="account-profile-wrapper-personal-info-row-element">
+                                            <span>*First Name</span>
+                                            <input class="element-lable" type="text" name="firstName" placeholder="<?php  echo substr($_SESSION['name'], 0, $pos); ?>" required>
+                                        </div>
+
+                                        <div class="account-profile-wrapper-personal-info-row-element">
+                                            <span>*Last Name</span>
+                                            <input class="element-lable" type="text" name="lastName" placeholder="<?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?>" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Email && Phone Number -->
+                                    <div class="account-profile-wrapper-personal-info-row">
+                                        <div class="account-profile-wrapper-personal-info-row-element">
+                                            <span>*Email</span>
+                                            <input class="element-lable" type="text" name="email" placeholder="<?php echo $_SESSION['email'];?>" required>
+                                        </div>
+
+                                        <div class="account-profile-wrapper-personal-info-row-element">
+                                            <span>*Phone Number</span>
+                                            <input class="element-lable" type="text" name="phoneNumber" placeholder="<?php echo substr($_SESSION['phonenumber'],  0, strlen($_SESSION['phonenumber']));?>" required>
+                                        </div>
+                                    </div>
+
                             </div>
 
-                            <div class="account-profile-wrapper-personal-info-row-element">
-                                <span>Last Name</span>
-                                <lable class="element-lable" type="text"><?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?></lable>
-                            </div>
-                        </div>
-
-                        <div class="account-profile-wrapper-personal-info-row">
-                            <div class="account-profile-wrapper-personal-info-row-element">
-                                <span>Email</span>
-                                <lable class="element-lable" type="text"><?php echo $_SESSION['email'];?></lable>
-                            </div>
-
-                            <div class="account-profile-wrapper-personal-info-row-element">
-                                <span>Phone Number</span>
-                                <lable class="element-lable" type="text"><?php echo substr($_SESSION['phonenumber'],  0, strlen($_SESSION['phonenumber']));?></lable>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="account-profile-wrapper-container-personal-info" id="personal-info-change">
-
-                        <div class="account-profile-wrapper-personal-info-row">
-                            <?php $pos = strpos ($_SESSION['name'], ' '); ?>
-
-                            <div class="account-profile-wrapper-personal-info-row-element">
-                                <span>*First Name</span>
-                                <input class="element-lable" type="text" placeholder="<?php  echo substr($_SESSION['name'], 0, $pos); ?>"></input>
-                            </div>
-
-                            <div class="account-profile-wrapper-personal-info-row-element">
-                                <span>*Last Name</span>
-                                <input class="element-lable" type="text" placeholder="<?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?>"></input>
-                            </div>
-                        </div>
-
-                        <div class="account-profile-wrapper-personal-info-row">
-                            <div class="account-profile-wrapper-personal-info-row-element">
-                                <span>*Email</span>
-                                <input class="element-lable" type="text" placeholder="<?php echo $_SESSION['email'];?>"></input>
-                            </div>
-
-                            <div class="account-profile-wrapper-personal-info-row-element">
-                                <span>*Phone Number</span>
-                                <input class="element-lable" type="text" placeholder="<?php echo substr($_SESSION['phonenumber'],  0, strlen($_SESSION['phonenumber']));?>"></input>
-                            </div>
-                        </div>
+                        </form>
 
                     </div>
 
                 </div>
-
 
                 <!-- Password -->
                 <div class="account-profile-wrapper-password-wrapper">
 
-                    <h4 class="account-profile-wrapper-password-wrapper-title">Password</h4>
+                    <!-- Set -->
+                    <div id="password-set">
+                        <div class="password-header">
+                            <h4 class="account-profile-wrapper-password-wrapper-title">Password</h4>
 
-                    <button class="account-btn" onclick="changePassword()">Change Password</button>
-
-                </div>
-
-                <div class="change-password-wrapper">
-
-                        <div class="change-password-field">
-                            <h5>Old password:</h5>
-                            <input type="text">
+                            <button class="account-btn" onclick="changePassword()">Change Password</button>
                         </div>
+                    </div>
 
-                        <div class="change-password-field">
-                            <h5>New password:</h5>
-                            <input type="text">
-                        </div>
+                    <!-- Change -->
+                    <div id="password-change">
+                        <form action="../actions/changePassword_action.php" method="post">
+                            <div class="password-header">
+                                <h4 class="account-profile-wrapper-password-wrapper-title">Password</h4>
 
-                        <div class="change-password-field">
-                            <h5>Confirm new password:</h5>
-                            <input type="text">
-                        </div>
+                                <button class="account-btn" type="post">Change Password</button>
+                            </div>
 
-                        <button class="account-btn">Change Password</button>
+                            <div class="change-password-field">
+                                <lable>Old password:</lable>
+                                <input class="element-lable" type="text" name="oldPass" required>
+                            </div>
+
+                            <div class="change-password-field">
+                                <lable>New password:</lable>
+                                <input class="element-lable" type="text" name="newPass" required>
+                            </div>
+
+                            <div class="change-password-field">
+                                <lable>Confirm new password:</lable>
+                                <input class="element-lable" type="text" name="newPassConfirm" required>
+                            </div>
+                        </form>
+                    </div>
 
                 </div>
 

@@ -792,19 +792,23 @@ nav#content>form>p:first-child{
 	display: none;
 }
 
-.account-profile-wrapper-password-wrapper{
+.password-header{
 	display: flex;
 }
-
 .account-profile-wrapper-password-wrapper-title{
 	margin: 10px 0;
 }
 
-.change-password-wrapper{
+#password-change{
 	display: none;
 }
 .change-password-field{
-	display: flex;
+	display: grid;
+	flex-direction: column;
+	margin-bottom: 0.5em;
+}
+.change-password-field input{
+	width: 50%;
 }
 
 .account-img-btn {

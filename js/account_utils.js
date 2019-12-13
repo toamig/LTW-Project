@@ -31,15 +31,15 @@ function changePersonalInfo(){
     wrapperSet.style.display = 'none';
 
     let wrapperChange = document.querySelector('#personal-info-change');
-    wrapperChange.style.display = 'flex';
+    wrapperChange.style.display = 'grid';
 }
 
 function changePassword(){
-    let btn = document.querySelector('.account-profile-wrapper-password-wrapper button');
+    let passSet = document.querySelector('#password-set');
 
-    btn.style.display = 'none';
+    passSet.style.display = 'none';
 
-    let elem = document.querySelector('.change-password-wrapper');
+    let elem = document.querySelector('#password-change');
         
     elem.style.display = 'grid';
 }

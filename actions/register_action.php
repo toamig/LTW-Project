@@ -28,8 +28,7 @@
         // Load all the users info from database.
         $users = loadAllUser();
 
-        // For security reasons only these fields are verified. ????
-        
+        // For security reasons only these fields are verified.
         foreach($users as $user){
             if($user['username'] == $username){
                 $_SESSION['messages'] = array('type' => 'error', 'content' => 'Username already in use!');
@@ -37,7 +36,7 @@
             break;
             }
             if($user['email'] == $email){
-                $_SESSION['messages'] = array('type' => 'error', 'content' => 'Email alrady in use!');
+                $_SESSION['messages'] = array('type' => 'error', 'content' => 'Email already in use!');
                 $error_flag = true;
             break;
             }
