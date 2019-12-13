@@ -1,7 +1,9 @@
 <?php 
     include_once('../database/session.php');
     include_once('../templates/templates.php');
-    drawHeader();
+
+    if(!isset($_SESSION['username'])){
+        drawHeader(); 
 ?>
 
     <nav id="content">
@@ -39,5 +41,13 @@
     </nav>
 
 <?php
-    drawFooter(); 
+
+        drawFooter(); 
+            
+    }
+    else{
+
+        header('Location: home.php');
+
+    }
 ?>

@@ -12,6 +12,10 @@
         $phonenumber = $_POST['phonenumber'];
         $password = $_POST['password'];
         $confirm = $_POST['confirm-password'];
+        $image = $_POST['image'];
+        if(is_null($image)){
+            $image = 'placeholder.png';
+        }
 
         $error_flag = false;
 
@@ -56,7 +60,8 @@
             $_SESSION['email'] = $email;
             $_SESSION['phonenumber'] = $phonenumber;
             $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
-
+            $_SESSION['image'] = $image;
+            
             if(!createUserAccount()){
                 session_destroy();
                 $_SESSION['messages'] = array('type' => 'error', 'content' => 'ERROR! Unable to create a new account!!');

@@ -33,10 +33,11 @@
         $email = $_SESSION['email'];
         $phonenumber = $_SESSION['phonenumber'];
         $password = $_SESSION['password'];
+        $image = $_SESSION['image'];
 
         global $db;
         $stmt = $db->prepare('INSERT INTO user (username, email, password, name, phonenumber, image) VALUES (?, ?, ?, ?, ?, ?)');
-        return $stmt->execute(array($username, $email, $password, $name, $phonenumber, NULL))?true:false;
+        return $stmt->execute(array($username, $email, $password, $name, $phonenumber, $image))?true:false;
     }
 
     function createHouse(){
@@ -66,6 +67,17 @@
         $stmt->execute();  
         $aux = $stmt->fetch();
         return $aux;
+    }
+
+    /*
+    * Updates the $column info from a specific user to $value
+    * @param $username, $column, $value
+    * @return boolean
+    */
+    function updateUserParam($username, $column, $value){
+        global $db;
+        $stmt = $db->prepare("UPDATE user SET ".$column." = '".$value."' WHERE username='".$username."'");
+        return $stmt->execute();
     }
 
     /*

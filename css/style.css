@@ -155,7 +155,7 @@ body header {
 	height: 2em;
 	display: flex;
 	padding: 0.5em;
-	background-color: var(--main-color-5);
+	background-color: white;
 	margin: auto;
 	border-radius: 5px;
 }
@@ -163,15 +163,19 @@ body header {
 #search input {
 	width: 100%;
     border: 0;
-	margin-left: 0.5em;
+	margin-right: 0.5em;
 	font-family: 'Exo 2', sans-serif;
 }
 
-input:-internal-autofill-selected {
-    background-color: var(--main-color-6) !important;
+#search input:-webkit-autofill,
+#search input:-webkit-autofill:hover, 
+#search input:-webkit-autofill:focus {
+	background-color: white !important;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
     background-image: none !important;
     color: var(--main-color-8) !important;
 }
+
 #search input:focus {
 	outline-color: var(--main-color-4);
 	outline-width: 2px;
@@ -503,7 +507,21 @@ nav#content>form>p:first-child{
 
 #house-title p {
 	color: var(--main-color-1);
+	margin: auto 0;
+	
+}
+
+#house-location{
 	margin: auto;
+	display: flex;
+	flex-direction: row;
+	vertical-align: middle;
+}
+
+#house-location svg{
+	fill: var(--main-color-1);
+	width: 15px;
+	margin-right: 10px;
 }
 
 #house-value {
@@ -606,6 +624,7 @@ nav#content>form>p:first-child{
     text-decoration: none;
 	border: none;
 	margin-top: 2em;
+	padding: 5px;
 	transition: background-color 0.5s;
 }
 
@@ -614,13 +633,33 @@ nav#content>form>p:first-child{
 }
 
 
-#house-properties {
+#house-properties-wrapper {
 	border-bottom: 1px solid var(--main-color-1);
+}
+
+#house-properties{
+	display: flex;
+	flex-direction: row;
+}
+
+#house-properties p{
+	flex: auto;
 }
 
 #house-description {
 	text-align: justify;
 	border-bottom: 1px solid var(--main-color-1);
+}
+
+.house-body>form{
+	text-align: center;
+	margin: 1em;
+}
+
+.house-body>form input{
+	text-align: center;
+	width: 10%;
+	min-width: 80px;
 }
 
 /* --- ACCOUNT --- */

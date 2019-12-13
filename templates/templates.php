@@ -41,22 +41,13 @@
                 </div>
 
                 <!-- If a session was not yet started. -->
-                <?php if (isset($_SESSION['username'])){ 
-                    
-                    if(isset($_SESSION['image'])){
-                        $imgPath = '../images/users/'.$_SESSION['image'];
-                    }
-                    else{
-                        $imgPath = '../images/icons/placeholder.png';
-                    }
-                
-                ?>
+                <?php if (isset($_SESSION['username'])){ ?>
 
                     <div id="taskbar">
                         
                         <a href="../pages/account.php"><?php echo $_SESSION['username'];?></a>
 
-                        <img src=<?=$imgPath ?>>
+                        <img src="../images/users/<?=$_SESSION['image'] ?>">
 
                     </div>
                 
