@@ -167,16 +167,11 @@ body header {
 	font-family: 'Exo 2', sans-serif;
 }
 
-<<<<<<< HEAD
 #search input:-webkit-autofill,
 #search input:-webkit-autofill:hover, 
 #search input:-webkit-autofill:focus {
 	background-color: white !important;
 	-webkit-box-shadow: 0 0 0px 1000px white inset;
-=======
-input:-internal-autofill-selected {
-    background-color: var(--main-color-6) !important;
->>>>>>> e37e1f1fce7a60ee3850006d7326bd67447b9529
     background-image: none !important;
     color: var(--main-color-8) !important;
 }
