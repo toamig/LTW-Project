@@ -110,14 +110,18 @@
                     </div>
                 </div>
 
+                <!-- Personal Information -->
                 <div class="account-profile-wrapper-personal-information border-gray">
 
                     <div class="account-profile-wrapper-personal-information-title">
                         <h4>Personal Information</h4>
-                        <button class="account-btn">Edit</button>
+                        
+                        <button class="account-btn" onclick="changePersonalInfo()" id="edit-btn">Edit</button>
+
+                        <button class="account-btn" id="make-changes-btn">Make Changes</button>
                     </div>
 
-                    <div class="account-profile-wrapper-container-personal-info">
+                    <div class="account-profile-wrapper-container-personal-info" id="personal-info-set">
 
                         <div class="account-profile-wrapper-personal-info-row">
                             <?php $pos = strpos ($_SESSION['name'], ' '); ?>
@@ -147,13 +151,66 @@
 
                     </div>
 
+                    <div class="account-profile-wrapper-container-personal-info" id="personal-info-change">
+
+                        <div class="account-profile-wrapper-personal-info-row">
+                            <?php $pos = strpos ($_SESSION['name'], ' '); ?>
+
+                            <div class="account-profile-wrapper-personal-info-row-element">
+                                <span>*First Name</span>
+                                <input class="element-lable" type="text" placeholder="<?php  echo substr($_SESSION['name'], 0, $pos); ?>"></input>
+                            </div>
+
+                            <div class="account-profile-wrapper-personal-info-row-element">
+                                <span>*Last Name</span>
+                                <input class="element-lable" type="text" placeholder="<?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?>"></input>
+                            </div>
+                        </div>
+
+                        <div class="account-profile-wrapper-personal-info-row">
+                            <div class="account-profile-wrapper-personal-info-row-element">
+                                <span>*Email</span>
+                                <input class="element-lable" type="text" placeholder="<?php echo $_SESSION['email'];?>"></input>
+                            </div>
+
+                            <div class="account-profile-wrapper-personal-info-row-element">
+                                <span>*Phone Number</span>
+                                <input class="element-lable" type="text" placeholder="<?php echo substr($_SESSION['phonenumber'],  0, strlen($_SESSION['phonenumber']));?>"></input>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
 
+
+                <!-- Password -->
                 <div class="account-profile-wrapper-password-wrapper">
 
                     <h4 class="account-profile-wrapper-password-wrapper-title">Password</h4>
 
-                    <button class="account-btn">Change Password</button>
+                    <button class="account-btn" onclick="changePassword()">Change Password</button>
+
+                </div>
+
+                <div class="change-password-wrapper">
+
+                        <div class="change-password-field">
+                            <h5>Old password:</h5>
+                            <input type="text">
+                        </div>
+
+                        <div class="change-password-field">
+                            <h5>New password:</h5>
+                            <input type="text">
+                        </div>
+
+                        <div class="change-password-field">
+                            <h5>Confirm new password:</h5>
+                            <input type="text">
+                        </div>
+
+                        <button class="account-btn">Change Password</button>
 
                 </div>
 

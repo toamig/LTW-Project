@@ -745,12 +745,27 @@ nav#content>form>p:first-child{
 	border-radius: 0.2em;
 }
 
+#make-changes-btn{
+	display: none;
+}
+
+#personal-info-change{
+	display: none;
+}
+
 .account-profile-wrapper-password-wrapper{
 	display: flex;
 }
 
 .account-profile-wrapper-password-wrapper-title{
 	margin: 10px 0;
+}
+
+.change-password-wrapper{
+	display: none;
+}
+.change-password-field{
+	display: flex;
 }
 
 .account-img-btn {

@@ -20,6 +20,30 @@ function changeTab(btnName){
     }
 }
 
+function changePersonalInfo(){
+    let editBtn = document.querySelector('#edit-btn');
+    editBtn.style.display = 'none';
+
+    let changeBtn = document.querySelector('#make-changes-btn');
+    changeBtn.style.display = 'flex';
+
+    let wrapperSet = document.querySelector('#personal-info-set');
+    wrapperSet.style.display = 'none';
+
+    let wrapperChange = document.querySelector('#personal-info-change');
+    wrapperChange.style.display = 'flex';
+}
+
+function changePassword(){
+    let btn = document.querySelector('.account-profile-wrapper-password-wrapper button');
+
+    btn.style.display = 'none';
+
+    let elem = document.querySelector('.change-password-wrapper');
+        
+    elem.style.display = 'grid';
+}
+
 function contactWrapper(username){
     let listElements = document.getElementsByClassName("conversation");
 
