@@ -4,13 +4,6 @@
     include_once('../database/db_utils.php');
 
     drawHeader();
-
-    if(isset($_SESSION['image'])){
-        $imgPath = '../images/users/'.$_SESSION['image'];
-    }
-    else{
-        $imgPath = '../images/icons/placeholder.png';
-    }
 ?>
 
 <div class="account">
@@ -85,8 +78,6 @@
 <?php } ?>
 
 <?php function drawProfileDashBoard(){ ?>
-    
-    <?php global $imgPath; ?>
 
     <div class="account-dash-board">
 
@@ -99,7 +90,7 @@
                 <?php $user = getUserEmail($_SESSION['email']); ?>
 
                 <div class="account-profile-img border-gray">
-                    <img src=<?=$imgPath ?> alt="profileLogo">
+                    <img src="../images/users/<?=$_SESSION['image']?>" alt="profileLogo">
                     <div class="account-profile-name-change-picture" >
                         <?php echo $_SESSION['name']; ?>
                         <form class="account-change-img" action="../actions/upluad_image_action.php" method="post" enctype="multipart/form-data">

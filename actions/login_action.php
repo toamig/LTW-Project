@@ -15,7 +15,7 @@
         if(!$user){
             $_SESSION['messages'] = array('type' => 'error', 'content' => "Account doesn't exit!");
             header("Location: ../pages/login.php");
-            exit(0);
+            die();
         }
         else if($verifyPass){
             $_SESSION['name'] = $user['name'];
@@ -26,18 +26,20 @@
                 $_SESSION['image'] = $user['image'];
             }
 
-            header('Location: ../pages/home.php');
+            echo '<script type="text/javascript">', 'history.go(-2);', '</script>';
+            die();
         }
         else{
             $_SESSION['messages'] = array('type' => 'error', 'content' => "Wrong password!");
             header("Location: ../pages/login.php");
-            exit(0);
+            die();
         }
 
     }
     else{
 
         header("Location: ../index.php");
+        die();
 
     }
     

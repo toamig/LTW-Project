@@ -11,3 +11,21 @@
 
 ** ALL FILES **
 - Media Queries.
+
+
+Carlos Vieira
+{
+** search.php **
+- filters
+- flexbox css results
+- search bar
+
+** house.php **
+- button to rent
+- send message
+- multiple photos
+
+** addhouse.php **
+- upload multiple photos
+- css
+}

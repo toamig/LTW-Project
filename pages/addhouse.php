@@ -8,7 +8,7 @@ drawHeader();
 
 <nav id="content">
         
-        <form  method="post" id="addhouse_form" action="../actions/addhouse_action.php">
+        <form  method="post" id="addhouse_form" action="../actions/addhouse_action.php" enctype="multipart/form-data">
             <p>Add a new house</p>
             <input type="text" name="title" id="title" required="true" placeholder="Title"><br>
             <input type="text" placeholder="Description" name="description" required="true" rows="4" cols="50"></textarea><br>
@@ -34,6 +34,6 @@ drawHeader();
 
 </nav>
 
- <?php
+<?php
     drawFooter(); 
 ?>

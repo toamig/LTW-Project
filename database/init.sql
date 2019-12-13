@@ -17,7 +17,7 @@ CREATE TABLE house (
   image VARCHAR,
   type VARCHAR,
   room INTEGER,
-  bathroom Integer,
+  bathroom INTEGER,
   price DOUBLE,
   published DATE,
   address VARCHAR, 
