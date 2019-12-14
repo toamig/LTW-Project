@@ -95,7 +95,7 @@
                         <?php echo $_SESSION['name']; ?>
                         <form class="account-change-img" action="../actions/upluad_image_action.php" method="post" enctype="multipart/form-data">
                             <input type="file" name="profileImg" class="account-img-btn">
-                            <input name="submit-profileImg" class="account-btn" value="Change profile picture">
+                            <input type="submit" name="submit-profileImg" class="account-btn" value="Change profile picture">
                             <!-- <label for="file">Change profile picture</label> -->
                             <!-- <input type="file"> -->
                         </form>
