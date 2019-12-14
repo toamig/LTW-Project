@@ -61,5 +61,20 @@ function loadConversation(){
     for(let i = 0; i < elem.length; ++i)
         elem[i].style.display = 'none';
 
-    elem[0].style.display = 'grid';
+    
+    // first found user
+    if(elem.length != 0) elem[1].style.display = 'grid';
+
+    else elem[0].style.display = 'grid';
+}
+
+function createNewMessage(){
+    let elem = document.getElementsByClassName('conversation');
+
+    for(let i = 0; i < elem.length; ++i)
+        elem[i].style.display = 'none';
+
+    let newMessage = document.getElementById('newMessage');
+
+    newMessage.style.display = 'grid';
 }
