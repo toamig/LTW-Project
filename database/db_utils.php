@@ -31,13 +31,13 @@
         $name = $_SESSION['name'];
         $username = $_SESSION['username'];
         $email = $_SESSION['email'];
-        $phonenumber = $_SESSION['phonenumber'];
+        $phoneNumber = $_SESSION['phoneNumber'];
         $password = $_SESSION['password'];
         $image = $_SESSION['image'];
 
         global $db;
-        $stmt = $db->prepare('INSERT INTO user (username, email, password, name, phonenumber, image) VALUES (?, ?, ?, ?, ?, ?)');
-        return $stmt->execute(array($username, $email, $password, $name, $phonenumber, $image))?true:false;
+        $stmt = $db->prepare('INSERT INTO user (username, email, password, name, phoneNumber, image) VALUES (?, ?, ?, ?, ?, ?)');
+        return $stmt->execute(array($username, $email, $password, $name, $phoneNumber, $image))?true:false;
     }
 
     /*
@@ -80,7 +80,8 @@
     */
     function updateUserParam($username, $column, $value){
         global $db;
-        $stmt = $db->prepare("UPDATE user SET ".$column." = '".$value."' WHERE username='".$username."'");
+        $sql = "UPDATE user SET ".$column." = '".$value."' WHERE username='".$username."'";
+        $stmt = $db->prepare($sql);
         return $stmt->execute();
     }
 

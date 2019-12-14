@@ -21,7 +21,7 @@
             $_SESSION['name'] = $user['name'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['email'] = $user['email'];
-            $_SESSION['phonenumber'] = $user['phoneNumber'];
+            $_SESSION['phoneNumber'] = $user['phoneNumber'];
             if($user['image'] != NULL){
                 $_SESSION['image'] = $user['image'];
             }

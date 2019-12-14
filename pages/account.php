@@ -150,7 +150,7 @@
 
                                 <div class="account-profile-wrapper-personal-info-row-element">
                                     <span>Phone Number</span>
-                                    <lable class="element-lable" type="text"><?php echo substr($_SESSION['phonenumber'],  0, strlen($_SESSION['phonenumber']));?></lable>
+                                    <lable class="element-lable" type="text"><?php echo substr($_SESSION['phoneNumber'],  0, strlen($_SESSION['phoneNumber']));?></lable>
                                 </div>
                             </div>
 
@@ -203,7 +203,7 @@
 
                                         <div class="account-profile-wrapper-personal-info-row-element">
                                             <span>*Phone Number</span>
-                                            <input class="element-lable" type="text" name="phoneNumber" placeholder="<?php echo substr($_SESSION['phonenumber'],  0, strlen($_SESSION['phonenumber']));?>" required>
+                                            <input class="element-lable" type="text" name="phoneNumber" placeholder="<?php echo substr($_SESSION['phoneNumber'],  0, strlen($_SESSION['phoneNumber']));?>" required>
                                         </div>
                                     </div>
 
@@ -238,17 +238,17 @@
 
                             <div class="change-password-field">
                                 <lable>Old password:</lable>
-                                <input class="element-lable" type="text" name="oldPass" required>
+                                <input class="element-lable" type="password" name="oldPass" required>
                             </div>
 
                             <div class="change-password-field">
                                 <lable>New password:</lable>
-                                <input class="element-lable" type="text" name="newPass" required>
+                                <input class="element-lable" type="password" name="newPass" required>
                             </div>
 
                             <div class="change-password-field">
                                 <lable>Confirm new password:</lable>
-                                <input class="element-lable" type="text" name="newPassConfirm" required>
+                                <input class="element-lable" type="password" name="newPassConfirm" required>
                             </div>
                         </form>
                     </div>

@@ -744,7 +744,7 @@ nav#content>form>p:first-child{
 }
 
 .account-dash-board-wrapper{
-	padding: 0.5em 1em;
+	padding: 1em;
 	margin: 0;
 }
 
@@ -794,6 +794,7 @@ nav#content>form>p:first-child{
 
 .password-header{
 	display: flex;
+	margin: 10px 0;
 }
 .account-profile-wrapper-password-wrapper-title{
 	margin: 10px 0;
@@ -860,7 +861,7 @@ nav#content>form>p:first-child{
 
 .account-profile-img{
 	display: flex;
-	padding: 0.5em 0;
+	padding-bottom: 1em;
 }
 
 .account-profile-img img{

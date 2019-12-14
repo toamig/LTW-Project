@@ -9,7 +9,7 @@
         $name = $_POST['firstname']." ".$_POST['lastname'];
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $phonenumber = $_POST['phonenumber'];
+        $phoneNumber = $_POST['phoneNumber'];
         $password = $_POST['password'];
         $confirm = $_POST['confirm-password'];
         $image = $_POST['image'];
@@ -40,7 +40,7 @@
                 $error_flag = true;
             break;
             }
-            if($user['phoneNumber'] == $phonenumber){
+            if($user['phoneNumber'] == $phoneNumber){
                 $_SESSION['messages'] = array('type' => 'error', 'content' => 'Phone number already in use!');
                 $error_flag = true;
             break;
@@ -57,7 +57,7 @@
             $_SESSION['name'] = $name;
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
-            $_SESSION['phonenumber'] = $phonenumber;
+            $_SESSION['phoneNumber'] = $phoneNumber;
             $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
             $_SESSION['image'] = $image;
             

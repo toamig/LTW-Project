@@ -19,7 +19,7 @@
             <!-- <span>E-mail:</span><br> -->
             <input type="email" name="email" id="email" required="true" placeholder="E-mail"><br>
             <!-- <span>Phone Number:</span><br> -->
-            <input type="tel" name="phonenumber" id="phonenumber" required="true" placeholder="Phone Number Format: 123-456-7890"><br>
+            <input type="tel" name="phoneNumber" id="phoneNumber" required="true" placeholder="Phone Number Format: 123-456-7890"><br>
             <!-- <span>Password:</span><br> -->
             <input type="password" name="password" id="password" required="true" placeholder="Password"><br>
             <!-- <span>Confirm Password:</span><br> -->

@@ -6,8 +6,13 @@
     $oldPass = $_POST['oldPass'];
     // echo $oldPass.'<br>';
 
+    $user = getUserEmail($email);
+    $verifyPass = password_verify($oldPass, $user['password']);
+
+    global $error_flag; 
+
     // Verify if the old password and the session password fields are equal.
-    if(!password_verify($oldPass, $_SESSION['password'])){
+    if(!$verifyPass){
         $_SESSION['messages'] = array('type' => 'error', 'content' => 'Old password and its session password are not equal!');
         $error_flag = true;
     }
@@ -27,7 +32,10 @@
     // If errors were identified, returns to the account page.
     // Else, updates password and returns to the account page.
     if(!$error_flag)
-        updateUserParam($_SESSION['username'], 'password', $newPass);
+        global $newPass;
+        $newpasshash = password_hash($newPass, PASSWORD_DEFAULT);
+        updateUserParam($_SESSION['username'], 'password', $newpasshash);
+        $_SESSION['password'] = $newpasshash;
     
     header("Location: ../pages/account.php");
     die();
