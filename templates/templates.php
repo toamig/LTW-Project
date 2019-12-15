@@ -23,6 +23,7 @@
 
             <link href="../css/style.css" rel="stylesheet">
             <link href="../css/responsive.css" rel="stylesheet">
+            <script type="text/javascript" src="../js/rental.js"></script>
 
         </head>
 
