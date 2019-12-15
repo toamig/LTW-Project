@@ -98,7 +98,7 @@
 
             </div>
 
-            <form action="addrent.php">
+            <form action="rental.php">
                     <input type="hidden" name="id" value="<?=$house['id']?>">
                     <input class="utils-btn" type="submit" value="Rent">
             </form>
