@@ -61,7 +61,6 @@ function loadConversation(){
     for(let i = 0; i < elem.length; ++i)
         elem[i].style.display = 'none';
 
-    
     // first found user
     if(elem.length != 0) elem[1].style.display = 'grid';
 
@@ -77,4 +76,46 @@ function createNewMessage(){
     let newMessage = document.getElementById('newMessage');
 
     newMessage.style.display = 'grid';
+}
+
+function sendMessage(){
+
+    let msg = document.querySelector('#message-input');
+
+    console.log('msg:');console.log(msg.value);
+
+    let divArray = document.getElementsByClassName("conversation");
+
+    let id;
+    let ul;
+
+    for(let conversation of divArray){
+        if(conversation.style.display != 'none'){
+            id = conversation.id;
+            ul = document.querySelector('#'+id+' ul');
+        }   
+    }
+
+    let li = document.createElement("li");
+    li.setAttribute("class", "reply"); // added line
+
+    let p = document. createElement("p");
+    p.setAttribute('class', 'message-p');
+    p.innerHTML = msg.value;
+    console.log('p:'); console.log(p);
+
+    li.appendChild(p);
+    ul.appendChild(li);
+
+    // let request = new XMLHttpRequest();
+    // request.open("get", "../actions/sendMessage_action.php?receiver="+id+"&msg="+msg.value, true);
+    // request.send();
+
+    // if (request.status === 200) {
+    // alert(request.responseText);
+    // }
+
+    msg.value = "";
+
+    event.preventDefault();
 }

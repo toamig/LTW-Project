@@ -814,6 +814,7 @@ nav#content>form>p:first-child{
 
 .account-img-btn {
 	color: transparent;
+	outline: none;
 }
 .account-img-btn::-webkit-file-upload-button {
 	visibility: hidden;
@@ -1124,4 +1125,14 @@ nav#content>form>p:first-child{
 }
 .send-message-icon:hover{
 	fill: var(--main-color-3);
+}
+
+.chat-user{
+	width: 90%;
+	height: 1.8em;
+    padding: 0;
+    margin: 0 1px;
+    border-radius: 0.2em;
+    border: 0;
+    outline: none;
 }

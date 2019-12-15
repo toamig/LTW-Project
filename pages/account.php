@@ -479,7 +479,7 @@
 <?php function messageRightPanel($messages){ ?>
 
     <div class="message-right-panel">
-        <form>
+        <form onsubmit="sendMessage()">
 
             <?php
                 creatNewMessage();
@@ -557,7 +557,9 @@
     <div class="conversation" id="newMessage">
         <div class="user-id-right" id="newUserMessage">
             <label>To:</label>
-            <input class="chat-user" placeholder="write the username of the person..">
+            <script> if($('#newMessage').style.display != 'none') { </script>
+                <input class="chat-user" placeholder="write the username of the person.." required>
+            <script> } </script>
         </div>
         <div class="chat-container">
             <ul>
@@ -569,8 +571,8 @@
 
 <?php function displayMessageInput() { ?>
     <div class="message-input">
-        <input type="text" placeholder="write your message..">
-        <button class="send-message-btn">
+        <input id="message-input" type="text" placeholder="write your message..">
+        <button class="send-message-btn" type="submit">
             <svg class="send-message-icon" id="Capa_1" enable-background="new 0 0 465.882 465.882" height="512" viewBox="0 0 465.882 465.882" width="512" xmlns="http://www.w3.org/2000/svg">
                 <path d="m465.882 0-465.882 262.059 148.887 55.143 229.643-215.29-174.674 235.65.142.053-.174-.053v128.321l83.495-97.41 105.77 39.175z"/>
             </svg>

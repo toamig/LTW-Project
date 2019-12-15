@@ -8,6 +8,40 @@
     $result = loadAllRental();
 ?>
 
+<script>
+    function arraymove(arr, fromIndex, toIndex) {
+        var element = arr[fromIndex];
+        arr.splice(fromIndex, 1);
+        arr.splice(toIndex, 0, element);
+    }
+
+    function sortBy(option){
+        console.log(option);
+
+        let houses = document.getElementsByClassName('wrapper-house');
+
+        console.log(houses);
+
+        if(option == 'price-high-to-low'){
+            
+            for(let i = 0; i < houses.length; ++i){
+                document.cookie="i="+i+"; expires=-1; path=/";
+                
+                console.log('i:');console.log(i);
+                console.log('cookie:');console.log(<?php echo $_COOKIE['i'];?>);
+                
+                let high = <?php echo $result[$_COOKIE['i']]['price']?>
+
+                console.log('price:');console.log(high);  
+
+                // for(let j = i+1; j < houses.length; ++j){
+
+                // }
+            }
+        }
+    }
+</script>
+
 <section id="results">
     <div class="results-header">
         <div>
@@ -15,7 +49,7 @@
         </div>
         <div class="sort-by">
             <h4>Sort By:</h4>
-            <select class="sort-by-select" required>
+            <select class="sort-by-select" required onchange="sortBy(this.value)">
                 <option value="" disabled selected hidden>-- Select --</option>
                 <option value="price-high-to-low">Price: High to Low</option>
                 <option value="price-low-to-high">Price: Low to High</option>
@@ -30,6 +64,7 @@
 
     <?php
         $resultsFound = false;
+        $index = -1;
         foreach($result as $item){
             $counter = 0;
             // Searches for the given input
@@ -38,10 +73,11 @@
             if($item['location'] != $search) $counter++;
             if($item['state'] != $search) $counter++;
             if($item['postCode'] != $search) $counter++;
+            ++$index;
             if($counter == 5) continue;
             $resultsFound = true;
     ?>
-    <div class="wrapper-house">
+    <div class="wrapper-house" id="<?php echo $index;?>">
         <ul class="house-item">
             <h4><?php echo $item['title']; ?> in <?php echo $item['location']; ?></h4>
             <div class="image-description">
