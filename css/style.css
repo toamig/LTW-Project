@@ -171,7 +171,7 @@ body header {
 #search input:-webkit-autofill:hover, 
 #search input:-webkit-autofill:focus {
 	background-color: white !important;
-	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	box-shadow: 0 0 0px 1000px white inset;
     background-image: none !important;
     color: var(--main-color-8) !important;
 }
@@ -337,49 +337,12 @@ nav#content>form>p:first-child{
 	flex: auto;
 }
 
-.house-item li{
-	list-style: none;
-	color: var(--main-color-1);
-}
-
-.description{
-	text-align: justify;
-}
-
-.image-description{
+.results-wrapper {
 	display: flex;
-}
-
-.image-description img{
-	width: 100%;
-}
-
-.desc-info{
-	display: flex;
-	flex-direction: column;
-	padding-left: 2em;
-}
-
-.house-info{
-	display: flex;
-	flex-direction: column;
-}
-
-.house-info h5{
-	display: flex;
-	flex-direction: row;
-}
-
-.house-info div {
-	display: flex;
-	flex-direction: row;
-	margin-top: 1em;
-
-}
-
-.house-info h5 {
-	margin: 0 1em 0 0;
-	color: var(--main-color-3);
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 2em 0;
 }
 
 .house-item {
@@ -389,11 +352,12 @@ nav#content>form>p:first-child{
 	color: var(--main-color-1);
 	background-color:var(--main-color-6);
 	box-shadow: 0 0 0.8rem 0.2rem var(--main-color-7);
+	margin: 1em;
 }
 
 .utils-btn {
 	background-color:var(--main-color-1);
-	border-radius: 3px;
+	border-radius: 5px;
 	display:inline-block;
 	cursor:pointer;
 	color:var(--main-color-6);
@@ -402,6 +366,7 @@ nav#content>form>p:first-child{
 	text-decoration:none;
 	border: none;
 	transition: background-color 0.5s;
+	position: relative;
 }
 .utils-btn:hover {
 	background-color:var(--main-color-2);
@@ -411,14 +376,29 @@ nav#content>form>p:first-child{
 	top:1px;
 }
 
-.postcode{
-	display:flex;
-	flex-direction: row;
+.utils-btn img {
+	width: 500px;
+	height: 350px;
+	border-radius: 3px;
+	object-fit: cover;
+	transition: 0.5s;
+}
+.utils-btn:hover img {
+	filter: blur(3px);
 }
 
-.utils-btn-container{
-	display: flex;
-	justify-content: flex-end;
+.utils-btn h3 {
+	position: absolute;
+	font-family: 'Exo 2', sans-serif;
+	color: white;
+	text-shadow: 2px 2px 4px black, 0px 0px 6px black;
+	margin: 2em;
+	bottom: 0;
+	left: 0;
+	transition: 0.5s;
+}
+.utils-btn:hover h3 {
+	font-size: large;
 }
 
 .results-header{
@@ -569,7 +549,7 @@ nav#content>form>p:first-child{
     margin: auto auto auto 0;
 	float: left;
 	width: 70%;
-	height: 35em;
+	height: 45em;
 	vertical-align: middle;
 	object-fit: cover;
 	box-shadow: 0 0 0.8rem 0.2rem var(--main-color-7);
@@ -602,8 +582,8 @@ nav#content>form>p:first-child{
 	object-fit: cover; 
 	object-position: center;
 	border-radius: 50%;
-	width: 50px;
-	height: 50px;
+	width: 70px;
+	height: 70px;
 	margin-right: 1em;
 	
 }
@@ -854,13 +834,11 @@ nav#content>form>p:first-child{
 }
 
 .account-btn{
-	margin: 5px 0 0 auto;
     background-color: var(--main-color-1);
-    border-radius: 3px;
+    border-radius: 5px;
     display: inline-block;
     cursor: pointer;
     color: var(--main-color-6);
-    font-weight: bold;
     text-decoration: none;
 	border: none;
 	padding: 5px;
@@ -883,36 +861,67 @@ nav#content>form>p:first-child{
 
 .account-profile-img img{
 	object-fit: cover;
-	height: 60px;
-	width: 60px;
+	height: 100px;
+	width: 100px;
 }
 
 .account-profile-name-change-picture{
-	display: grid;
-	padding-left: 0.5em;
+	display: flex;
+	flex-direction: column;
+	padding-left: 1em;
+}
+
+.account-profile-name-change-picture p{
+	font-size: larger;
+	margin-top: 0;
+	margin-bottom: auto;
+}
+
+.account-change-img {
+	margin-top: auto;
+}
+
+.password-header button {
+	margin-left: auto;
 }
 
 /* Portfolio */
 .houses-wrapper{
-	display: contents;
-	width: 50%;
+	padding-bottom: 1em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+    justify-content: center;
 }
 
-.portfolio-element{
-	padding-bottom: 1em;
+.houses-wrapper > form{
+	margin: 1em;
 }
+
+.houses-wrapper .add-new-wrapper{
+	margin: 1em;
+	width: 350px;
+	height: 250px;
+	border-radius: 5px;
+	border: 5px solid var(--main-color-1);
+	display: flex;
+	justify-content: center;
+}
+
+.houses-wrapper .add-new-wrapper a{
+	margin: auto;
+}
+
+.houses-wrapper .add-new-wrapper svg{
+	width: 150px;
+	height: auto;
+	fill: var(--main-color-1);
+}
+
 .portfolio-element h4{
 	margin: auto;
 	margin-top: 8px;
-}
-
-.houses-wrapper ul{
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.houses-wrapper ul li{
-	flex: 0 0 33.3%;
 }
 
 .list-item{
@@ -920,25 +929,38 @@ nav#content>form>p:first-child{
 	flex-direction: column;
 }
 
-.item-house-img{
-	width: 25em;
-	height: 18em;
+.houses-wrapper .account-btn {
+	position: relative;
 }
 
-.add-new-wrapper{
-	display: flex;
-	justify-content: center;
+.item-house-img{
+	width: 350px;
+	height: 250px;
+	border-radius: 3px;
+	object-fit: cover;
+	transition: 0.5s;
+}
+.account-btn:hover img {
+	filter: blur(3px);
+}
+
+.account-btn h3 {
+	position: absolute;
+	font-family: 'Exo 2', sans-serif;
+	color: white;
+	text-shadow: 2px 2px 4px black, 0px 0px 6px black;
+	margin: 2em;
+	bottom: 0;
+	left: 0;
+	transition: 0.5s;
+}
+.account-btn:hover h3 {
+	font-size: large;
 }
 
 .add-new-btn{
 	background-color: transparent;
 	border: none;
-}
-
-.add-new-btn img{
-	width: 100%;
-    transform: scale(0.5);
-	max-height: 21em;
 }
 
 .add-new-btn img:hover{
