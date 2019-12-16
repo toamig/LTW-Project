@@ -8,39 +8,7 @@
     $result = loadAllRental();
 ?>
 
-<script>
-    function arraymove(arr, fromIndex, toIndex) {
-        var element = arr[fromIndex];
-        arr.splice(fromIndex, 1);
-        arr.splice(toIndex, 0, element);
-    }
-
-    function sortBy(option){
-        console.log(option);
-
-        let houses = document.getElementsByClassName('wrapper-house');
-
-        console.log(houses);
-
-        if(option == 'price-high-to-low'){
-            
-            for(let i = 0; i < houses.length; ++i){
-                document.cookie="i="+i+"; expires=-1; path=/";
-                
-                console.log('i:');console.log(i);
-                console.log('cookie:');console.log(<?php echo $_COOKIE['i'];?>);
-                
-                let high = <?php echo $result[$_COOKIE['i']]['price']?>
-
-                console.log('price:');console.log(high);  
-
-                // for(let j = i+1; j < houses.length; ++j){
-
-                // }
-            }
-        }
-    }
-</script>
+<script src="../js/results_utils.js"></script>
 
 <section id="results">
     <div class="results-header">
@@ -66,6 +34,7 @@
         $resultsFound = false;
         $index = -1;
         foreach($result as $item){
+            ++$index;
             $counter = 0;
             // Searches for the given input
             if($item['id'] != $search) $counter++;
@@ -73,7 +42,6 @@
             if($item['location'] != $search) $counter++;
             if($item['state'] != $search) $counter++;
             if($item['postCode'] != $search) $counter++;
-            ++$index;
             if($counter == 5) continue;
             $resultsFound = true;
     ?>

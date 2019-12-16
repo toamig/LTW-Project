@@ -557,9 +557,7 @@
     <div class="conversation" id="newMessage">
         <div class="user-id-right" id="newUserMessage">
             <label>To:</label>
-            <script> if($('#newMessage').style.display != 'none') { </script>
-                <input class="chat-user" placeholder="write the username of the person.." required>
-            <script> } </script>
+            <input class="chat-user" placeholder="write the username of the person..">
         </div>
         <div class="chat-container">
             <ul>
