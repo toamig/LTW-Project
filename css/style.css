@@ -194,7 +194,7 @@ body header {
 
 #search button:hover {
 	background: var(--main-color-2);
-  }
+}
 
 #search svg {
 	margin-left: 0.5em;
