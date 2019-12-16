@@ -39,6 +39,9 @@ Carlos Vieira
 - edit house
 - remove house
 
+** <?>.php **
+- responsiveness
+
 ** addhouse.php **
 - upload multiple photos
 - current time
