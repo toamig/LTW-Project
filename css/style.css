@@ -659,6 +659,10 @@ nav#content>form>p:first-child{
 	min-width: 80px;
 }
 
+
+#select_box{
+	padding-left: 10%;
+}
 /* --- ACCOUNT --- */
 
 .account{
