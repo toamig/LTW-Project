@@ -17,15 +17,33 @@ Carlos Vieira
 {
 ** search.php **
 - filters
-- flexbox css results
 - search bar
 
+** profile.php **
+- perfil para ser visto por outros utilizadores:
+    - name /user name
+    - photo
+    - contact
+    - published houses list
+
+** addrental.php **
+- improve dates
+- available dates database
+
+** login/register.php ** 
+- ajax to display error message
+
 ** house.php **
-- button to rent
 - send message
 - multiple photos
+- edit house
+- remove house
+
+** <?>.php **
+- responsiveness
 
 ** addhouse.php **
 - upload multiple photos
+- current time
 - css
 }

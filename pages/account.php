@@ -82,7 +82,7 @@
 
         <ul class="account-dash-board-items">
 
-            <h4 class="account-dash-board-title border-gray">Profile</h4>
+            <h3 class="account-dash-board-title border-gray">Profile</h3>
 
             <div class="account-dash-board-wrapper">
 
@@ -92,8 +92,8 @@
                 <div class="account-profile-img border-gray">
                     <img src="../images/users/<?=$_SESSION['image']?>" alt="profileLogo">
                     <div class="account-profile-name-change-picture" >
-                        <?php echo $_SESSION['name']; ?>
-                        <form class="account-change-img" action="../actions/upluad_image_action.php" method="post" enctype="multipart/form-data">
+                        <p><?php echo $_SESSION['name']; ?></p>
+                        <form class="account-change-img" action="../actions/upload_image_action.php" method="post" enctype="multipart/form-data">
                             <input type="file" name="profileImg" class="account-img-btn">
                             <input type="submit" name="submit-profileImg" class="account-btn" value="Change profile picture">
                             <!-- <label for="file">Change profile picture</label> -->
@@ -293,24 +293,23 @@
 
     <h4>Owned Houses</h4>
     <div class="houses-wrapper">
-        <ul>
-            <?php
-                $houses = getUserOwnedHouses($_SESSION['username']);
+        <?php
+            $houses = getUserOwnedHouses($_SESSION['username']);
 
-                if(sizeof($houses)){
-                    foreach($houses as $item){
-                        ?> 
-                        <li>
-                            <button class="account-btn">
-                                <?php ownedItem($item); ?>
-                            </button> 
-                        </li>
-                        <?php
-                    }
+            if(sizeof($houses)){
+                foreach($houses as $item){
+                    ?> 
+                    <form action="house.php" method="get">
+                        <input type="hidden" name="id" value="<?=$item['id']?>">
+                        <button class="account-btn" type="submit">
+                            <?php ownedItem($item); ?>
+                        </button> 
+                    </form>
+                    <?php
                 }
-            ?>
-            <?php addNewBtn();?>
-        </ul>
+            }
+        ?>
+        <?php addNewBtn();?>
     </div>
     
 <?php } ?>
@@ -318,57 +317,46 @@
 <?php function rentedHouses() { ?>
     <h4>Rented Houses</h4>
     <div class="houses-wrapper">
-        <ul>
-            <?php
-                $houses = getUserRentedHouses($_SESSION['username']);
+        <?php
+            $houses = getUserRentedHouses($_SESSION['username']);
 
-                if(sizeof($houses)){
-                    foreach($houses as $item){
-                        ?> 
-                        <li>
-                            <button class="account-btn">
-                                <?php rentedItem($item); ?>
-                            </button> 
-                        </li>
-                        <?php
-                    }
+            if(sizeof($houses)){
+                foreach($houses as $item){
+                    ?> 
+                    <form action="house.php" method="get">
+                        <input type="hidden" name="id" value="<?=$item['id']?>">
+                        <button class="account-btn" type="submit">
+                            <?php rentedItem($item); ?>
+                        </button> 
+                    </form>
+                    <?php
                 }
-            ?>
-            <?php addNewBtn();?>
-        </ul>
+            }
+        ?>
+        <?php addNewBtn();?>
     </div>
 
 <?php } ?>
 
 <?php function ownedItem($item){ ?>
-        <ul class="list-item">
-            <li class="location">
-                    <?php echo $item['title']; ?> in <?php echo $item['location']; ?>
-            </li>
-            <li>
-                <img class="item-house-img" src="../images/houses/<?php echo $item['image'];?>" alt="HouseImg">
-            </li>
-        </ul>
+        <img class="item-house-img" src="../images/houses/<?php echo $item['image'];?>" alt="HouseImg">
+        <h3><?php echo $item['title']; ?></h3>
 <?php } ?>
 
 <?php function rentedItem($item){ ?>
-        <ul class="list-item">
             <?php $house = getHouse($item['houseID']);?>
-            <li class="location">
-                    <?php echo $house['title']; ?> in <?php echo $house['location']; ?>
-            </li>
-            <li>
-                <img class="item-house-img" src="../images/houses/<?php echo $house['image'];?>" alt="HouseImg">
-            </li>
-        </ul>
+            <img class="item-house-img" src="../images/houses/<?php echo $house['image'];?>" alt="HouseImg">
+            <h3><?php echo $house['title']; ?></h3>
 <?php } ?>
 
 <?php function addNewBtn() { ?>
-    <li class="add-new-wrapper">
-        <a href="addhouse.php"><button class="add-new-btn">
-            <img class="add-new-img" src="../images/icons/addNew.svg" alt="AddNewImg">
-        </button></a>
-    </li>
+    <div class="add-new-wrapper">
+        <a href="addhouse.php">
+            <svg height="448pt" viewBox="0 0 448 448" width="448pt" xmlns="http://www.w3.org/2000/svg">
+                <path d="m408 184h-136c-4.417969 0-8-3.582031-8-8v-136c0-22.089844-17.910156-40-40-40s-40 17.910156-40 40v136c0 4.417969-3.582031 8-8 8h-136c-22.089844 0-40 17.910156-40 40s17.910156 40 40 40h136c4.417969 0 8 3.582031 8 8v136c0 22.089844 17.910156 40 40 40s40-17.910156 40-40v-136c0-4.417969 3.582031-8 8-8h136c22.089844 0 40-17.910156 40-40s-17.910156-40-40-40zm0 0"/>
+            </svg>
+        </a>
+</div>
 <?php } ?>
 
 <!-- Messages -->

@@ -43,5 +43,10 @@ if(isset($_POST['submit-addhouse'])){
 	}
 
 }
+else{
+
+	header('Location: ../pages/home.php');
+
+}
 
 ?>

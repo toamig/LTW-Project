@@ -30,6 +30,8 @@
         </div>
     </div>
 
+    <div class="results-wrapper">
+
     <?php
         $resultsFound = false;
         $index = -1;
@@ -45,61 +47,28 @@
             if($counter == 5) continue;
             $resultsFound = true;
     ?>
-    <div class="wrapper-house" id="<?php echo $index;?>">
+
+<!-- <div class="wrapper-house" id="<?php echo $index;?>">
         <ul class="house-item">
             <h4><?php echo $item['title']; ?> in <?php echo $item['location']; ?></h4>
             <div class="image-description">
-                <li>
+                <li> -->
+
+        <div class="house-item">
+            <form action="house.php">
+                <input type="hidden" name="id" value="<?=$item['id']?>">
+                <button class="utils-btn" type="submit" value="olaolaola">
                     <img src="../images/houses/<?php echo $item['image'];?>" alt="HouseExampleImg">
-                </li>
-                <div class="desc-info">
-                    <li class="description">
-                        <?php echo $item['description']; ?>
-                    </li>
-                    <div class="house-info">
-                        <div class="price-info">
-                            <h5>Price:</h5>
-                            <li class="price-amount">
-                            <?php echo $item['price']."$"; ?>
-                            </li>
-                        </div>
-                        <div class="date-info">
-                            <h5>Date:</h5>
-                            <li class="date">
-                                <?php echo $item['published']; ?>
-                            </li>
-                        </div>
-                        <div class="address-info">
-                            <h5>Address:</h5>
-                            <li class="address">
-                                <?php echo $item['address']; ?>
-                            </li>
-                        </div>
-                        <div class="state-info">
-                            <h5>State:</h5>
-                            <li class="state">
-                                <?php echo $item['state']; ?>
-                            </li>
-                        </div>
-                        <div class="postcode-info">
-                            <h5>Post Code:</h5>
-                            <li class="postcode">
-                                <?php echo $item['postCode']; ?>
-                            </li>
-                        </div>
-                    </div>
-                    <div class="utils-btn-container">
-                        <form action="house.php">
-                            <input type="hidden" name="id" value="<?=$item['id']?>">
-                            <input class="utils-btn" type="submit" value="Details">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </ul>
+                    <h3><?php echo $item['title']; ?></h3>
+                </button>
+            </form>
+        </div>
+        
+    <?php } ?>
+
     </div>
-    <?php
-        }
+
+    <?php    
         if(!$resultsFound){ ?>
             <div class="no-results-found">
                 <img src="../images/icons/noResultsFound.png" alt="noResultsFound">

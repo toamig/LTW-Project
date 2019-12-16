@@ -6,6 +6,8 @@
      * link.
      */
     function drawHeader(){
+
+        
 ?>
 
     <!DOCTYPE html>
@@ -41,7 +43,7 @@
 
                 </div>
 
-                <!-- If a session was not yet started. -->
+                <!-- If the user has already register or loged in. -->
                 <?php if (isset($_SESSION['username'])){ ?>
 
                     <div id="taskbar">
@@ -52,7 +54,7 @@
 
                     </div>
                 
-                <!-- If the user has already register or loged in. -->
+                <!-- If a session was not yet started. -->
                 <?php } else { ?>
 
                     <div id="signup">
