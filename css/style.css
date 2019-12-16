@@ -907,6 +907,11 @@ nav#content>form>p:first-child{
 	border: 5px solid var(--main-color-1);
 	display: flex;
 	justify-content: center;
+	transition: 0.5s;
+	background-color: var(--main-color-4);
+}
+.houses-wrapper .add-new-wrapper:hover {
+	border: 5px solid var(--main-color-2);
 }
 
 .houses-wrapper .add-new-wrapper a{
@@ -914,9 +919,14 @@ nav#content>form>p:first-child{
 }
 
 .houses-wrapper .add-new-wrapper svg{
-	width: 150px;
+	width: 130px;
 	height: auto;
 	fill: var(--main-color-1);
+	transition: 0.5s;
+}
+.houses-wrapper .add-new-wrapper:hover svg{
+	width: 150px;
+	fill: var(--main-color-2);
 }
 
 .portfolio-element h4{
