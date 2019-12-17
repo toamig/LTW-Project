@@ -32,7 +32,6 @@
         else{
             $_SESSION['messages'] = array('type' => 'error', 'content' => "Wrong password!");
             echo "<span class='form-".$_SESSION['messages']['type']."'>".$_SESSION['messages']['content']."</span>";
-            header("Location: ../pages/account.php");
             die();
         }
 
