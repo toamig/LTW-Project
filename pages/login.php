@@ -6,26 +6,20 @@
         drawHeader(); 
 ?>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script src="../js/error_utils.js"></script>
 
     <nav id="content">
-        <form action="../actions/login_action.php" method="post" id="login_form" onsubmit="loginErrorMessage()">
+        <form action="../actions/login_action.php" method="post" id="login-form" >
             <p>Login to Rent-a-house</p>
-            <input type="email" name="email" id="email" required="true" placeholder="E-mail"><br>
-            <!-- <span>Phone Number:</span><br> -->
-            <input type="password" name="password" id="password" required="true" placeholder="Password"><br>
-            <!-- <span>Confirm Password:</span><br> -->
+            <input type="email" name="email" id="login-email" required="true" placeholder="E-mail"><br>
+
+            <input type="password" name="password" id="login-password" required="true" placeholder="Password"><br>
             
-            <?php if(isset($_SESSION['messages'])) {?>
+            <div class="form-message"></div>
 
-                <div id="error"><?=$_SESSION['messages']['content']?></div>
-
-                <?php
-                unset($_SESSION['messages']);
-
-            }?>
-
-            <input type="submit" name="submit-login" value="Sign-in" id="submit"><br>
+            <input type="submit" name="login-submit" value="Sign-in" id="login-submit" class="submit"><br>
             <p>Don't have an account? <a href="register.php">Sign-up now.</a></p>
         </form>
     </nav>

@@ -46,4 +46,6 @@ Carlos Vieira
 - upload multiple photos
 - current time
 - css
+
+https://stackoverflow.com/questions/40903462/how-to-keep-a-scrollbar-always-bottom
 }
