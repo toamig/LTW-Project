@@ -10,13 +10,14 @@
 	--main-color-3: #8D86C9;
 	--main-color-4: #CAC4CE;
 	--main-color-5: #F7ECE1;
+	--main-color-6: white;
 
 	/* Secondaries */
-	--main-color-6: white;
 	--main-color-7: rgba(0,0,0,.2);
 	--main-color-8: rgb(0, 0, 0);
 	--main-color-9: rgb(83, 83, 83);
-	--main-color-10: rgb(245, 89, 71);
+	--error: rgb(245, 89, 71);
+	--success: rgb(75,181,67);
 }
 
 /* --- Reset CSS --- */
@@ -279,7 +280,7 @@ nav#content form input::placeholder{
 }
 
 
-#submit{
+.submit{
 	background-color: var(--main-color-1);
 	color: var(--main-color-6);
 	border: none;
@@ -287,14 +288,13 @@ nav#content form input::placeholder{
 	transition: background-color 0.5s;
 }
 
-#submit:hover {
+.submit:hover {
 	background-color:var(--main-color-2);
 }
 
-nav#content form #error{
+nav#content form .form-message{
 	margin: 1em 0;
 	text-align: center;
-	color: var(--main-color-10);
 	font-weight: bold;
 }
 
@@ -311,6 +311,14 @@ nav#content form p>a{
 
 nav#content>form>p:first-child{
 	font-size: 1.5em;
+}
+
+.form-error {
+	color: var(--error);
+}
+
+.form-success {
+	color: var(--success);
 }
 
 /* --- RENTAL ---- */

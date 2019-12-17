@@ -49,7 +49,6 @@ function loadConversation(){
 
     for(let i = 0; i < elem.length; ++i)
         elem[i].style.display = 'none';
-
     // first found user
     if(elem.length != 1) elem[1].style.display = 'grid';
 
