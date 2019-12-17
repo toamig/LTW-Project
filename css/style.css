@@ -189,7 +189,7 @@ body header {
 	background: var(--main-color-1);
 	border: none;
 	cursor: pointer;
-	transition: background 0.5s;
+	transition: 0.5s;
 }
 
 #search button:hover {
@@ -1052,6 +1052,7 @@ nav#content>form>p:first-child{
 	border: 0;
 	text-align: center;
 	padding: 14px;
+	width: 100%;
 	text-decoration: none;
 }
 .contact-wrap:hover {

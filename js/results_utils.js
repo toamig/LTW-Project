@@ -7,7 +7,7 @@ function arraymove(arr, fromIndex, toIndex) {
 function sortBy(option){
     console.log(option);
 
-    let houses = document.getElementsByClassName('wrapper-house');
+    let houses = document.getElementsByClassName('house-item');
 
     console.log(houses);
 

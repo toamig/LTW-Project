@@ -62,7 +62,7 @@ function loadConversation(){
         elem[i].style.display = 'none';
 
     // first found user
-    if(elem.length != 0) elem[1].style.display = 'grid';
+    if(elem.length != 1) elem[1].style.display = 'grid';
 
     else elem[0].style.display = 'grid';
 }
@@ -80,9 +80,9 @@ function createNewMessage(){
 
 function sendMessage(){
 
-    let msg = document.querySelector('#message-input');
+    event.preventDefault();
 
-    console.log('msg:');console.log(msg.value);
+    let msg = document.querySelector('#message-input');
 
     let divArray = document.getElementsByClassName("conversation");
 
@@ -92,6 +92,14 @@ function sendMessage(){
     for(let conversation of divArray){
         if(conversation.style.display != 'none'){
             id = conversation.id;
+            if(id == 'newMessage'){
+                let addressee = document.querySelector('.chat-user');
+                if(addressee.value == ""){
+                    alert('Missing addressee!!');
+                    return;
+                }
+            }
+
             ul = document.querySelector('#'+id+' ul');
         }   
     }
@@ -102,20 +110,18 @@ function sendMessage(){
     let p = document. createElement("p");
     p.setAttribute('class', 'message-p');
     p.innerHTML = msg.value;
-    console.log('p:'); console.log(p);
 
     li.appendChild(p);
     ul.appendChild(li);
 
-    // let request = new XMLHttpRequest();
-    // request.open("get", "../actions/sendMessage_action.php?receiver="+id+"&msg="+msg.value, true);
-    // request.send();
-
-    // if (request.status === 200) {
-    // alert(request.responseText);
-    // }
+    let request = new XMLHttpRequest();
+    request.open("POST", "../actions/send_message_action.php", true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify({'id': id, 'msg': msg.value}));
 
     msg.value = "";
+}
 
-    event.preventDefault();
+function refresh(){
+    console.log('olaa');
 }

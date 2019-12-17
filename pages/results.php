@@ -34,9 +34,8 @@
 
     <?php
         $resultsFound = false;
-        $index = -1;
-        foreach($result as $item){
-            ++$index;
+        for($i=0; $i<sizeof($result); ++$i){
+            $item = $result[$i];
             $counter = 0;
             // Searches for the given input
             if($item['id'] != $search) $counter++;
@@ -48,13 +47,7 @@
             $resultsFound = true;
     ?>
 
-<!-- <div class="wrapper-house" id="<?php echo $index;?>">
-        <ul class="house-item">
-            <h4><?php echo $item['title']; ?> in <?php echo $item['location']; ?></h4>
-            <div class="image-description">
-                <li> -->
-
-        <div class="house-item">
+        <div class="house-item" id="<?php echo $i;?>">
             <form action="house.php">
                 <input type="hidden" name="id" value="<?=$item['id']?>">
                 <button class="utils-btn" type="submit" value="olaolaola">
