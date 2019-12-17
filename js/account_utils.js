@@ -60,10 +60,11 @@ function loadConversation(){
 
     for(let i = 0; i < elem.length; ++i)
         elem[i].style.display = 'none';
-
+    
+    console.log(elem);
     
     // first found user
-    if(elem.length != 0) elem[1].style.display = 'grid';
+    if(elem.length != 1) elem[1].style.display = 'grid';
 
     else elem[0].style.display = 'grid';
 }

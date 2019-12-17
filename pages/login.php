@@ -6,8 +6,10 @@
         drawHeader(); 
 ?>
 
+    <script src="../js/error_utils.js"></script>
+
     <nav id="content">
-        <form action="../actions/login_action.php" method="post" id="login_form">
+        <form action="../actions/login_action.php" method="post" id="login_form" onsubmit="loginErrorMessage()">
             <p>Login to Rent-a-house</p>
             <input type="email" name="email" id="email" required="true" placeholder="E-mail"><br>
             <!-- <span>Phone Number:</span><br> -->
