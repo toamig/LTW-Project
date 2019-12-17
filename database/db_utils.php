@@ -138,6 +138,19 @@
     }
 
     /*
+    * Inserts a new message into the db.
+    * @param $receiver, $msg
+    * @return true:false
+    */
+    function sendMessage($receiver, $msg){
+        $sender = $_SESSION['username'];
+
+        global $db;
+        $stmt = $db->prepare('INSERT INTO message (id, sender, receiver, message) VALUES (?, ?, ?, ?)');
+        return $stmt->execute(array(NULL, $sender, $receiver, $msg))?true:false;
+    }
+
+    /*
     * Closes the connection to the database
     */
     function closeConnection(){

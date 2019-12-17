@@ -189,7 +189,7 @@ body header {
 	background: var(--main-color-1);
 	border: none;
 	cursor: pointer;
-	transition: background 0.5s;
+	transition: 0.5s;
 }
 
 #search button:hover {
@@ -815,6 +815,7 @@ nav#content>form>p:first-child{
 
 .account-img-btn {
 	color: transparent;
+	outline: none;
 }
 .account-img-btn::-webkit-file-upload-button {
 	visibility: hidden;
@@ -1051,6 +1052,7 @@ nav#content>form>p:first-child{
 	border: 0;
 	text-align: center;
 	padding: 14px;
+	width: 100%;
 	text-decoration: none;
 }
 .contact-wrap:hover {
@@ -1177,4 +1179,14 @@ nav#content>form>p:first-child{
 }
 .send-message-icon:hover{
 	fill: var(--main-color-3);
+}
+
+.chat-user{
+	width: 90%;
+	height: 1.8em;
+    padding: 0;
+    margin: 0 1px;
+    border-radius: 0.2em;
+    border: 0;
+    outline: none;
 }

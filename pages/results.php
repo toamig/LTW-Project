@@ -8,6 +8,8 @@
     $result = loadAllRental();
 ?>
 
+<script src="../js/results_utils.js"></script>
+
 <section id="results">
     <div class="results-header">
         <div>
@@ -15,7 +17,7 @@
         </div>
         <div class="sort-by">
             <h4>Sort By:</h4>
-            <select class="sort-by-select" required>
+            <select class="sort-by-select" required onchange="sortBy(this.value)">
                 <option value="" disabled selected hidden>-- Select --</option>
                 <option value="price-high-to-low">Price: High to Low</option>
                 <option value="price-low-to-high">Price: Low to High</option>
@@ -32,7 +34,8 @@
 
     <?php
         $resultsFound = false;
-        foreach($result as $item){
+        for($i=0; $i<sizeof($result); ++$i){
+            $item = $result[$i];
             $counter = 0;
             // Searches for the given input
             if($item['id'] != $search) $counter++;
@@ -44,7 +47,7 @@
             $resultsFound = true;
     ?>
 
-        <div class="house-item">
+        <div class="house-item" id="<?php echo $i;?>">
             <form action="house.php">
                 <input type="hidden" name="id" value="<?=$item['id']?>">
                 <button class="utils-btn" type="submit" value="olaolaola">
