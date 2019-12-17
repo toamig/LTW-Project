@@ -1120,7 +1120,7 @@ nav#content>form>p:first-child{
 .chat-container {
 	border: 1px solid var(--main-color-1);
 	margin: 0;
-	overflow: auto;
+	overflow: scroll;
 	width: auto;
 	height: 23em;
 	background-color: var(--main-color-5);

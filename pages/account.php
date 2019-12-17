@@ -374,8 +374,6 @@
 
                     <?php $messages = getMessages($_SESSION['username']); ?>
 
-                    <?php //var_dump($messages); ?>
-
                     <?php messageLeftPanel($messages); ?>
 
                     <?php messageRightPanel($messages); ?>

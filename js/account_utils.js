@@ -44,17 +44,6 @@ function changePassword(){
     elem.style.display = 'grid';
 }
 
-function contactWrapper(username){
-    let listElements = document.getElementsByClassName("conversation");
-
-    for(let i = 0; i < listElements.length; ++i){
-        if(listElements[i].id != username[0].id){
-            listElements[i].style.display = "none";
-        }
-        else listElements[i].style.display = "grid";
-    }
-}
-
 function loadConversation(){
     let elem = document.getElementsByClassName('conversation');
 
@@ -65,6 +54,17 @@ function loadConversation(){
     if(elem.length != 1) elem[1].style.display = 'grid';
 
     else elem[0].style.display = 'grid';
+}
+
+function contactWrapper(username){
+    let listElements = document.getElementsByClassName("conversation");
+
+    for(let i = 0; i < listElements.length; ++i){
+        if(listElements[i].id != username[0].id){
+            listElements[i].style.display = "none";
+        }
+        else listElements[i].style.display = "grid";
+    }
 }
 
 function createNewMessage(){
@@ -94,13 +94,9 @@ function sendMessage(){
             id = conversation.id;
             if(id == 'newMessage'){
                 let addressee = document.querySelector('.chat-user');
-                if(addressee.value == ""){
-                    alert('Missing addressee!!');
-                    return;
-                }
+                ul = document.querySelector('#'+addressee.value+' ul');
             }
-
-            ul = document.querySelector('#'+id+' ul');
+            else ul = document.querySelector('#'+id+' ul');
         }   
     }
 
