@@ -13,9 +13,9 @@
     <nav id="content">
         <form action="../actions/login_action.php" method="post" id="login-form" >
             <p>Login to Rent-a-house</p>
-            <input type="email" name="email" id="login-email" required="true" placeholder="E-mail"><br>
+            <input type="email" name="login-email" id="login-email" required="true" placeholder="E-mail"><br>
 
-            <input type="password" name="password" id="login-password" required="true" placeholder="Password"><br>
+            <input type="password" name="login-password" id="login-password" required="true" placeholder="Password"><br>
             
             <div class="form-message"></div>
 

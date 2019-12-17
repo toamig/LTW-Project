@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_POST['submit-register'])){
+    if(isset($_POST['submit'])) {
 
         include_once('../database/session.php');
         include_once('../database/db_utils.php');
@@ -11,9 +11,9 @@
         $email = $_POST['email'];
         $phoneNumber = $_POST['phoneNumber'];
         $password = $_POST['password'];
-        $confirm = $_POST['confirm-password'];
-        $image = $_POST['image'];
-        if(is_null($image)){
+        $confirm = $_POST['confirm'];
+
+        if(!isset($_POST['image'])){
             $image = 'placeholder.png';
         }
 
@@ -49,8 +49,7 @@
 
        // If the the parameters evaluated above fail, it returns to the register page again. 
         if($error_flag){ 
-            header('Location: ../pages/register.php');
-            die();
+            echo "<span class='form-".$_SESSION['messages']['type']."'>".$_SESSION['messages']['content']."</span>";
         }
         //If not, a new account is created.
         else {
@@ -60,21 +59,37 @@
             $_SESSION['phoneNumber'] = $phoneNumber;
             $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
             $_SESSION['image'] = $image;
+
+            $verifyCreateAcc = createUserAccount();
             
-            if(!createUserAccount()){
+            if(!$verifyCreateAcc){
+                $_SESSION['messages'] = array('type' => 'error', 'content' => 'ERROR! Unable to create a new account!');
+                echo "<span class='form-".$_SESSION['messages']['type']."'>".$_SESSION['messages']['content']."</span>";
+                session_unset();
                 session_destroy();
-                $_SESSION['messages'] = array('type' => 'error', 'content' => 'ERROR! Unable to create a new account!!');
-                header('Location: ../pages/register.php');
-                die();
             }
-            else header('Location: ../pages/account.php');
+            else{
+                $_SESSION['messages'] = array('type' => 'success', 'content' => 'Account successfully created!');
+                echo "<span class='form-".$_SESSION['messages']['type']."'>".$_SESSION['messages']['content']."</span>";
+            }
         }
 
     }
     else {
-
-        header('Location: ../index.php');
-
+        echo "There was an error!";
+        die();
     }
     
 ?>
+
+<script>
+
+    var registerError = "<?=$error_flag;?>";
+
+    var verifyCreateAcc = "<?=$verifyCreateAcc;?>";
+
+    if(!registerError && verifyCreateAcc){
+        window.history.back();
+    }
+        
+</script>

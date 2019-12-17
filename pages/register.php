@@ -6,35 +6,32 @@
         drawHeader(); 
 ?>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="../js/error_utils.js"></script>
+
     <nav id="content">
         
-        <form action="../actions/register_action.php" method="post" id="register_form">
+        <form action="../actions/register_action.php" method="post" id="register-form">
             <p>Register now in Rent-a-house</p>
             <!-- <span>First Name:</span><br> -->
-            <input type="text" name="firstname" id="firstname" required="true" placeholder="First Name"><br>
+            <input type="text" name="register-firstname" id="register-firstname" required="true" placeholder="First Name"><br>
             <!-- <span>Last Name:</span><br> -->
-            <input type="text" name="lastname" id="lastname" required="true" placeholder="Last Name"><br>
+            <input type="text" name="register-lastname" id="register-lastname" required="true" placeholder="Last Name"><br>
             <!-- <span>User Name:</span><br> -->
-            <input type="text" name="username" id="username" required="true" placeholder="User Name"><br>
+            <input type="text" name="register-username" id="register-username" required="true" placeholder="User Name"><br>
             <!-- <span>E-mail:</span><br> -->
-            <input type="email" name="email" id="email" required="true" placeholder="E-mail"><br>
+            <input type="email" name="register-email" id="register-email" required="true" placeholder="E-mail"><br>
             <!-- <span>Phone Number:</span><br> -->
-            <input type="tel" name="phoneNumber" id="phoneNumber" required="true" placeholder="Phone Number Format: 123-456-7890"><br>
+            <input type="tel" name="register-phoneNumber" id="register-phoneNumber" required="true" placeholder="Phone Number Format: 123-456-7890"><br>
             <!-- <span>Password:</span><br> -->
-            <input type="password" name="password" id="password" required="true" placeholder="Password"><br>
+            <input type="password" name="register-password" id="register-password" required="true" placeholder="Password"><br>
             <!-- <span>Confirm Password:</span><br> -->
-            <input type="password" name="confirm-password" id="confirm-password" required="true" placeholder="Confirm your password"><br>
+            <input type="password" name="register-confirm" id="register-confirm" required="true" placeholder="Confirm your password"><br>
 
-            <?php if(isset($_SESSION['messages'])) {?>
+            <div class="form-message"></div>
 
-                <div id="error"><?=$_SESSION['messages']['content']?></div>
-
-                <?php
-                unset($_SESSION['messages']);
-
-            }?>
-
-            <input type="submit" name="submit-register" value="Register" id="submit"><br>
+            <input type="submit" name="register-submit" id="register-submit" value="Register" class="submit"><br>
             <p>Already have an account? <a href="login.php">Sign-in.</a></p>
         </form>
 

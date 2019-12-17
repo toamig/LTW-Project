@@ -10,9 +10,17 @@
 
         $house = getHouse($id);
 
-        $owner = getUserUsername($house['owner']); 
+        $owner = getUserUsername($house['owner']);
+
+        $images = getHouseImages($id);
+        
+        if($house){
         
 ?>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <script src="../js/slideshow.js"></script>
 
         <article class="house-body">
 
@@ -46,7 +54,32 @@
             
             <section id="house-image-contact">
 
-                <img  src="../images/houses/<?=$house['image']?>" alt="HouseImg">
+                <div class="slideshow-container">
+
+                    <?php for($i = 0; $i < count($images); $i++) { ?>
+
+                        <div class="mySlides fade">
+
+                            <img class="slide-image" src="../images/houses/<?=$images[$i]['image']?>">
+
+                        </div>
+
+                    <?php } ?>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <div class="dots-container">
+
+                        <?php for($i = 1; $i <= count($images); $i++) { ?>
+                            
+                            <span class="dot" onclick="currentSlide(<?=$i?>)"></span>
+
+                        <?php } ?>
+
+                    </div>
+
+                </div>
 
                 <div id="house-contact-owner">
 
@@ -107,13 +140,14 @@
 
 
 <?php 
+        drawFooter(); 
 
-    drawFooter(); 
-
+        }
+        else{
+            header('Location: home.php');
+        }
     }
     else{ 
-
         header('Location: home.php');
-
     }
 ?>

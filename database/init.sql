@@ -1,7 +1,8 @@
+DROP TABLE IF EXISTS houseimages;
+DROP TABLE IF EXISTS message;
+DROP TABLE IF EXISTS rental;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS house;
-DROP TABLE IF EXISTS rental;
-DROP TABLE IF EXISTS message;
 
 CREATE TABLE user (
   username VARCHAR PRIMARY KEY,
@@ -14,7 +15,6 @@ CREATE TABLE user (
 
 CREATE TABLE house (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  image VARCHAR,
   type VARCHAR,
   room INTEGER,
   bathroom INTEGER,
@@ -44,6 +44,12 @@ CREATE TABLE message (
   message VARCHAR
 );
 
+CREATE TABLE houseimages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  houseID integer REFERENCES house,
+  image VARCHAR
+);
+
 -- Preencher base de dados incial
 
 -- User
@@ -56,11 +62,11 @@ INSERT INTO user VALUES
 
 -- House
 INSERT INTO house VALUES 
-(NULL, 'houseExample1.jpg', 'House', 2, 2, 1995000, '2018-10-20', '3432 22nd St', 'San Francisco', 'CA', '94110', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'LucianoLisby'),
-(NULL, 'houseExample2.jpeg', 'House', 2, 2, 1998888, '2016-06-03', '1425 7th Ave', 'Los Angeles', 'CA', '94122', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'DenverDebelak'),
-(NULL, 'houseExample3.jpeg', 'House', 2, 2, 2950000, '2009-08-14', '1257-1261 Lombard St', 'Chicago', 'IL', '94109', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'JanieJett'),
-(NULL, 'houseExample4.jpeg', 'House', 2, 2, 1005000, '2019-12-09', '51 Innes Court', 'San Francisco', 'CA', '94124', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'FeFigueredo'),
-(NULL, 'houseExample5.jpg', 'House', 2, 2, 3009890, '2001-03-28', '250 Peralta Ave', 'San Francisco', 'CA', '94110', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'CruzCervantez');
+(NULL, 'House', 2, 2, 1995000, '2018-10-20', '3432 22nd St', 'San Francisco', 'CA', '94110', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'LucianoLisby'),
+(NULL, 'House', 2, 2, 1998888, '2016-06-03', '1425 7th Ave', 'Los Angeles', 'CA', '94122', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'DenverDebelak'),
+(NULL, 'House', 2, 2, 2950000, '2009-08-14', '1257-1261 Lombard St', 'Chicago', 'IL', '94109', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'JanieJett'),
+(NULL, 'House', 2, 2, 1005000, '2019-12-09', '51 Innes Court', 'San Francisco', 'CA', '94124', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'FeFigueredo'),
+(NULL, 'House', 2, 2, 3009890, '2001-03-28', '250 Peralta Ave', 'San Francisco', 'CA', '94110', 'Charming and well-kept 2 bedroom, 2 bathroom home near parks, trails, and downtown. Home features a xeriscaped, fully-fenced, private back yard with a large shed and patio. Large driveway for off-street parking. Dogs are welcome with a small pet fee. Landlords are open to the possibility of subletting with a proper agreement. Tenants responsible for utilities.', 'Lorem ipsum dolor sit amet', 'CruzCervantez');
 
 -- Rental
 INSERT INTO rental VALUES
@@ -88,3 +94,10 @@ INSERT INTO message VALUES
 (NULL, 'FeFigueredo', 'LucianoLisby', 'Interdum et malesuada fames ac ante ipsum primis in faucibus.'),
 (NULL, 'LucianoLisby', 'FeFigueredo', 'Proin blandit erat eget magna semper varius. Donec vel metus orci.'),
 (NULL, 'FeFigueredo', 'LucianoLisby', 'Interdum et malesuada fames ac ante ipsum primis in faucibus.');
+
+INSERT INTO houseimages VALUES 
+(NULL, 1, 'houseExample1.jpg'),
+(NULL, 2, 'houseExample2.jpeg'),
+(NULL, 3, 'houseExample3.jpeg'),
+(NULL, 4, 'houseExample4.jpeg'),
+(NULL, 5, 'houseExample5.jpg');

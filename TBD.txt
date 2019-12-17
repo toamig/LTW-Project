@@ -15,9 +15,6 @@
 
 Carlos Vieira
 {
-** search.php **
-- filters
-- search bar
 
 ** profile.php **
 - perfil para ser visto por outros utilizadores:
@@ -30,22 +27,25 @@ Carlos Vieira
 - improve dates
 - available dates database
 
-** login/register.php ** 
-- ajax to display error message
-
 ** house.php **
 - send message
-- multiple photos
 - edit house
 - remove house
 
 ** <?>.php **
 - responsiveness
 
-** addhouse.php **
-- upload multiple photos
-- current time
-- css
+}
 
-https://stackoverflow.com/questions/40903462/how-to-keep-a-scrollbar-always-bottom
+
+Filipe Nogueira
+{
+
+** search.php **
+- filters
+- search bar
+
+** account.php **
+- cancel password change button 
+
 }

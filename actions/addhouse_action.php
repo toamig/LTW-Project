@@ -10,7 +10,7 @@ if(isset($_POST['submit-addhouse'])){
 	$room = $_POST['room'];
 	$bathroom = $_POST['bathroom'];
 	$price = $_POST['price'];
-	$published = $_POST['published'];
+	$published = date("m/d/Y");
 	$address = $_POST['address'];
 	$location = $_POST['location'];
 	$state = $_POST['state'];
@@ -18,29 +18,38 @@ if(isset($_POST['submit-addhouse'])){
     $description = $_POST['description'];
     $title = $_POST['title'];
     $owner = $_SESSION['username'];
-    
-
-	$target_dir = "../images/houses/";
-	$fileName = basename($_FILES["image"]["name"]);
-	$targetFile= $target_dir . $fileName;
-	$fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-
 	
-    // echo "<script>alert('$fileType'); window.location.replace(\"../pages/addhouse.php\");</script>";	
+	//Adding house to the database
+	global $db;	
+	$stmt = $db->prepare('INSERT INTO house (type, room, bathroom, price, published, address, location, state, postcode, description, title, owner) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)');
+	$stmt->execute(array($type, $room, $bathroom, $price, $published, $address, $location, $state, $postcode, $description, $title, $owner));
 
-	$allowTypes = array('jpg','png','jpeg');
-	if(in_array($fileType, $allowTypes)){
-		move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile);
-    	global $db;	
-		$stmt = $db->prepare('INSERT INTO house (image, type, room, bathroom, price, published, address, location, state, postcode, description, title, owner) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)');
-		$stmt->execute(array($fileName, $type, $room, $bathroom, $price, $published, $address, $location, $state, $postcode, $description, $title, $owner));
-		$message = "House added";
-        echo "<script>alert('$message')";// window.location.replace(\"../pages/addhouse.php\");</script>";
+	$houseID = lastHouseID();
+
+	var_dump($houseID);
+
+	//For each image
+	$allowedTypes = array('jpg','png','jpeg');
+	for($i = 0; $i < count($_FILES["image"]["name"]); $i++){
+
+		$target_dir = "../images/houses/";
+		$fileName = basename($_FILES["image"]["name"][$i]);
+		$targetFile= $target_dir . $fileName;
+		$fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+		if(in_array($fileType, $allowedTypes)){
+			move_uploaded_file($_FILES["image"]["tmp_name"][$i], $targetFile);
+			$stmt = $db->prepare('INSERT INTO houseimages (houseID, image) VALUES (?,?)');
+			$stmt->execute(array($houseID['max(id)'], $fileName));
+		}
+		else{
+			$message = "ERROR! Insert valid image";
+			echo "<script>alert('$message')";	
+		}
 	}
-	else{
-		$message = "ERROR! Insert valid image";
-        echo "<script>alert('$message')";// window.location.replace(\"../pages/addhouse.php\");</script>";	
-	}
+
+	header('Location: ../pages/house.php?id='.$houseID['max(id)']);
+	die();
 
 }
 else{
@@ -48,5 +57,4 @@ else{
 	header('Location: ../pages/home.php');
 
 }
-
 ?>
