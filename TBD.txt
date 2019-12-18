@@ -16,13 +16,6 @@
 Carlos Vieira
 {
 
-** profile.php **
-- perfil para ser visto por outros utilizadores:
-    - name /user name
-    - photo
-    - contact
-    - published houses list
-
 ** addrental.php **
 - improve dates
 - available dates database

@@ -19,6 +19,7 @@
 ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="../js/house_utils.js"></script>
 
         <script src="../js/slideshow.js"></script>
 
@@ -91,10 +92,12 @@
 
                     </div>
 
-                    <form method="post" action="../actions/send_message_action.php">
+                    <form method="post" onsubmit="sendMessage()">
 
-                        <textarea name="message" cols="auto" rows="auto">Hey, I'd like to get more information about this property. Best regards!</textarea>
+                            <?php var_dump($owner);?>
 
+                        <textarea id="msg" name="msg" cols="auto" rows="auto" value="Hey, I'd like to get more information about this property. Best regards!">Hey, I'd like to get more information about this property. Best regards!</textarea>
+                        <input id="owner-id" type="hidden" name="id" value="<?=$owner['username']?>">
                         <input type="submit" name="send-message" value="Send message">
 
                     </form>
