@@ -1,3 +1,6 @@
+/*
+*
+*/
 function loadFirstTab(){
     let elems = document.getElementsByClassName('account-dash-board');
 
@@ -9,6 +12,9 @@ function loadFirstTab(){
     }
 }
 
+/*
+*
+*/
 function changeTab(btnName){
     let elems = document.getElementsByClassName('account-dash-board');
 
@@ -32,6 +38,9 @@ function changeTab(btnName){
     }
 }
 
+/*
+*
+*/
 function changePersonalInfo(){
     let editBtn = document.querySelector('#edit-btn');
     editBtn.style.display = 'none';
@@ -49,6 +58,9 @@ function changePersonalInfo(){
     wrapperChange.style.display = 'grid';
 }
 
+/*
+*
+*/
 function cancelChangePersonalInfo(){
     event.preventDefault();
 
@@ -60,6 +72,9 @@ function cancelChangePersonalInfo(){
     document.querySelector('#personal-info-change').style.display = 'none';
 }
 
+/*
+*
+*/
 function changePassword(){
     let passSet = document.querySelector('#password-set');
 
@@ -70,11 +85,17 @@ function changePassword(){
     elem.style.display = 'grid';
 }
 
+/*
+*
+*/
 function cancelChangePassword(){
     document.querySelector('#password-set').style.display = 'grid';
     document.querySelector('#password-change').style.display = 'none';
 }
 
+/*
+*
+*/
 function loadConversation(){
     let elem = document.getElementsByClassName('conversation');
 
@@ -86,6 +107,9 @@ function loadConversation(){
     else elem[0].style.display = 'grid';
 }
 
+/*
+*
+*/
 function contactWrapper(username){
     let listElements = document.getElementsByClassName("conversation");
 
@@ -97,6 +121,9 @@ function contactWrapper(username){
     }
 }
 
+/*
+*
+*/
 function createNewMessage(){
     let elem = document.getElementsByClassName('conversation');
 
@@ -108,6 +135,9 @@ function createNewMessage(){
     newMessage.style.display = 'grid';
 }
 
+/*
+*
+*/
 function sendMessage(){
 
     event.preventDefault();

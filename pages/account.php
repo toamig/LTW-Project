@@ -316,6 +316,14 @@
     
 <?php } ?>
 
+<?php function ownedItem($item){ 
+    $images = getHouseImages($item['id']);
+    ?>
+        
+        <img class="item-house-img" src="../images/houses/<?php echo $images[0]['image'];?>" alt="HouseImg">
+        <h3><?php echo $item['title']; ?></h3>
+<?php } ?>
+
 <?php function rentedHouses() { ?>
     <h4>Rented Houses</h4>
     <div class="houses-wrapper">
@@ -340,18 +348,11 @@
 
 <?php } ?>
 
-<?php function ownedItem($item){ 
-    $images = getHouseImages($item['id']);
-    ?>
-        
-        <img class="item-house-img" src="../images/houses/<?php echo $images[0]['image'];?>" alt="HouseImg">
-        <h3><?php echo $item['title']; ?></h3>
-<?php } ?>
-
 <?php function rentedItem($item){ ?>
-            <?php $house = getHouse($item['houseID']);?>
-            <img class="item-house-img" src="../images/houses/<?php echo $house['image'];?>" alt="HouseImg">
-            <h3><?php echo $house['title']; ?></h3>
+    <?php $images = getHouseImages($item['houseID']); ?>
+    <?php $house = getHouse($item['houseID']);?>
+    <img class="item-house-img" src="../images/houses/<?php echo $images[0]['image'];?>" alt="HouseImg">
+    <h3><?php echo $house['title']; ?></h3>
 <?php } ?>
 
 <?php function addNewBtn() { ?>
