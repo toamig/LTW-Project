@@ -42,10 +42,27 @@
     }
 
     /*
-    *
+    * Creates a new house with the given parameters
+    * @param $type, $room, $bathroom, $price, $published, $address, $location, $state, $postcode, $description, $title, $owner
+    * @return true:false
     */
-    function createHouse(){
-        
+    function createHouse($type, $room, $bathroom, $price, $published, $address, $location, $state, $postcode, $description, $title, $owner){
+        global $db;	
+        $stmt = $db->prepare('INSERT INTO house (type, room, bathroom, price, published, address, location, state, postcode, description, title, owner) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)');
+        $aux = $stmt->execute(array($type, $room, $bathroom, $price, $published, $address, $location, $state, $postcode, $description, $title, $owner));
+        return $aux;
+    }
+
+    /*
+    * Inserts image to the database
+    * @param $houseID, $fileName
+    * @return true:false
+    */
+    function insertImage($houseID, $fileName){
+        global $db;	
+        $stmt = $db->prepare('INSERT INTO houseimages (houseID, image) VALUES (?,?)');
+		$aux = $stmt->execute(array($houseID, $fileName));
+        return $aux;
     }
 
     /*

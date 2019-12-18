@@ -3,7 +3,15 @@
     include_once('../database/db_utils.php');
     drawHeader(); 
 
-    $search = $_GET['search'];
+    if(isset($_GET['search'])){
+        $search = $_GET['search'];
+        $search_flag = true;
+    }
+
+    else {
+        $search = "All";
+        $search_flag = false;
+    }
 
     $result = loadAllRental();
 ?>
@@ -50,20 +58,25 @@
     <div class="results-wrapper">
 
     <?php
+        
         $resultsFound = false;
         for($i=0; $i<sizeof($result); ++$i){
             $item = $result[$i];
-            $counter = 0;
-            // Searches for the given input
-            if(strtolower($item['id']) != strtolower($search)) $counter++;
-            if(strtolower($item['address']) != strtolower($search)) $counter++;
-            if(strtolower($item['location']) != strtolower($search)) $counter++;
-            if(strtolower($item['state']) != strtolower($search)) $counter++;
-            if(strtolower($item['postCode']) != strtolower($search)) $counter++;
-            if($counter == 5) continue;
+            if($search_flag){
+                $counter = 0;
+                // Searches for the given input
+                if(strtolower($item['id']) != strtolower($search)) $counter++;
+                if(strtolower($item['address']) != strtolower($search)) $counter++;
+                if(strtolower($item['location']) != strtolower($search)) $counter++;
+                if(strtolower($item['state']) != strtolower($search)) $counter++;
+                if(strtolower($item['postCode']) != strtolower($search)) $counter++;
+                if($counter == 5) continue;
+            }
             $resultsFound = true;
 
             $images = getHouseImages($item['id']);
+
+            
     ?>
 
         <div class="house-item" id="<?php echo $i+1;?>">
@@ -90,5 +103,7 @@
 </section>
 
 <?php 
+
+
     drawFooter(); 
 ?>

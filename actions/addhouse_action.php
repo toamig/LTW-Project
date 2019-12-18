@@ -20,13 +20,10 @@ if(isset($_POST['submit-addhouse'])){
     $owner = $_SESSION['username'];
 	
 	//Adding house to the database
-	global $db;	
-	$stmt = $db->prepare('INSERT INTO house (type, room, bathroom, price, published, address, location, state, postcode, description, title, owner) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)');
-	$stmt->execute(array($type, $room, $bathroom, $price, $published, $address, $location, $state, $postcode, $description, $title, $owner));
 
+	createHouse($type, $room, $bathroom, $price, $published, $address, $location, $state, $postcode, $description, $title, $owner);
+	
 	$houseID = lastHouseID();
-
-	var_dump($houseID);
 
 	//For each image
 	$allowedTypes = array('jpg','png','jpeg');
@@ -39,8 +36,7 @@ if(isset($_POST['submit-addhouse'])){
 
 		if(in_array($fileType, $allowedTypes)){
 			move_uploaded_file($_FILES["image"]["tmp_name"][$i], $targetFile);
-			$stmt = $db->prepare('INSERT INTO houseimages (houseID, image) VALUES (?,?)');
-			$stmt->execute(array($houseID['max(id)'], $fileName));
+			insertImage($houseID['max(id)'], $fileName);
 		}
 		else{
 			$message = "ERROR! Insert valid image";
