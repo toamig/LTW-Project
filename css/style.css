@@ -408,7 +408,7 @@ nav#content>form>p:first-child{
 }
 
 .results-header{
-	display: grid;
+	display: flex;
 	grid-template-columns: auto auto;
 	border-bottom: 1px solid var(--main-color-1);
 }
@@ -462,24 +462,6 @@ nav#content>form>p:first-child{
 	margin: 1em 0;
 }
 
-.new-search {
-	text-align: center;
-}
-
-.new-search-btn{
-	color: var(--main-color-6);
-	background-color: var(--main-color-1);
-	padding: 5px;
-	border-radius: 0.5em;
-	border: none;
-	width: 15%;
-	transition: background-color 0.5s;
-}
-
-.new-search-btn:hover{
-	background-color:var(--main-color-2);
-}
-
 /* --- HOUSE --- */
 
 .house-body {
@@ -490,9 +472,8 @@ nav#content>form>p:first-child{
 }
 
 #house-header {
-	display: flex;
+	display: grid;
 	flex-direction: row;
-	border-bottom: 1px solid var(--main-color-1);
     margin-bottom: 1em;
 }
 

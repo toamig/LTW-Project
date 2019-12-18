@@ -43,9 +43,5 @@ Filipe Nogueira
 
 ** search.php **
 - filters
-- search bar
-
-** account.php **
-- cancel password change button 
 
 }
