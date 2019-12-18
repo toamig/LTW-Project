@@ -10,6 +10,8 @@
         $house = getHouse($id);
         $owner = getUserUsername($house['owner']); 
     }
+
+    $images = getHouseImages($id);
 ?>
     <article class="house-body">
         <div id="house-header">
@@ -32,7 +34,7 @@
 
                 <section id="house-image-contact">
 
-                    <img  src="../images/houses/<?=$house['image']?>" alt="HouseImg">
+                    <img  src="../images/houses/<?=$images[0]['image']?>" alt="HouseImg">
 
                     <div id="house-contact-owner">
                     <?php 
@@ -48,7 +50,7 @@
                         <table id="table">
                             <tr><th>Price:</th><th>$<?=$house["price"]?>/day</th></tr>
                         </table>
-                        <br><br><button class="utils-btn">Confirm.</button>
+                        <br><br><button class="utils-btn">Confirm</button>
                     </div>
 
                     </div>

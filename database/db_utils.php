@@ -1,5 +1,6 @@
 <?php
-    include_once('../database/connection.php');
+    include_once('connection.php');
+    include_once('session.php');
 
     /*
     * Get function for all the houses present in the database.
@@ -80,9 +81,14 @@
     */
     function updateUserParam($username, $column, $value){
         global $db;
-        $sql = "UPDATE user SET ".$column." = '".$value."' WHERE username='".$username."'";
-        $stmt = $db->prepare($sql);
-        return $stmt->execute();
+        if(!empty($value)){
+            $sql = "UPDATE user SET ".$column." = '".$value."' WHERE username='".$username."'";
+            $stmt = $db->prepare($sql);
+            return $stmt->execute();
+        }
+        else{
+            return false;
+        }
     }
 
     /*
@@ -148,6 +154,31 @@
         global $db;
         $stmt = $db->prepare('INSERT INTO message (id, sender, receiver, message) VALUES (?, ?, ?, ?)');
         return $stmt->execute(array(NULL, $sender, $receiver, $msg))?true:false;
+    }
+
+    /*
+    * Inserts a new message into the db.
+    * @param $receiver, $msg
+    * @return true:false
+    */
+    function getHouseImages($houseID){
+        global $db;
+        $stmt = $db->prepare("SELECT * FROM houseimages  WHERE houseID = '".$houseID."'");
+        $stmt->execute();
+        $aux = $stmt->fetchAll();
+        return $aux;
+    }
+
+    /*
+    * Returns the id of the last inserted house.
+    * @return int 
+    */
+    function lastHouseID(){
+        global $db;
+        $stmt = $db->prepare('SELECT max(id) FROM house');
+        $stmt->execute();
+        $aux = $stmt->fetch();
+        return $aux;
     }
 
     /*

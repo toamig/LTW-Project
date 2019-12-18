@@ -26,9 +26,8 @@ drawHeader();
 
             <!-- <span>Phone Number:</span><br> -->
             <input type="number" name="postcode" id="postcode" required="true" pattern="([0-9]{4})-([0-9]{3})" placeholder="Post Code - Format: 1234-567"><br>
-            <input type="date" name="published" placeholder="Today Date"><br>
-            <input type="file" name="image" required="true"><br>
-            <input type="submit" name="submit-addhouse" value="Add" id="submit"><br>
+            <input type="file" name="image[]" multiple required="true"><br>
+            <input type="submit" name="submit-addhouse" value="Add" class="submit"><br>
             
         </form>
 

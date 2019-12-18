@@ -45,13 +45,15 @@
             if($item['postCode'] != $search) $counter++;
             if($counter == 5) continue;
             $resultsFound = true;
+
+            $images = getHouseImages($item['id']);
     ?>
 
         <div class="house-item" id="<?php echo $i;?>">
             <form action="house.php">
                 <input type="hidden" name="id" value="<?=$item['id']?>">
-                <button class="utils-btn" type="submit" value="olaolaola">
-                    <img src="../images/houses/<?php echo $item['image'];?>" alt="HouseExampleImg">
+                <button class="utils-btn" type="submit">
+                    <img src="../images/houses/<?php echo $images[0]['image'];?>" alt="HouseExampleImg">
                     <h3><?php echo $item['title']; ?></h3>
                 </button>
             </form>

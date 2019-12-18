@@ -12,10 +12,12 @@
         $user = getUserEmail($email);
         $verifyPass = password_verify($password, $user['password']);
 
+        $loginError = false;
+
         if(!$user){
             $_SESSION['messages'] = array('type' => 'error', 'content' => "Account doesn't exit!");
             echo "<span class='form-".$_SESSION['messages']['type']."'>".$_SESSION['messages']['content']."</span>";
-            die();
+            $loginError = true;
         }
         else if($verifyPass){
             $_SESSION['name'] = $user['name'];
@@ -27,18 +29,28 @@
             }
             $_SESSION['messages'] = array('type' => 'success', 'content' => "Successfully logged in!");
             echo "<span class='form-".$_SESSION['messages']['type']."'>".$_SESSION['messages']['content']."</span>";
-            die();
         }
         else{
             $_SESSION['messages'] = array('type' => 'error', 'content' => "Wrong password!");
             echo "<span class='form-".$_SESSION['messages']['type']."'>".$_SESSION['messages']['content']."</span>";
-            die();
+            $loginError = true;
         }
 
     }
     else{
         echo "There was an error!";
+        header("Location: ../pages/home.php");
         die();
     }
     
 ?>
+
+<script>
+
+    var loginError = "<?=$loginError;?>";
+
+    if(!loginError){
+        window.history.back();
+    }
+        
+</script>

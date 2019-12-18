@@ -120,7 +120,7 @@
                             <div class="account-profile-wrapper-personal-info-row">
                                 <div class="account-profile-wrapper-personal-info-row-element">
                                     <span>Username</span>
-                                    <lable class="element-lable" type="text"><?php  echo $_SESSION['username']; ?></lable>
+                                    <label class="element-label" type="text"><?php  echo $_SESSION['username']; ?></label>
                                 </div>
 
                                 <div class="account-profile-wrapper-personal-info-row-element"></div>
@@ -132,12 +132,12 @@
 
                                 <div class="account-profile-wrapper-personal-info-row-element">
                                     <span>First Name</span>
-                                    <lable class="element-lable" type="text"><?php  echo substr($_SESSION['name'], 0, $pos); ?></lable>
+                                    <label class="element-label" type="text"><?php  echo substr($_SESSION['name'], 0, $pos); ?></label>
                                 </div>
 
                                 <div class="account-profile-wrapper-personal-info-row-element">
                                     <span>Last Name</span>
-                                    <lable class="element-lable" type="text"><?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?></lable>
+                                    <label class="element-label" type="text"><?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?></label>
                                 </div>
                             </div>
 
@@ -145,12 +145,12 @@
                             <div class="account-profile-wrapper-personal-info-row">
                                 <div class="account-profile-wrapper-personal-info-row-element">
                                     <span>Email</span>
-                                    <lable class="element-lable" type="text"><?php echo $_SESSION['email'];?></lable>
+                                    <label class="element-label" type="text"><?php echo $_SESSION['email'];?></label>
                                 </div>
 
                                 <div class="account-profile-wrapper-personal-info-row-element">
                                     <span>Phone Number</span>
-                                    <lable class="element-lable" type="text"><?php echo substr($_SESSION['phoneNumber'],  0, strlen($_SESSION['phoneNumber']));?></lable>
+                                    <label class="element-label" type="text"><?php echo substr($_SESSION['phoneNumber'],  0, strlen($_SESSION['phoneNumber']));?></label>
                                 </div>
                             </div>
 
@@ -173,7 +173,7 @@
                                     <div class="account-profile-wrapper-personal-info-row">
                                         <div class="account-profile-wrapper-personal-info-row-element">
                                             <span>Username</span>
-                                            <input class="element-lable" type="text" name="username" placeholder="<?php  echo $_SESSION['username']; ?>" required>
+                                            <input class="element-label" type="text" name="username" placeholder="<?php  echo $_SESSION['username']; ?>">
                                         </div>
 
                                         <div class="account-profile-wrapper-personal-info-row-element"></div>
@@ -184,26 +184,26 @@
                                         <?php $pos = strpos ($_SESSION['name'], ' '); ?>
 
                                         <div class="account-profile-wrapper-personal-info-row-element">
-                                            <span>*First Name</span>
-                                            <input class="element-lable" type="text" name="firstName" placeholder="<?php  echo substr($_SESSION['name'], 0, $pos); ?>" required>
+                                            <span>First Name</span>
+                                            <input class="element-label" type="text" name="firstName" placeholder="<?php  echo substr($_SESSION['name'], 0, $pos); ?>" >
                                         </div>
 
                                         <div class="account-profile-wrapper-personal-info-row-element">
-                                            <span>*Last Name</span>
-                                            <input class="element-lable" type="text" name="lastName" placeholder="<?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?>" required>
+                                            <span>Last Name</span>
+                                            <input class="element-label" type="text" name="lastName" placeholder="<?php echo substr($_SESSION['name'], $pos+1, strlen($_SESSION['name']));?>" >
                                         </div>
                                     </div>
 
                                     <!-- Email && Phone Number -->
                                     <div class="account-profile-wrapper-personal-info-row">
                                         <div class="account-profile-wrapper-personal-info-row-element">
-                                            <span>*Email</span>
-                                            <input class="element-lable" type="text" name="email" placeholder="<?php echo $_SESSION['email'];?>" required>
+                                            <span>Email</span>
+                                            <input class="element-label" type="text" name="email" placeholder="<?php echo $_SESSION['email'];?>">
                                         </div>
 
                                         <div class="account-profile-wrapper-personal-info-row-element">
-                                            <span>*Phone Number</span>
-                                            <input class="element-lable" type="text" name="phoneNumber" placeholder="<?php echo substr($_SESSION['phoneNumber'],  0, strlen($_SESSION['phoneNumber']));?>" required>
+                                            <span>Phone Number</span>
+                                            <input class="element-label" type="text" name="phoneNumber" placeholder="<?php echo substr($_SESSION['phoneNumber'],  0, strlen($_SESSION['phoneNumber']));?>" >
                                         </div>
                                     </div>
 
@@ -237,18 +237,18 @@
                             </div>
 
                             <div class="change-password-field">
-                                <lable>Old password:</lable>
-                                <input class="element-lable" type="password" name="oldPass" required>
+                                <label>Old password:</label>
+                                <input class="element-label" type="password" name="oldPass" required>
                             </div>
 
                             <div class="change-password-field">
-                                <lable>New password:</lable>
-                                <input class="element-lable" type="password" name="newPass" required>
+                                <label>New password:</label>
+                                <input class="element-label" type="password" name="newPass" required>
                             </div>
 
                             <div class="change-password-field">
-                                <lable>Confirm new password:</lable>
-                                <input class="element-lable" type="password" name="newPassConfirm" required>
+                                <label>Confirm new password:</label>
+                                <input class="element-label" type="password" name="newPassConfirm" required>
                             </div>
                         </form>
                     </div>
@@ -338,8 +338,11 @@
 
 <?php } ?>
 
-<?php function ownedItem($item){ ?>
-        <img class="item-house-img" src="../images/houses/<?php echo $item['image'];?>" alt="HouseImg">
+<?php function ownedItem($item){ 
+    $images = getHouseImages($item['id']);
+    ?>
+        
+        <img class="item-house-img" src="../images/houses/<?php echo $images[0]['image'];?>" alt="HouseImg">
         <h3><?php echo $item['title']; ?></h3>
 <?php } ?>
 
