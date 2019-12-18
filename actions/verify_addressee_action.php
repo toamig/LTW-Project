@@ -8,6 +8,6 @@
 
     $user = getUserUsername($receiver);
 
-    if(!isset($user)) echo false;
-    else echo true;
+    if(!isset($user)) echo json_encode(false);
+    else echo json_encode(true);
 ?>

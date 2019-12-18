@@ -1,5 +1,5 @@
 /*
-*
+* When the pages loads, display the first div created (profile).
 */
 function loadFirstTab(){
     let elems = document.getElementsByClassName('account-dash-board');
@@ -13,7 +13,7 @@ function loadFirstTab(){
 }
 
 /*
-*
+* Manages the display of the tabs according to the chosen option.
 */
 function changeTab(btnName){
     let elems = document.getElementsByClassName('account-dash-board');
@@ -39,7 +39,7 @@ function changeTab(btnName){
 }
 
 /*
-*
+* Displays the change personal information field.
 */
 function changePersonalInfo(){
     let editBtn = document.querySelector('#edit-btn');
@@ -59,7 +59,7 @@ function changePersonalInfo(){
 }
 
 /*
-*
+* Hides the change personal information field.
 */
 function cancelChangePersonalInfo(){
     event.preventDefault();
@@ -73,7 +73,7 @@ function cancelChangePersonalInfo(){
 }
 
 /*
-*
+* Displays the change password field.
 */
 function changePassword(){
     let passSet = document.querySelector('#password-set');
@@ -86,7 +86,7 @@ function changePassword(){
 }
 
 /*
-*
+* Hides the change password field.
 */
 function cancelChangePassword(){
     document.querySelector('#password-set').style.display = 'grid';
@@ -94,7 +94,7 @@ function cancelChangePassword(){
 }
 
 /*
-*
+* When the pages loads, displays the first conversation found.
 */
 function loadConversation(){
     let elem = document.getElementsByClassName('conversation');
@@ -108,7 +108,7 @@ function loadConversation(){
 }
 
 /*
-*
+* Manages the display of the chat boxes according to the chosen contact.
 */
 function contactWrapper(username){
     let listElements = document.getElementsByClassName("conversation");
@@ -122,7 +122,7 @@ function contactWrapper(username){
 }
 
 /*
-*
+* Displays the new message element. 
 */
 function createNewMessage(){
     let elem = document.getElementsByClassName('conversation');
@@ -136,7 +136,7 @@ function createNewMessage(){
 }
 
 /*
-*
+* Sends a message to the chat box owner and display that message.
 */
 function sendMessage(){
 
@@ -158,7 +158,24 @@ function sendMessage(){
                     alert('Missing addressee username!');
                     return;
                 }
-                ul = document.querySelector('#'+addressee.value+' ul');
+                else{
+                    console.log(addressee.value);
+                    let verifyAddresse = new XMLHttpRequest();
+                    verifyAddresse.open("POST", "../actions/verify_addressee_action.php", true);
+                    verifyAddresse.onreadystatechange = function(){
+                        if(this.readyState == 4 && this.status == 200){
+                            let verify = JSON.parse(this.response);
+                            if(!verify){
+                                alert('Addressee doesn\'t exist!');
+                                return;
+                            }
+                        }
+                    };
+                    verifyAddresse.setRequestHeader('Content-Type', 'application/json');
+                    verifyAddresse.send(JSON.stringify({'id': addressee.value}));
+                }
+                ul = document.querySelector('#'+id+' ul');
+                id = addressee.value;
             }
             else ul = document.querySelector('#'+id+' ul');
         }   
@@ -189,6 +206,8 @@ function sendMessage(){
 function deleteConversation(deleteBtn){
     let username = deleteBtn.parentNode.parentNode.id;
 
+    console.log(username);
+
     let contact = document.querySelectorAll('#'+username);
 
     for(let i = 0; i < contact.length; ++i){
@@ -211,8 +230,4 @@ function deleteConversation(deleteBtn){
     request.open("POST", "../actions/delete_conversation_action.php", true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({'username': username}));
-}
-
-function refresh(){
-    console.log('olaa');
 }

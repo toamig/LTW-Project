@@ -1239,7 +1239,7 @@ nav#content>form>p:first-child{
 #contact-profile-ref:hover{
 	text-decoration: underline;
 }
-#delete-chat-btn{
+.delete-chat-btn{
 	float: right;
 }
 #newUserMessage{
