@@ -1,5 +1,5 @@
 /*
-*
+* When the pages loads, display the first div created (profile).
 */
 function loadFirstTab(){
     let elems = document.getElementsByClassName('account-dash-board');
@@ -13,7 +13,7 @@ function loadFirstTab(){
 }
 
 /*
-*
+* Manages the display of the tabs according to the chosen option.
 */
 function changeTab(btnName){
     let elems = document.getElementsByClassName('account-dash-board');
@@ -39,7 +39,7 @@ function changeTab(btnName){
 }
 
 /*
-*
+* Displays the change personal information field.
 */
 function changePersonalInfo(){
     let editBtn = document.querySelector('#edit-btn');
@@ -59,7 +59,7 @@ function changePersonalInfo(){
 }
 
 /*
-*
+* Hides the change personal information field.
 */
 function cancelChangePersonalInfo(){
     event.preventDefault();
@@ -73,7 +73,7 @@ function cancelChangePersonalInfo(){
 }
 
 /*
-*
+* Displays the change password field.
 */
 function changePassword(){
     let passSet = document.querySelector('#password-set');
@@ -86,7 +86,7 @@ function changePassword(){
 }
 
 /*
-*
+* Hides the change password field.
 */
 function cancelChangePassword(){
     document.querySelector('#password-set').style.display = 'grid';
@@ -94,7 +94,7 @@ function cancelChangePassword(){
 }
 
 /*
-*
+* When the pages loads, displays the first conversation found.
 */
 function loadConversation(){
     let elem = document.getElementsByClassName('conversation');
@@ -108,7 +108,7 @@ function loadConversation(){
 }
 
 /*
-*
+* Manages the display of the chat boxes according to the chosen contact.
 */
 function contactWrapper(username){
     let listElements = document.getElementsByClassName("conversation");
@@ -122,7 +122,7 @@ function contactWrapper(username){
 }
 
 /*
-*
+* Displays the new message element. 
 */
 function createNewMessage(){
     let elem = document.getElementsByClassName('conversation');
@@ -136,7 +136,7 @@ function createNewMessage(){
 }
 
 /*
-*
+* Sends a message to the chat box owner and display that message.
 */
 function sendMessage(){
 
