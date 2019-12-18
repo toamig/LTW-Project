@@ -182,6 +182,20 @@
     }
 
     /*
+    * Deletes all the messages exchanged with a specific user
+    * @param username 
+    */
+    function deleteConversation($username){
+        global $db;
+        
+        $stmt = $db->prepare("DELETE FROM message WHERE sender='".$username."'");
+        $stmt->execute();
+
+        $stmt = $db->prepare("DELETE FROM message WHERE receiver='".$username."'");
+        $stmt->execute();
+    }
+
+    /*
     * Closes the connection to the database
     */
     function closeConnection(){

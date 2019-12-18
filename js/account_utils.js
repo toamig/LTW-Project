@@ -11,7 +11,6 @@ function loadFirstTab(){
 
 function changeTab(btnName){
     let elems = document.getElementsByClassName('account-dash-board');
-    console.log(elems);
 
     for(let i = 0; i < elems.length; ++i){
         if(elems[i].id == btnName)
@@ -151,6 +150,37 @@ function sendMessage(){
     request.send(JSON.stringify({'id': id, 'msg': msg.value}));
 
     msg.value = "";
+}
+
+/*
+* Deletes all the messages exchanged with the chosen user
+* @param deleteBtn 
+*/
+function deleteConversation(deleteBtn){
+    let username = deleteBtn.parentNode.parentNode.id;
+
+    let contact = document.querySelectorAll('#'+username);
+
+    for(let i = 0; i < contact.length; ++i){
+        contact[i].remove();
+    }
+
+    let list = document.querySelectorAll('.conversation');
+
+    if(list.length == 1) list[0].style.display = 'grid';
+    else{
+        for(let i = 1; i < list.length; ++i){
+            if(list[i].id != username){
+                list[i].style.display = 'grid';
+                break;
+            }
+        }
+    }
+
+    let request = new XMLHttpRequest();
+    request.open("POST", "../actions/delete_conversation_action.php", true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify({'username': username}));
 }
 
 function refresh(){

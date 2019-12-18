@@ -1191,6 +1191,9 @@ nav#content>form>p:first-child{
 	border-radius: 50%;
 	border: 1px solid var(--main-color-6);
 }
+.user-id-right button{
+	float: right;
+}
 #newUserMessage{
 	padding: 1.05em 0.5em;
 }
