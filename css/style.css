@@ -485,9 +485,7 @@ nav#content>form>p:first-child{
 
 .no-results-found{
 	text-align: center;
-    border: 1px solid var(--main-color-1);
     background-color: var(--main-color-6);
-	border-radius: 0.5em;
 	margin: 1em 0;
 }
 
@@ -630,13 +628,13 @@ nav#content>form>p:first-child{
 	height: 15px;
 	width: 15px;
 	margin: 0 2px;
-	background-color: #bbb;
+	background-color: var(--main-color-3);
 	border-radius: 50%;
 	display: inline-block;
 	transition: background-color 0.5s ease;
 }
 .active, .dot:hover {
-	background-color: #717171;
+	background-color: var(--main-color-2);
 }
 
 .fade {
@@ -699,7 +697,7 @@ nav#content>form>p:first-child{
 	flex: auto;
 }
 
-#house-contact-owner form :first-child {
+#house-contact-owner form textarea {
 	border: 1px solid var(--main-color-1);
 	font-family: 'Exo 2', sans-serif;
 	border-radius: 5px;
@@ -710,7 +708,7 @@ nav#content>form>p:first-child{
 	flex: auto;
 }
 
-#house-contact-owner form :nth-child(2){
+#house-contact-owner form :nth-child(3){
     background-color: var(--main-color-1);
     border-radius: 3px;
     display: inline-block;
@@ -724,7 +722,7 @@ nav#content>form>p:first-child{
 	transition: background-color 0.5s;
 }
 
-#house-contact-owner form :nth-child(2):hover {
+#house-contact-owner form :nth-child(3):hover {
 	background-color:var(--main-color-2);
 }
 
@@ -754,10 +752,21 @@ nav#content>form>p:first-child{
 
 .house-body>form input{
 	text-align: center;
-	width: 10%;
 	min-width: 80px;
 }
 
+.delete-btn {
+	background-color: var(--error);
+	display: inline-block;
+	cursor: pointer;
+	color: var(--main-color-6);
+	font-weight: bold;
+	padding: 5px;
+	text-decoration: none;
+	border: none;
+	transition: background-color 0.5s;
+	position: relative;
+}
 
 #select_box{
 	padding-left: 10%;

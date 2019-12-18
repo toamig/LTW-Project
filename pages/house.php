@@ -93,13 +93,9 @@
                     </div>
 
                     <form method="post" onsubmit="sendMessage()">
-
-                            <?php var_dump($owner);?>
-
                         <textarea id="msg" name="msg" cols="auto" rows="auto" value="Hey, I'd like to get more information about this property. Best regards!">Hey, I'd like to get more information about this property. Best regards!</textarea>
                         <input id="owner-id" type="hidden" name="id" value="<?=$owner['username']?>">
                         <input type="submit" name="send-message" value="Send message">
-
                     </form>
 
                 </div>
@@ -134,10 +130,21 @@
 
             </div>
 
-            <form action="rental.php">
-                    <input type="hidden" name="id" value="<?=$house['id']?>">
-                    <input class="utils-btn" type="submit" value="Rent">
+            <?php if(isset($_SESSION['username']) && $_SESSION['username'] == $owner['username']){ ?>
+
+            <form action="../actions/deletehouse_action.php" method="post">
+                <input type="hidden" name="id" value="<?=$house['id']?>">
+                <input class="delete-btn" type="submit" name="submit-delete" value="Delete House">
             </form>
+
+            <?php } else { ?>
+
+            <form action="rental.php">
+                <input type="hidden" name="id" value="<?=$house['id']?>">
+                <input class="utils-btn" type="submit" value="Rent">
+            </form>
+
+            <?php } ?>           
 
         </article>
 

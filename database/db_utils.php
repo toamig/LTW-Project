@@ -110,7 +110,7 @@
 
     /*
     * Gets all the info from a specific house
-    * @param $email, $password
+    * @param $id
     * @return array()
     */
     function getHouse($id){
@@ -119,6 +119,17 @@
         $stmt->execute();  
         $aux = $stmt->fetch();
         return $aux;
+    }
+
+    /*
+    * Erases house with the given id from the database
+    * @param $id
+    * @return true:false
+    */
+    function deleteHouse($id){
+        global $db;
+        $stmt = $db->prepare("DELETE FROM house WHERE id='".$id."'");
+        return $stmt->execute();  
     }
 
     /*
@@ -197,6 +208,17 @@
         $stmt->execute();
         $aux = $stmt->fetchAll();
         return $aux;
+    }
+
+    /*
+    * Deletes all images associated with the given houseID
+    * @param $receiver, $msg
+    * @return true:false
+    */
+    function deleteHouseImages($houseID){
+        global $db;
+        $stmt = $db->prepare("DELETE FROM houseimages  WHERE houseID = '".$houseID."'");
+        return $stmt->execute();
     }
 
     /*
