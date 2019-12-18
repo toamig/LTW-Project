@@ -3,16 +3,18 @@
     include_once('../templates/templates.php');
     include_once('../database/db_utils.php');
 
-    $username = $_GET['username'];
+    if(isset($_GET['username'])){
 
-    $user = getUserUsername($username);
+        $username = $_GET['username'];
 
-    $name = $user['name'];
-    $email = $user['email'];
-    $phoneNumber = $user['phoneNumber'];
-    $image = $user['image'];
+        $user = getUserUsername($username);
 
-    drawHeader();
+        $name = $user['name'];
+        $email = $user['email'];
+        $phoneNumber = $user['phoneNumber'];
+        $image = $user['image'];
+
+        drawHeader();
 ?>
 
 <script src="../js/profile_utils.js"></script>
@@ -247,4 +249,11 @@
 <?php } ?>
 
 <!-- Footer -->
-<?php drawFooter(); ?>
+<?php drawFooter(); 
+
+    }
+    else{
+        header("Location: home.php");
+    }
+?>
+

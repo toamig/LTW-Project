@@ -34,14 +34,14 @@
         </nav>
         <div class="sort-by">
             <h4>Sort By:</h4>
-            <select class="sort-by-select" required onchange="sortBy(this.value)">
+            <select class="sort-by-select" required onchange="sortBy(this.value)" >
                 <option value="" disabled selected hidden>-- Select --</option>
                 <option value="price-high-to-low">Price: High to Low</option>
                 <option value="price-low-to-high">Price: Low to High</option>
                 <option value="date-recent-to-older">Date: Recent to Older</option>
                 <option value="date-older-to-recent">Date: Older to Recent</option>
-                <option value="beds-more-to-less">Beds: More to Less</option>
-                <option value="beds-less-to-more">Beds: Less to More</option>
+                <option value="room-more-to-less">Rooms: More to Less</option>
+                <option value="room-less-to-more">Rooms: Less to More</option>
             </select>
             <div class="sort-by-arrow"></div>
         </div>
@@ -55,18 +55,18 @@
             $item = $result[$i];
             $counter = 0;
             // Searches for the given input
-            if($item['id'] != $search) $counter++;
-            if($item['address'] != $search) $counter++;
-            if($item['location'] != $search) $counter++;
-            if($item['state'] != $search) $counter++;
-            if($item['postCode'] != $search) $counter++;
+            if(strtolower($item['id']) != strtolower($search)) $counter++;
+            if(strtolower($item['address']) != strtolower($search)) $counter++;
+            if(strtolower($item['location']) != strtolower($search)) $counter++;
+            if(strtolower($item['state']) != strtolower($search)) $counter++;
+            if(strtolower($item['postCode']) != strtolower($search)) $counter++;
             if($counter == 5) continue;
             $resultsFound = true;
 
             $images = getHouseImages($item['id']);
     ?>
 
-        <div class="house-item" id="<?php echo $i;?>">
+        <div class="house-item" id="<?php echo $i+1;?>">
             <form action="house.php">
                 <input type="hidden" name="id" value="<?=$item['id']?>">
                 <button class="utils-btn" type="submit">

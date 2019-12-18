@@ -105,6 +105,19 @@
     }
 
     /*
+    * Returns a list of houses ordered by param
+    * @param $param
+    * @return boolean
+    */
+    function sortHousesBy($param, $direction){
+        global $db;
+        $sql = "SELECT * FROM house ORDER BY ".$param." ".$direction;
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchALL();
+    }
+
+    /*
     * Gets all the owned houses from a specific user
     * @param $username
     * @return array()
