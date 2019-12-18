@@ -899,6 +899,7 @@ nav#content>form>p:first-child{
 	border: none;
 	padding: 5px;
 	transition: background-color 0.5s;
+	border-radius: 2px;
 }
 .account-img-btn:hover::before {
 	background-color:var(--main-color-2);
@@ -911,6 +912,7 @@ nav#content>form>p:first-child{
     color: var(--main-color-6);
     text-decoration: none;
 	border: none;
+	border-radius: 2px;
 	padding: 5px;
 	transition: background-color 0.5s;
 }
