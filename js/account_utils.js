@@ -158,7 +158,24 @@ function sendMessage(){
                     alert('Missing addressee username!');
                     return;
                 }
-                ul = document.querySelector('#'+addressee.value+' ul');
+                else{
+                    console.log(addressee.value);
+                    let verifyAddresse = new XMLHttpRequest();
+                    verifyAddresse.open("POST", "../actions/verify_addressee_action.php", true);
+                    verifyAddresse.onreadystatechange = function(){
+                        if(this.readyState == 4 && this.status == 200){
+                            let verify = JSON.parse(this.response);
+                            if(!verify){
+                                alert('Addressee doesn\'t exist!');
+                                return;
+                            }
+                        }
+                    };
+                    verifyAddresse.setRequestHeader('Content-Type', 'application/json');
+                    verifyAddresse.send(JSON.stringify({'id': addressee.value}));
+                }
+                ul = document.querySelector('#'+id+' ul');
+                id = addressee.value;
             }
             else ul = document.querySelector('#'+id+' ul');
         }   
@@ -213,8 +230,4 @@ function deleteConversation(deleteBtn){
     request.open("POST", "../actions/delete_conversation_action.php", true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({'username': username}));
-}
-
-function refresh(){
-    console.log('olaa');
 }
