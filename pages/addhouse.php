@@ -12,10 +12,11 @@ drawHeader();
             <p>Add a new house</p>
             <input type="text" name="title" id="title" required="true" placeholder="Title"><br>
             <input type="text" placeholder="Description" name="description" required="true" rows="4" cols="50"></textarea><br>
-            <div id="select_box"><select name="type">
-                <option>House</option>
-                <option>Apartment</option>
-                <option>Studio</option>
+            <div id="select_box"><select name="type" required>
+                <option value="" disabled selected>Select house type:</option>
+                <option value="house">House</option>
+                <option value="apartment">Apartment</option>
+                <option value="studio">Studio</option>
             </select></div><br>
             <input type="number" name="room" required="true" placeholder="Rooms" min="1"><br>
             <input type="number" name="bathroom" required="true" placeholder="Bathrooms" min="0"><br>
