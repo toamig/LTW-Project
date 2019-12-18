@@ -3,7 +3,7 @@
     include_once('../templates/templates.php');
     include_once('../database/db_utils.php');
 
-    $username = $_POST['username'];
+    $username = $_GET['username'];
 
     $user = getUserUsername($username);
 
@@ -63,6 +63,15 @@
 
 <!-- Profile -->
 <?php function drawProfileDashBoard(){ ?>
+
+    <?php 
+        global $username;
+        global $name;
+        global $email;
+        global $phoneNumber;
+        global $image;
+    ?>
+
     <div class="account-dash-board" id="profile">
 
         <ul class="account-dash-board-items">
@@ -171,6 +180,10 @@
 <?php } ?>
 
 <?php function onwedHouses(){ ?>
+    <?php 
+        global $username;
+    ?>
+
     <h4>Owned Houses</h4>
     <div class="houses-wrapper">
         <?php
@@ -201,6 +214,10 @@
 <?php } ?>
 
 <?php function rentedHouses() { ?>
+    <?php 
+        global $username;
+    ?>
+
     <h4>Rented Houses</h4>
     <div class="houses-wrapper">
         <?php

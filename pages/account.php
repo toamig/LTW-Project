@@ -514,10 +514,7 @@
     <div class="conversation" id="<?php echo $user['username'];?>">
         <div class="user-id-right">
             <img class="contact-img" src="../images/users/<?php echo $user['image'];?>" alt="userImg">
-            <form action="/home.php" method="post">
-                <input name="username" type="hidden" value="<?php echo $user['name'];?>">
-                <button id="contact-profile-btn" type="submit"><?php echo $user['name'];?></button>
-            </form>
+            <label><a id="contact-profile-ref" href="profile.php?username=<?php echo $user['username'];?>"><?php echo $user['name'];?></a></label>
             <button id="delete-chat-btn" class="account-btn" type="button" onclick="deleteConversation(this)">Delete chat</button>
         </div>
         <div class="chat-container">

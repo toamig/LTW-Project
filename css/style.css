@@ -1191,13 +1191,12 @@ nav#content>form>p:first-child{
 	border-radius: 50%;
 	border: 1px solid var(--main-color-6);
 }
-#contact-profile-btn{
-	border: 0;
-    font-size: inherit;
+#contact-profile-ref{
+	text-decoration: none;
+	color: var(--main-color-1);
 }
-#contact-profile-btn:hover{
-	border-radius: 10px;
-	background-color: var(--main-color-4);
+#contact-profile-ref:hover{
+	text-decoration: underline;
 }
 #delete-chat-btn{
 	float: right;
