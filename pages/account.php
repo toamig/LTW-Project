@@ -519,7 +519,7 @@
         <div class="user-id-right">
             <img class="contact-img" src="../images/users/<?php echo $user['image'];?>" alt="userImg">
             <label><a id="contact-profile-ref" href="profile.php?username=<?php echo $user['username'];?>"><?php echo $user['name'];?></a></label>
-            <button id="delete-chat-btn" class="account-btn" type="button" onclick="deleteConversation(this)">Delete chat</button>
+            <button class="delete-chat-btn account-btn" type="button" onclick="deleteConversation(this)">Delete chat</button>
         </div>
         <div class="chat-container">
             <ul>

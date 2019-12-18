@@ -189,6 +189,8 @@ function sendMessage(){
 function deleteConversation(deleteBtn){
     let username = deleteBtn.parentNode.parentNode.id;
 
+    console.log(username);
+
     let contact = document.querySelectorAll('#'+username);
 
     for(let i = 0; i < contact.length; ++i){

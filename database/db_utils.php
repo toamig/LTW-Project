@@ -216,12 +216,13 @@
     * @param username 
     */
     function deleteConversation($username){
+        $user = $_SESSION['username'];
         global $db;
         
-        $stmt = $db->prepare("DELETE FROM message WHERE sender='".$username."'");
+        $stmt = $db->prepare("DELETE FROM message WHERE sender='".$username."' and receiver='".$user."'");
         $stmt->execute();
 
-        $stmt = $db->prepare("DELETE FROM message WHERE receiver='".$username."'");
+        $stmt = $db->prepare("DELETE FROM message WHERE sender='".$user."' and receiver='".$username."'");
         $stmt->execute();
     }
 
