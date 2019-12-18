@@ -11,12 +11,25 @@ function loadFirstTab(){
 
 function changeTab(btnName){
     let elems = document.getElementsByClassName('account-dash-board');
+    console.log(elems);
 
     for(let i = 0; i < elems.length; ++i){
         if(elems[i].id == btnName)
             elems[i].style.display = 'grid';
 
         else elems[i].style.display = 'none';
+    }
+
+    if(btnName == "profile"){
+        document.querySelector('#edit-btn').style.display = 'flex';
+        document.querySelector('#personal-info-set').style.display = 'grid';
+
+        document.querySelector('#make-changes-btn').style.display = 'none';
+        document.querySelector('#cancel-changes-btn').style.display = 'none';
+        document.querySelector('#personal-info-change').style.display = 'none';
+
+        document.querySelector('#password-set').style.display = 'grid';
+        document.querySelector('#password-change').style.display = 'none';
     }
 }
 
@@ -27,11 +40,25 @@ function changePersonalInfo(){
     let changeBtn = document.querySelector('#make-changes-btn');
     changeBtn.style.display = 'flex';
 
+    let cancelChangeBtn = document.querySelector('#cancel-changes-btn');
+    cancelChangeBtn.style.display = 'flex';;
+
     let wrapperSet = document.querySelector('#personal-info-set');
     wrapperSet.style.display = 'none';
 
     let wrapperChange = document.querySelector('#personal-info-change');
     wrapperChange.style.display = 'grid';
+}
+
+function cancelChangePersonalInfo(){
+    event.preventDefault();
+
+    document.querySelector('#edit-btn').style.display = 'flex';
+    document.querySelector('#personal-info-set').style.display = 'grid';
+
+    document.querySelector('#make-changes-btn').style.display = 'none';
+    document.querySelector('#cancel-changes-btn').style.display = 'none';
+    document.querySelector('#personal-info-change').style.display = 'none';
 }
 
 function changePassword(){
@@ -42,6 +69,11 @@ function changePassword(){
     let elem = document.querySelector('#password-change');
         
     elem.style.display = 'grid';
+}
+
+function cancelChangePassword(){
+    document.querySelector('#password-set').style.display = 'grid';
+    document.querySelector('#password-change').style.display = 'none';
 }
 
 function loadConversation(){
@@ -93,6 +125,10 @@ function sendMessage(){
             id = conversation.id;
             if(id == 'newMessage'){
                 let addressee = document.querySelector('.chat-user');
+                if(addressee.value == ""){
+                    alert('Missing addressee username!');
+                    return;
+                }
                 ul = document.querySelector('#'+addressee.value+' ul');
             }
             else ul = document.querySelector('#'+id+' ul');

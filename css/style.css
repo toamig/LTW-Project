@@ -872,6 +872,7 @@ nav#content>form>p:first-child{
 
 #make-changes-btn{
 	display: none;
+	margin-right: 1%;
 }
 
 #personal-info-change{
@@ -883,7 +884,7 @@ nav#content>form>p:first-child{
 	margin: 10px 0;
 }
 .account-profile-wrapper-password-wrapper-title{
-	margin: 10px 0;
+	margin: 10px auto 0 0;
 }
 
 #password-change{
@@ -970,7 +971,7 @@ nav#content>form>p:first-child{
 }
 
 .password-header button {
-	margin-left: auto;
+	margin-left: 1%;
 }
 
 /* Portfolio */

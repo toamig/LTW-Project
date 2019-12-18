@@ -166,6 +166,7 @@
                             <div class="account-profile-wrapper-personal-information-title">
                                 <h4>Personal Information</h4>
                                 <button class="account-btn" id="make-changes-btn" type="submit">Make Changes</button>
+                                <button class="account-btn" id="cancel-changes-btn" type="button" onclick="cancelChangePersonalInfo()">Cancel</button>
                             </div>
                             
                             <div class="account-profile-wrapper-container-personal-info">
@@ -234,6 +235,7 @@
                                 <h4 class="account-profile-wrapper-password-wrapper-title">Password</h4>
 
                                 <button class="account-btn" type="post">Change Password</button>
+                                <button class="account-btn" type="button" onclick="cancelChangePassword()">Cancel</button>
                             </div>
 
                             <div class="change-password-field">
