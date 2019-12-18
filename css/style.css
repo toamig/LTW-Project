@@ -1191,7 +1191,15 @@ nav#content>form>p:first-child{
 	border-radius: 50%;
 	border: 1px solid var(--main-color-6);
 }
-.user-id-right button{
+#contact-profile-btn{
+	border: 0;
+    font-size: inherit;
+}
+#contact-profile-btn:hover{
+	border-radius: 10px;
+	background-color: var(--main-color-4);
+}
+#delete-chat-btn{
 	float: right;
 }
 #newUserMessage{
